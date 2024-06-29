@@ -1,5 +1,22 @@
-.wrapper { background-color: #fbf3d5; display: flex; flex-direction: column; }
-.header { width: 100%; }
+.wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fbf3d5; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 @media (max-width: 991px) { .header { max-width: 100%; } }
 .nav-container { gap: 20px; display: flex; }
 @media (max-width: 991px) { .nav-container { flex-direction: column; align-items: stretch; gap: 0; } }
