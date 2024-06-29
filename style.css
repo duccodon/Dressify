@@ -1,11 +1,4 @@
-.wrapper {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
 html, body {
-    height: 100%;
     margin: 0;
     padding: 0;
 }
@@ -15,33 +8,101 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden; 
 }
 
-.header { width: 100%; }
-@media (max-width: 991px) { .header { max-width: 100%; } }
-.nav-container { gap: 20px; display: flex; }
-@media (max-width: 991px) { .nav-container { flex-direction: column; align-items: stretch; gap: 0; } }
-.logo-container { display: flex; flex-direction: column; line-height: normal; width: 33%; margin-left: 0; }
-@media (max-width: 991px) { .logo-container { width: 100%; } }
+.wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.header { 
+    width: 100%; 
+    max-width: 100%; 
+}
+
+.nav-container { 
+    gap: 20px; 
+    display: flex; 
+    flex-wrap: wrap; 
+}
+
+.logo-container { 
+    display: flex; 
+    flex-direction: column; 
+    line-height: normal; 
+    width: 33%; 
+    margin-left: 0; 
+}
+
 .logo-wrapper { 
     font-family: 'Text Me One', sans-serif;
     display: flex; 
-    flex-grow: 1; 
+    align-items: center; 
     gap: 20px; 
     font-size: 64px; 
     color: #817373; 
     font-weight: 400; 
-    white-space: nowrap; 
 }
-@media (max-width: 991px) { .logo-wrapper { margin-top: 40px; font-size: 40px; white-space: initial; } }
-.logo-image { aspect-ratio: 0.84; object-fit: auto; object-position: center; width: 89px; fill: rgba(25, 34, 63, 0.5); }
-.logo-text { font-family: Text Me One, sans-serif; align-self: end; margin-top: 60px; flex-grow: 1; flex-basis: auto; }
-@media (max-width: 991px) { .logo-text { margin-top: 40px; font-size: 40px; } }
-.nav-links-container { display: flex; flex-direction: column; line-height: normal; width: 67%; margin-left: 20px; }
-@media (max-width: 991px) { .nav-links-container { width: 100%; } }
-.nav-links { display: flex; width: 100%; align-items: center; gap: 20px; align-self: stretch; font-size: 16px; color: rgba(0, 0, 0, 0.7); font-weight: 400; justify-content: space-between; margin: auto 0; }
-@media (max-width: 991px) { .nav-links { max-width: 100%; margin-top: 40px; flex-wrap: wrap; } }
-.nav-link { font-family: Rubik, sans-serif; align-self: stretch; margin: auto 0; }
+
+.logo-image { 
+    max-width: 89px; 
+    height: auto;
+}
+
+.logo-text { 
+    font-family: 'Text Me One', sans-serif; 
+    margin-top: 0; 
+}
+
+.nav-links-container { 
+    display: flex; 
+    flex-direction: column; 
+    line-height: normal; 
+    flex-grow: 1; 
+    margin-left: 20px; 
+}
+
+.nav-links { 
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
+    font-size: 16px; 
+    color: rgba(0, 0, 0, 0.7); 
+    font-weight: 400; 
+    justify-content: flex-end; 
+    flex-wrap: wrap; 
+}
+
+.nav-link {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.7);
+    font-family: 'Rubik', sans-serif;
+}
+
+@media (max-width: 991px) {
+    .nav-container { 
+        flex-direction: column; 
+        align-items: stretch; 
+        gap: 20px; 
+    }
+    
+    .logo-container, .nav-links-container { 
+        width: 100%; 
+        margin-left: 0;
+    }
+    
+    .logo-wrapper { 
+        font-size: 40px; 
+    }
+    
+    .nav-links { 
+        justify-content: flex-start; /* Align to the left on smaller screens */
+    }
+}
+
+
 .sign-in-button { background-color: #9cafaa; align-self: stretch; display: flex; gap: 20px; font-size: 18px; color: #7f6060; justify-content: space-between; padding: 21px 41px; }
 @media (max-width: 991px) { .sign-in-button { padding: 0 20px; } }
 .sign-in-text { font-family: Text Me One, sans-serif; }
