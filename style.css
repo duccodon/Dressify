@@ -17,12 +17,22 @@ body {
     flex-direction: column;
 }
 
+.header { width: 100%; }
 @media (max-width: 991px) { .header { max-width: 100%; } }
 .nav-container { gap: 20px; display: flex; }
 @media (max-width: 991px) { .nav-container { flex-direction: column; align-items: stretch; gap: 0; } }
 .logo-container { display: flex; flex-direction: column; line-height: normal; width: 33%; margin-left: 0; }
 @media (max-width: 991px) { .logo-container { width: 100%; } }
-.logo-wrapper { display: flex; flex-grow: 1; gap: 20px; font-size: 64px; color: #817373; font-weight: 400; white-space: nowrap; }
+.logo-wrapper { 
+    font-family: 'Text Me One', sans-serif;
+    display: flex; 
+    flex-grow: 1; 
+    gap: 20px; 
+    font-size: 64px; 
+    color: #817373; 
+    font-weight: 400; 
+    white-space: nowrap; 
+}
 @media (max-width: 991px) { .logo-wrapper { margin-top: 40px; font-size: 40px; white-space: initial; } }
 .logo-image { aspect-ratio: 0.84; object-fit: auto; object-position: center; width: 89px; fill: rgba(25, 34, 63, 0.5); }
 .logo-text { font-family: Text Me One, sans-serif; align-self: end; margin-top: 60px; flex-grow: 1; flex-basis: auto; }
