@@ -4,7 +4,10 @@
         <meta charset = "UTF-8">
         <meta name = "viewport" content = "width = device width, initial-scale = 1.0">
         <link rel="stylesheet" type="text/css" href="style.css">
+        
         <link href="https://fonts.googleapis.com/css2?family=Text+Me+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+
         <title>Landing Page</title>
 </head>
   <div class="wrapper">
@@ -36,7 +39,7 @@
         <div class="hero-content">
           <div class="hero-text-container">
             <div class="hero-text-wrapper">
-              <h2 class="welcome-text">Welcome!</h2>
+              <h2 class="welcome-text"> <span style="color: #efbc9b;">Welcome!</span></h2>
               <h1 class="hero-title">
                 The World's Best Clothing Rental
                 <span style="color: #efbc9b;">Platform</span>
@@ -46,7 +49,6 @@
               </p>
               <button class="cta-button">
                 <span class="cta-text">Get Started</span>
-                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b19110c5d3d10ff7d2da96be65a6cf627d76465c96da1727b2bfb6d7eab82d3e?apiKey=ddd8aa0cfecf4afdbc9c5aaf3fe7201a&" alt="Arrow" class="cta-icon" />
               </button>
             </div>
           </div>
@@ -54,6 +56,7 @@
             <div class="hero-image-wrapper">
               <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6302bbdfa09c43956b11e80f646fb6fdf07f49dad7752ccd39df9b1b690fe075?apiKey=ddd8aa0cfecf4afdbc9c5aaf3fe7201a&" alt="Hero" class="hero-image" />
               <div class="hero-image-overlay"></div>
+              <div class="hero-image-blur"></div>
             </div>
           </div>
         </div>
