@@ -208,6 +208,7 @@ body {
     width: 62%;
     margin-left: 50px;
     position: relative;
+    margin-bottom: -100px;
 }
 @media (max-width: 991px) { .hero-image-container { width: 100%; } }
 .hero-image-wrapper { 
@@ -226,7 +227,7 @@ body {
 .hero-image-blur {
     position: absolute;
     width: 400px; 
-    height: 500px; 
+    height: 550px; 
     background-color: rgb(60, 56, 56); 
     border-radius: 70%; 
     filter: blur(70px);
@@ -253,12 +254,13 @@ body {
     background-color: #efbc9b;
     width: 70%;
     max-width: 100%;
-    height: 100%;
+    height: 80%;
     z-index: 1;
 }
-.partners-section { background-color: #efbc9b; padding: 21px 80px; }
+
+.partners-section { background-color: #efbc9b; padding: 15px 80px; margin-top: 35px;}
 @media (max-width: 991px) { .partners-section { max-width: 100%; padding: 0 20px; } }
-.partners-container { gap: 20px; display: flex; }
+.partners-container { gap: 30px; display: flex; }
 @media (max-width: 991px) { .partners-container { flex-direction: column; align-items: stretch; gap: 0; } }
 .partners-logos { display: flex; flex-direction: column; line-height: normal; width: 84%; margin-left: 0; }
 @media (max-width: 991px) { .partners-logos { width: 100%; } }
@@ -277,8 +279,8 @@ body {
 .partners-logo-pair { display: flex; gap: 20px; align-self: stretch; justify-content: space-between; margin: auto 0; }
 @media (max-width: 991px) { .partners-logo-pair { max-width: 100%; margin-top: 40px; flex-wrap: wrap; } }
 .partner-logo { aspect-ratio: 4.35; object-fit: auto; object-position: center; width: 156px; max-width: 100%; }
-.partner-logo-2 { aspect-ratio: 6.25; object-fit: auto; object-position: center; width: 207px; align-self: start; max-width: 100%; }
-.partners-logo-column-2 { display: flex; flex-direction: column; line-height: normal; width: 27%; margin-left: 20px; }
+.partner-logo-2 { aspect-ratio: auto; object-position: center; width: 220px; align-self: start; max-width: 100%;}
+.partners-logo-column-2 { display: flex; flex-direction: column; line-height: normal; width: 37%; margin-left: 50px; }
 @media (max-width: 991px) { .partners-logo-column-2 { width: 100%; } }
 .partner-logo-3 { aspect-ratio: 1; object-fit: auto; object-position: center; width: 175px; fill: #fff; max-width: 100%; }
 @media (max-width: 991px) { .partner-logo-3 { margin-top: 40px; } }
