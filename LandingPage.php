@@ -101,76 +101,70 @@
         <div class="services-container">
           <div class="services-content">
             <div class="services-text">
-              <div class="services-text-wrapper">
-                <h2 class="services-title">Our Services</h2>
-                <h3 class="services-subtitle">
-                  Browse our services & <span style="color: #9cafaa;">offerings</span>
-                </h3>
-                <button class="services-cta">
-                  <span class="services-cta-text">Get Started</span>
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b19110c5d3d10ff7d2da96be65a6cf627d76465c96da1727b2bfb6d7eab82d3e?apiKey=ddd8aa0cfecf4afdbc9c5aaf3fe7201a&" alt="Arrow" class="services-cta-icon" />
-                </button>
-              </div>
+              <h2 class="services-title">Our Services</h2>
+              <h3 class="services-subtitle">
+                Browse our services & <span class="highlight">offerings</span>
+              </h3>
+              <button class="services-cta">
+                Get Started <span class="services-cta-icon">→</span>
+              </button>
             </div>
-            <div class="services-cards">
-              <div class="services-cards-wrapper">
-                <div class="services-cards-grid">
-                  <div class="services-card-column">
-                    <div class="services-card">
-                      <div class="services-card-divider"></div>
-                      <h4 class="services-card-title">Wishlists</h4>
-                      <p class="services-card-description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor
-                      </p>
-                      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/67fbeeb1f41e6ff74f72dda0599395027ffc17b21d4637b3fdfaa2786980da28?apiKey=ddd8aa0cfecf4afdbc9c5aaf3fe7201a&" alt="Wishlist icon" class="services-card-icon" />
-                    </div>
-                  </div>
-                  <div class="services-card-column-2">
-                    <div class="services-card-2">
-                      <div class="services-card-divider"></div>
-                      <h4 class="services-card-title">Order Checking</h4>
-                      <p class="services-card-description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor
-                      </p>
-                      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8e7a38d00c717b82db3b53d7296cf5a970e39202035fac08f9f63ca8e2cd7121?apiKey=ddd8aa0cfecf4afdbc9c5aaf3fe7201a&" alt="Order checking icon" class="services-card-icon" />
-                    </div>
-                  </div>
+            
+            <div class="services-grid">
+              <div class="services-card">
+                <div class="services-card-divider"></div>
+                <h4 class="services-card-title">Wishlists</h4>
+                <p class="services-card-description">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor
+                </p>
+                <div class="services-card-icon-wrapper">
+                  <span class="services-card-icon">↗</span>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-  
-      <section class="benefits-section">
-        <h2 class="benefits-title">Benefits</h2>
-        <div class="benefits-grid">
-          <div class="benefit-card">
-            <div class="benefit-card-divider"></div>
-            <h3 class="benefit-card-title">Multiple payment methods</h3>
-            <p class="benefit-card-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor
-            </p>
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8e7a38d00c717b82db3b53d7296cf5a970e39202035fac08f9f63ca8e2cd7121?apiKey=ddd8aa0cfecf4afdbc9c5aaf3fe7201a&" alt="Payment methods icon" class="benefit-card-icon" />
-          </div>
-          <div class="benefit-card-column">
-            <div class="benefit-card">
-              <div class="benefit-card-divider"></div>
-              <h3 class="benefit-card-title">Membership and loyalty points</h3>
-              <p class="benefit-card-description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor
-              </p>
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8e7a38d00c717b82db3b53d7296cf5a970e39202035fac08f9f63ca8e2cd7121?apiKey=ddd8aa0cfecf4afdbc9c5aaf3fe7201a&" alt="Membership icon" class="benefit-card-icon" />
-            </div>
-          </div>
-          <div class="benefit-card-column">
-            <div class="benefit-card">
-              <div class="benefit-card-divider"></div>
-              <h3 class="benefit-card-title">Secured shopping</h3>
-              <p class="benefit-card-description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor
-              </p>
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8e7a38d00c717b82db3b53d7296cf5a970e39202035fac08f9f63ca8e2cd7121?apiKey=ddd8aa0cfecf4afdbc9c5aaf3fe7201a&" alt="Secured shopping icon" class="benefit-card-icon" />
+              
+              <div class="services-card">
+                <div class="services-card-divider"></div>
+                <h4 class="services-card-title">Order Checking</h4>
+                <p class="services-card-description">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor
+                </p>
+                <div class="services-card-icon-wrapper">
+                  <span class="services-card-icon">↗</span>
+                </div>
+              </div>
+              
+              <div class="services-card">
+                <div class="services-card-divider"></div>
+                <h4 class="services-card-title">Multiple payment methods</h4>
+                <p class="services-card-description">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor
+                </p>
+                <div class="services-card-icon-wrapper">
+                  <span class="services-card-icon">↗</span>
+                </div>
+              </div>
+              
+              <div class="services-card">
+                <div class="services-card-divider"></div>
+                <h4 class="services-card-title">Membership and loyalty points</h4>
+                <p class="services-card-description">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor
+                </p>
+                <div class="services-card-icon-wrapper">
+                  <span class="services-card-icon">↗</span>
+                </div>
+              </div>
+              
+              <div class="services-card">
+                <div class="services-card-divider"></div>
+                <h4 class="services-card-title">Secured shopping</h4>
+                <p class="services-card-description">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor
+                </p>
+                <div class="services-card-icon-wrapper">
+                  <span class="services-card-icon">↗</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
