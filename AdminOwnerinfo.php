@@ -17,7 +17,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="Admin.php" class="active"><span class="la la-chalkboard"></span>
+                    <a href="Admin.php"><span class="la la-chalkboard"></span>
                     <span>Dashboard</span></a>
                 </li>
                 <li>
@@ -25,7 +25,7 @@
                     <span>Customers</span></a>
                 </li>
                 <li>
-                    <a href="AdminOwnerinfo.php"><span class="la la-user-tie"></span>
+                    <a href="AdminOwnerinfo.php" class="active"><span class="la la-user-tie"></span>
                     <span>Rental owner</span></a>
                 </li>
                 <li>

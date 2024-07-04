@@ -17,11 +17,11 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="Admin.php" class="active"><span class="la la-chalkboard"></span>
+                    <a href="Admin.php"><span class="la la-chalkboard"></span>
                     <span>Dashboard</span></a>
                 </li>
                 <li>
-                    <a href="AdminCustomerinfo.php"><span class="la la-user-circle"></span>
+                    <a href="AdminCustomerinfo.php" class="active"><span class="la la-user-circle"></span>
                     <span>Customers</span></a>
                 </li>
                 <li>

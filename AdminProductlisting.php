@@ -17,7 +17,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="Admin.php" class="active"><span class="la la-chalkboard"></span>
+                    <a href="Admin.php"><span class="la la-chalkboard"></span>
                     <span>Dashboard</span></a>
                 </li>
                 <li>
@@ -33,7 +33,7 @@
                     <span>Orders</span></a>
                 </li>
                 <li>
-                    <a href="AdminProductlisting.php"><span class="la la-warehouse"></span>
+                    <a href="AdminProductlisting.php" class="active"><span class="la la-warehouse"></span>
                     <span>Inventory</span></a>
                 </li>
                 <li>
