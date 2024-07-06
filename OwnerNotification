@@ -1,0 +1,429 @@
+<style>
+    .container {
+      background-color: #fbf3d5;
+      display: flex;
+      padding-top: 29px;
+      flex-direction: column;
+    }
+    
+    .content-wrapper {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 8%;
+    }
+
+    .sidebar-brand {
+    color: #ff7008;
+    writing-mode: vertical-rl;  
+    text-orientation: mixed;  
+    transform: rotate(180deg); 
+    margin-left: 25px;
+    font: 200 50px Roboto, sans-serif;
+}
+    
+    .sidebar-nav {
+      align-items: center;
+      background-color: #efbc9b;
+      display: flex;
+      max-width: 124px;
+      flex-direction: column;
+      padding: 80px 40px;
+    }
+    
+    .nav-icon {
+      aspect-ratio: 1;
+      object-fit: auto;
+      object-position: center;
+      width: 100%;
+      margin-top: 121px;
+    }
+    
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 90%;
+      margin-left: 20px;
+    }
+    
+    .content-container {
+      align-self: center;
+      display: flex;
+      width: 100%;
+      max-width: 1280px;
+      flex-direction: column;
+    }
+    
+    .user-profile {
+      background-color: #efbc9b;
+      align-self: end;
+      width: 1240px;
+      max-width: 100%;
+      padding: 44px 65px;
+    }
+    
+    .profile-wrapper {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .avatar-container {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 50%;
+    }
+    
+    .avatar {
+      background-color: #fbf3d5;
+      border-radius: 50%;
+      width: 158px;
+      height: 158px;
+      margin: 0 auto;
+    }
+    
+    .user-info {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 50%;
+      margin-left: 20px;
+    }
+    
+    .username-wrapper {
+      display: flex;
+      margin-top: 23px;
+      gap: 10px;
+      font-size: 43px;
+      color: #000;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    
+    .username {
+      font-family: Roboto, sans-serif;
+      flex-grow: 1;
+    }
+    
+    .dropdown-icon {
+      aspect-ratio: 0.5;
+      object-fit: auto;
+      object-position: center;
+      width: 10px;
+      fill: #000;
+      margin: auto 0;
+    }
+    
+    .notification-btn {
+      border-radius: 26px;
+      background-color: #fff;
+      align-self: center;
+      margin-top: 39px;
+      width: 431px;
+      max-width: 100%;
+      color: #000;
+      text-align: center;
+      letter-spacing: 0.81px;
+      padding: 22px 60px;
+      font: 600 27px Roboto, sans-serif;
+    }
+    
+    .content-grid {
+      margin-top: 36px;
+      display: flex;
+      gap: 20px;
+    }
+    
+    .grid-left {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 41%;
+    }
+    
+    .grid-item {
+      border: 1px solid #000;
+      background-color: #d9d9d9;
+      height: 122px;
+      margin-bottom: 1px;
+    }
+    
+    .grid-item-active {
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      background-color: #fff;
+    }
+    
+    .grid-right {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 59%;
+      margin-left: 20px;
+    }
+    
+    .content-box {
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      border: 1px solid #000;
+      background-color: #fff;
+      width: 708px;
+      max-width: 100%;
+      height: 840px;
+      margin: 28px auto 0;
+    }
+    
+    .footer {
+      background-color: #efbc9b;
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      color: #000;
+      padding: 0 60px 15px;
+    }
+    
+    .footer-content {
+      display: flex;
+      margin-top: 21px;
+      width: 849px;
+      max-width: 100%;
+      flex-direction: column;
+    }
+    
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .footer-column {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 26%;
+    }
+    
+    .footer-heading {
+      text-transform: uppercase;
+      font: 700 16px Proxima Nova, sans-serif;
+      color: #000;
+    }
+    
+    .footer-list {
+      margin-top: 28px;
+      font: 400 14px/30px Roboto, sans-serif;
+      color: #000;
+    }
+    
+    .social-column {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 15%;
+      margin-left: 20px;
+    }
+    
+    .social-icons {
+      aspect-ratio: 2.22;
+      object-fit: auto;
+      object-position: center;
+      width: 88px;
+      align-self: center;
+      margin-top: 20px;
+    }
+    
+    .copyright {
+      color: #000;
+      text-align: center;
+      align-self: center;
+      margin-top: 28px;
+      font: 400 14px/100% Roboto, sans-serif;
+    }
+    
+    @media (max-width: 991px) {
+      .content-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0px;
+      }
+    
+      .sidebar {
+        width: 100%;
+      }
+    
+      .main-content {
+        width: 100%;
+      }
+    
+      .content-container {
+        max-width: 100%;
+      }
+    
+      .user-profile {
+        padding: 0 20px;
+      }
+    
+      .profile-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0px;
+      }
+    
+      .avatar-container {
+        width: 100%;
+      }
+    
+      .avatar {
+        margin-top: 40px;
+      }
+    
+      .user-info {
+        width: 100%;
+      }
+    
+      .username-wrapper {
+        margin-top: 40px;
+        white-space: initial;
+      }
+    
+      .notification-btn {
+        white-space: initial;
+        padding: 0 20px;
+      }
+    
+      .content-grid {
+        max-width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0px;
+      }
+    
+      .grid-left {
+        width: 100%;
+      }
+    
+      .grid-item {
+        max-width: 100%;
+      }
+    
+      .grid-right {
+        width: 100%;
+      }
+    
+      .content-box {
+        margin-top: 40px;
+      }
+    
+      .footer {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    
+      .footer-links {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0px;
+      }
+    
+      .footer-column {
+        width: 100%;
+        margin-top: 40px;
+      }
+    
+      .social-column {
+        width: 100%;
+        margin-top: 40px;
+      }
+    
+      .copyright {
+        margin-top: 40px;
+      }
+    }
+    </style>
+    
+    <div class="container">
+      <div class="content-wrapper">
+        <nav class="sidebar">
+          <div class="sidebar-nav">
+            <h1 class="sidebar-brand">Dressify</h1>
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/143e45f58002ef9e91cf634e0104eba0f0f08bad5c5e64e81bea4787cc2f7286?apiKey=ef65c1600ab64517b49ba8fffd8c443f&" class="nav-icon" alt="" />
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/29b74868714c6ed357d91f86b28691695d29d581c16e0c188661eefb952cd715?apiKey=ef65c1600ab64517b49ba8fffd8c443f&" class="nav-icon" alt="" />
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/cdca86556a87b04a5b53fa4d9bc385a26dc98476611856e33ac1bacb35a113e6?apiKey=ef65c1600ab64517b49ba8fffd8c443f&" class="nav-icon" alt="" />
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/24db18d4c701c3748aa5a7d8aa8c757c4f943b977885228bcae04e90691eb0d2?apiKey=ef65c1600ab64517b49ba8fffd8c443f&" class="nav-icon" alt="" />
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/a424434cd521bdfd4bf426f05add4a71d003721dfe2b5b85b28384c43b21e37e?apiKey=ef65c1600ab64517b49ba8fffd8c443f&" class="nav-icon" alt="" />
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/09db59bc57c2b694f346efd4497c67f719e97e6cfc0515744ce1f362fcce3b02?apiKey=ef65c1600ab64517b49ba8fffd8c443f&" class="nav-icon" alt="" />
+          </div>
+        </nav>
+        <main class="main-content">
+          <div class="content-container">
+            <section class="user-profile">
+              <div class="profile-wrapper">
+                <div class="avatar-container">
+                  <div class="avatar" role="img" aria-label="User avatar"></div>
+                </div>
+                <div class="user-info">
+                  <div class="username-wrapper">
+                    <h1 class="username">Sonali.</h1>
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/3403a0f142d76653254c0ecb8eac78834424708442f977228be3ba17712310f8?apiKey=ef65c1600ab64517b49ba8fffd8c443f&" class="dropdown-icon" alt="Dropdown icon" />
+                  </div>
+                </div>
+              </div>
+            </section>
+            <button class="notification-btn">Notification</button>
+            <div class="content-grid">
+              <div class="grid-left">
+                <div class="grid-item grid-item-active"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+                <div class="grid-item"></div>
+              </div>
+              <div class="grid-right">
+                <div class="content-box"></div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+      <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-links">
+            <div class="footer-column">
+              <h2 class="footer-heading">Navigation</h2>
+              <nav class="footer-list">
+                <a href="#">Home</a><br />
+                <a href="#">FAQ</a><br />
+                <a href="#">About Us</a><br />
+                <a href="#">Help Centre</a>
+              </nav>
+            </div>
+            <div class="footer-column">
+              <h2 class="footer-heading">LEGAL</h2>
+              <nav class="footer-list">
+                <a href="#">Privacy Policy</a><br />
+                <a href="#">Terms of Service</a><br />
+              </nav>
+            </div>
+            <div class="footer-column">
+              <h2 class="footer-heading">TALK TO US</h2>
+              <p class="footer-list">
+                <a href="mailto:5friends@gmail.com">5friends@gmail.com</a><br />
+              </p>
+            </div>
+            <div class="social-column">
+              <h2 class="footer-heading">Follow us</h2>
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/4b20a695986181850269356447deca949e56b4b88efdb83ed10284218a44769a?apiKey=ef65c1600ab64517b49ba8fffd8c443f&" class="social-icons" alt="Social media icons" />
+            </div>
+          </div>
+        </div>
+        <p class="copyright">© 2024 Dressify. All Rights Reserved.</p>
+      </footer>
+    </div>
