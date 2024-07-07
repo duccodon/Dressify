@@ -108,7 +108,7 @@ body{
     cursor: pointer;
 }
 
-.container input{
+.container input, .container select{
     background-color: #fff;
     border: none;
     margin: 8px 0;
@@ -116,6 +116,9 @@ body{
     font-size: 13px;
     border-radius: 5px;
     width: 100%;
+}
+.container select {
+    width: 30%; 
 }
 
 .form-container{

@@ -27,26 +27,28 @@
         $city = mysqli_real_escape_string($conn, $filter_city);
 
         $filter_phone = filter_var($_POST['phone'], FILTER_SANITIZE_STRING);
-        $phone = mysqli_real_escape_string($conn, $filter_phone);
+        $contact_number = mysqli_real_escape_string($conn, $filter_phone);
+
+        $filter_user_type = filter_var($_POST['user_type'], FILTER_SANITIZE_STRING);
+        $user_type = mysqli_real_escape_string($conn, $filter_user_type);
 
         $select_user_email = mysqli_query($conn, "SELECT * FROM customers WHERE email = '$email'") or die('Query failed');
         $select_user_username = mysqli_query($conn, "SELECT * FROM customers WHERE username = '$username'") or die('Query failed');
         if (mysqli_num_rows($select_user_email) > 0){
-            $message[] = 'This email has been used for an account. Please try another email to continue!!!';
+            $message_up[] = 'This email has been used for an account. Please try another email to continue!!!';
         }elseif (mysqli_num_rows($select_user_username) > 0){
-            $message[] = 'This username has been used for an account. Please try another username to continue!!!';
+            $message_up[] = 'This username has been used for an account. Please try another username to continue!!!';
         }
         else{
             if ($password != $cpassword){
-                $message[] = 'Incorrect confirm password';
+                $message_up[] = 'Incorrect confirm password';
             }else{
-                mysqli_query($conn, "INSERT INTO customers (`username`, `email`, `password`, `fullname`, `address`, `country`, `city`, `contact_number`) VALUES('$username', '$email', '$password', '$fullname', '$address', '$country', '$city', '$contact_number')") or die('Query failed');
-                $message[] = 'Register successfully';
+                mysqli_query($conn, "INSERT INTO customers (`username`, `email`, `password`, `fullname`, `address`, `country`, `city`, `contact_number`, `user_type`) VALUES('$username', '$email', '$password', '$fullname', '$address', '$country', '$city', '$contact_number', '$user_type')") or die('Query failed');
+                $message_up[] = 'Register successfully';
             }
         }
-    }   
-
-
+    }
+    
     if(isset($_POST['submit-login'])){
         $filter_email = filter_var($_POST['email'], FILTER_SANITIZE_STRING);
         $email = mysqli_real_escape_string($conn, $filter_email);
@@ -56,10 +58,27 @@
 
         $select_user = mysqli_query($conn, "SELECT * FROM customers WHERE email = '$email' AND `password` = '$password'") or die('Query failed');
         if (mysqli_num_rows($select_user) > 0){
-            header('location:CustomerProfile.php');
+            $row = mysqli_fetch_assoc($select_user);
+            if ($row['user_type'] == 'admin'){
+                $_SESSION['admin_name'] = $row['name'];
+                $_SESSION['admin_email'] = $row['email'];
+                $_SESSION['admin_id'] = $row['id'];
+                header('location:Admin.php');
+            }elseif ($row['user_type'] == 'Customer'){
+                $_SESSION['cus_name'] = $row['name'];
+                $_SESSION['cus_email'] = $row['email'];
+                $_SESSION['cus_id'] = $row['id'];
+                header('location:CustomerProfile.php');
+            }
+            else if ($row['user_type'] == 'Rental Owner'){
+                $_SESSION['cus_name'] = $row['name'];
+                $_SESSION['cus_email'] = $row['email'];
+                $_SESSION['cus_id'] = $row['id'];
+                header('location:OwnerNotification.html');
+            }
         }
         else{
-            $message[] = 'Invalid email or incorrect password. Please check again!!!';
+            $message_in[] = 'Invalid email or incorrect password. Please check again!!!';
         }
     }
 ?>
@@ -82,11 +101,11 @@
     <div class="container" id="container">
         <div class="form-container sign-up">
             <?php
-                if (isset($message)){
-                    foreach($message as $message){
+                if (isset($message_up)){
+                    foreach($message_up as $message_up){
                         echo'
-                            <div class="message">
-                                <span>'.$message.'</span>
+                            <div class="message">   
+                                <span>'.$message_up.'</span>
                                 <i class="fa-brands fa-trash-can" onclick="this.parentElement.remove()"></i>
                             </div>
                         ';
@@ -112,11 +131,29 @@
                 <input type="text" name="country" placeholder="Enter your country" id="" required>
                 <input type="text" name="city" placeholder="Enter your city" id="" required>
                 <input type="tel" name="phone" placeholder="Enter your phone number" id="" required>
+                <select name="user_type">
+                    <option value="Customer">Select a role</option>
+                    <option value="Customer">Customer</option>
+                    <option value="Rental Owner">Rental Owner</option>
+                </select>
                 <button type="submit" name="submit-create" class="">Create account</button>
             </form>
         </div>
 
         <div class="form-container sign-in">
+            <?php
+                if (isset($message_in)){
+                    foreach($message_in as $message_in){
+                        echo'
+                            <div class="message">
+                                <span>'.$message_in.'</span>
+                                <i class="fa-brands fa-trash-can" onclick="this.parentElement.remove()"></i>
+                            </div>
+                        ';
+                    }
+                }
+            ?>
+
             <form method="post">
                 <h1>Sign In</h1>
                 <div class="social-icons">
