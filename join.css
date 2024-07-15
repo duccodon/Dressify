@@ -117,8 +117,11 @@ body{
     border-radius: 5px;
     width: 100%;
 }
-.container select {
-    width: 30%; 
+.group-input{
+    margin-right: auto;
+    width: 90%;
+    display: inline-flex;
+    column-gap: 1rem;
 }
 
 .form-container{

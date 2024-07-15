@@ -128,14 +128,17 @@
                 <input type="password" name="cpassword" placeholder="Confirm your password" required>
                 <input type="text" name="fullname" placeholder="Enter your fullname" id="" required>
                 <input type="text" name="address" placeholder="Enter your address" id="" required>
-                <input type="text" name="country" placeholder="Enter your country" id="" required>
-                <input type="text" name="city" placeholder="Enter your city" id="" required>
+                <div class="group-input">
+                    <input type="text" name="country" placeholder="Enter your country" id="" required>
+                    <input type="text" name="city" placeholder="Enter your city" id="" required>
+               
+                    <select name="user_type">
+                        <option value="Customer">Select a role</option>
+                        <option value="Customer">Customer</option>
+                        <option value="Rental Owner">Rental Owner</option>
+                    </select>
+                </div>
                 <input type="tel" name="phone" placeholder="Enter your phone number" id="" required>
-                <select name="user_type">
-                    <option value="Customer">Select a role</option>
-                    <option value="Customer">Customer</option>
-                    <option value="Rental Owner">Rental Owner</option>
-                </select>
                 <button type="submit" name="submit-create" class="">Create account</button>
             </form>
         </div>
