@@ -17,6 +17,10 @@
     text-decoration: none;
 }
 
+body {
+    background-color: var(--theme-color);
+}
+
 .sidebar {
     width: 250px;
     position: fixed;
@@ -24,6 +28,7 @@
     top: 0;
     height: 100%;
     background: var(--bright-orange);
+    z-index: 2;
 }
 
 .sidebar-brand {
@@ -269,15 +274,8 @@ td .status {
 }
 
 /*****************************AdminProductlisting*****************************/
-.listItem {
-    overflow: auto;
-}
-.listItem::-webkit-scrollbar{
-    width: 0;
-}
-
 .cards-list{
-    margin-top: 20px;
+    margin-top: 40px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 1rem;
@@ -305,15 +303,26 @@ td .status {
     justify-content: center;
     color: var(--red-murrey);
     font-size: 20px;
-    padding-top: 0.5rem;
+    padding-bottom: 0.3rem;
 }
-
-.card-list-single a{
-    margin-left: 30px;
+.card-list-single a {
+    display: inline-flex;
+    justify-content:space-between;
+    margin-left: 2.2rem;
     background: var(--dark-green);
     padding: .4rem;
     border-radius: 10px;
     color: var(--red-murrey);
+}
+.wish {
+    position: absolute;  
+    margin-top: .5rem;  
+    transform: translate(-50%, -50%); 
+    z-index: 2;
+}
+.card-list-single a:hover, .wish:hover {
+    background-color: var(--red-murrey);
+    color: var(--dark-green);
 }
 
 

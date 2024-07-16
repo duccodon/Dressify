@@ -72,68 +72,6 @@
         </header>
 
         <main>
-            <div class="cards">
-                <div class="card-single">
-                    <div>
-                        <h1>54</h1>
-                        <span>Customers</span>
-                    </div>
-                    <div>
-                        <span class="la la-users"></span>
-                    </div>
-                </div>
-
-                <div class="card-single">
-                    <div>
-                        <h1>122</h1>
-                        <span>Rental owners</span>
-                    </div>
-                    <div>
-                        <span class="la la-user-tie"></span>
-                    </div>
-                </div>
-
-                <div class="card-single">
-                    <div>
-                        <h1>122</h1>
-                        <span>Comments</span>
-                    </div>
-                    <div>
-                        <span class="la la-comments"></span>
-                    </div>
-                </div>
-
-                <div class="card-single">
-                    <div>
-                        <h1>122</h1>
-                        <span>Total Orders</span>
-                    </div>
-                    <div>
-                        <span class="la la-shopping-bag"></span>
-                    </div>
-                </div>
-
-                <div class="card-single">
-                    <div>
-                        <h1>122</h1>
-                        <span>Revenue</span>
-                    </div>
-                    <div>
-                        <span class="la la-money-bill-wave"></span>
-                    </div>
-                </div>
-
-                <div class="card-single">
-                    <div>
-                        <h1>122</h1>
-                        <span>Total Visit</span>
-                    </div>
-                    <div>
-                        <span class="la la-globe"></span>
-                    </div>
-                </div>
-            </div>
-
             <div class="recent-grid">
                 <div class="orders">
                     <div class="card">

@@ -72,15 +72,11 @@
             </div>
         </header>
 
-        <img src = "img/download (1).jpg">
-                <p>Price: 100</p>
-                <h4>Ao cua hoang</h4>
-                <a href="admin_product.php?view=<?php echo $fetch_products['id']; ?>" class="edit">View</a>
-                <a class="edit"><i class="fa-solid fa-heart"></i></a>
         <main>
             <div class="cards-list">
                 <div class="card-list-single">
                     <div>
+                        <a class="wish"><i class="fa-solid fa-heart"></i></a>
                         <img src = "img/download (1).jpg">
                         <div class="list-content">Ao cua hoang</div>
                         <div class="list-content">Price: 100</div>
@@ -93,7 +89,8 @@
 
                 <div class="card-list-single">
                     <div>
-                        <img src = "img/download (1).jpg">
+                        <a class="wish"><i class="fa-solid fa-heart"></i></a>
+                        <img src="img/1.jpg">
                         <div class="list-content">Ao cua hoang</div>
                         <div class="list-content">Price: 100</div>
                         <div>
@@ -105,6 +102,7 @@
 
                 <div class="card-list-single">
                     <div>
+                        <a class="wish"><i class="fa-solid fa-heart"></i></a>
                         <img src = "img/download (1).jpg">
                         <div class="list-content">Ao cua hoang</div>
                         <div class="list-content">Price: 100</div>
