@@ -208,6 +208,8 @@
 }
 </style>
 
+<?php include 'CustomerSidebar.php'; ?>
+
 <section class="feedback-container">
   <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5ef6db6bfb4a7ebfc7b81a389071b6f520e0ab72aafd27466d1fb371e36ef4a5?apiKey=2cbb572e4cb94131a46c507d9ddbcac0&" class="sidebar-image" alt="Decorative sidebar image" />
   <main class="main-content">
@@ -228,6 +230,7 @@
       <textarea id="suggestions" class="suggestions-input" placeholder="Enter here" aria-label="Enter your suggestions"></textarea>
       <label for="product-images" class="form-label">Product Image(s)</label>
       <input type="file" id="product-images" class="product-images-input" accept="image/*" multiple aria-label="Upload product images" />
+      <button type="submit" name="submit-changes" class="">Submit changes</button>
     </form>
   </main>
 </section>

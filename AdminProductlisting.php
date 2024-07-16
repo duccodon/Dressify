@@ -6,6 +6,7 @@
 
     <link rel="stylesheet" href="AdminStyle.css">
     <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
 
@@ -71,259 +72,88 @@
             </div>
         </header>
 
+        <img src = "img/download (1).jpg">
+                <p>Price: 100</p>
+                <h4>Ao cua hoang</h4>
+                <a href="admin_product.php?view=<?php echo $fetch_products['id']; ?>" class="edit">View</a>
+                <a class="edit"><i class="fa-solid fa-heart"></i></a>
         <main>
-            <div class="cards">
-                <div class="card-single">
+            <div class="cards-list">
+                <div class="card-list-single">
                     <div>
-                        <h1>54</h1>
-                        <span>Customers</span>
-                    </div>
-                    <div>
-                        <span class="la la-users"></span>
-                    </div>
-                </div>
-
-                <div class="card-single">
-                    <div>
-                        <h1>122</h1>
-                        <span>Rental owners</span>
-                    </div>
-                    <div>
-                        <span class="la la-user-tie"></span>
-                    </div>
-                </div>
-
-                <div class="card-single">
-                    <div>
-                        <h1>122</h1>
-                        <span>Comments</span>
-                    </div>
-                    <div>
-                        <span class="la la-comments"></span>
-                    </div>
-                </div>
-
-                <div class="card-single">
-                    <div>
-                        <h1>122</h1>
-                        <span>Total Orders</span>
-                    </div>
-                    <div>
-                        <span class="la la-shopping-bag"></span>
-                    </div>
-                </div>
-
-                <div class="card-single">
-                    <div>
-                        <h1>122</h1>
-                        <span>Revenue</span>
-                    </div>
-                    <div>
-                        <span class="la la-money-bill-wave"></span>
-                    </div>
-                </div>
-
-                <div class="card-single">
-                    <div>
-                        <h1>122</h1>
-                        <span>Total Visit</span>
-                    </div>
-                    <div>
-                        <span class="la la-globe"></span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="recent-grid">
-                <div class="orders">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Recent Orders</h3>
-                            <a href="AdminOrder.php">
-                                <button>See all <span class="la la-arrow-right">                              
-                                </span></button>
-                            </a>
-                        </div>
-
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table width="100%"> 
-                                    <thead>
-                                        <tr>
-                                            <td>Order ID</td>
-                                            <td>Order Customer</td>
-                                            <td>Order Owner</td>
-                                            <td>Status</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>UI/UX design</td>
-                                            <td>UI Team</td>
-                                            <td>
-                                                <span class="status finish"></span>
-                                                Finish
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>UI/UX design</td>
-                                            <td>UI Team</td>
-                                            <td>
-                                                <span class="status deli-cus"></span>
-                                                Delivering to customer
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>UI/UX design</td>
-                                            <td>UI Team</td>
-                                            <td>
-                                                <span class="status used"></span>
-                                                In used
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>UI/UX design</td>
-                                            <td>UI Team</td>
-                                            <td>
-                                                <span class="status deli-owner"></span>
-                                                Delivering to owner
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>UI/UX design</td>
-                                            <td>UI Team</td>
-                                            <td>
-                                                <span class="status packaging"></span>
-                                                Packaging
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                        <img src = "img/download (1).jpg">
+                        <div class="list-content">Ao cua hoang</div>
+                        <div class="list-content">Price: 100</div>
+                        <div>
+                            <a href="AdminProductlisting.php?view=" class="edit">View <i class="fa-solid fa-eye"></i></a>
+                            <a href="AdminProductlisting.php?delete=" class="delete" onclick="return confirm('Are you sure to delete this product');">Delete <i class="fa-solid fa-trash"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <div class="customers">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>New customers</h3>
-                            <a href="AdminCustomerinfo.php">
-                                <button>See all <span class="la la-arrow-right">                              
-                                </span></button>
-                            </a>
-                        </div>
-
-                        <div class="card-body">
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="" width="40px" height="40px" alt="">
-                                    <div>
-                                        <h4>Cao Nguyen Huy Hoang</h4>
-                                        <small>CEO Friends</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="la la-user-circle"></span>
-                                    <span class="la la-phone"></span>
-                                    <span class="la la-at"></span>
-                                </div>
-                            </div>
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="" width="40px" height="40px" alt="">
-                                    <div>
-                                        <h4>Cao Nguyen Huy Hoang</h4>
-                                        <small>CEO Friends</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="la la-user-circle"></span>
-                                    <span class="la la-phone"></span>
-                                    <span class="la la-at"></span>
-                                </div>
-                            </div>
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="" width="40px" height="40px" alt="">
-                                    <div>
-                                        <h4>Cao Nguyen Huy Hoang</h4>
-                                        <small>CEO Friends</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="la la-user-circle"></span>
-                                    <span class="la la-phone"></span>
-                                    <span class="la la-at"></span>
-                                </div>
-                            </div>
+                <div class="card-list-single">
+                    <div>
+                        <img src = "img/download (1).jpg">
+                        <div class="list-content">Ao cua hoang</div>
+                        <div class="list-content">Price: 100</div>
+                        <div>
+                            <a href="AdminProductlisting.php?view=" class="edit">View <i class="fa-solid fa-eye"></i></a>
+                            <a href="AdminProductlisting.php?delete=" class="delete" onclick="return confirm('Are you sure to delete this product');">Delete <i class="fa-solid fa-trash"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <div class="owners">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>New Rental Owners</h3>
-                            <a href="AdminOwnerinfo.php">
-                                <button>See all <span class="la la-arrow-right">                              
-                                </span></button>
-                            </a>
+                <div class="card-list-single">
+                    <div>
+                        <img src = "img/download (1).jpg">
+                        <div class="list-content">Ao cua hoang</div>
+                        <div class="list-content">Price: 100</div>
+                        <div>
+                            <a href="AdminProductlisting.php?view=" class="edit">View <i class="fa-solid fa-eye"></i></a>
+                            <a href="AdminProductlisting.php?delete=" class="delete" onclick="return confirm('Are you sure to delete this product');">Delete <i class="fa-solid fa-trash"></i></a>
                         </div>
-                            
-                        <div class="card-body">
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="" width="40px" height="40px" alt="">
-                                    <div>
-                                        <h4>Cao Nguyen Huy Hoang</h4>
-                                        <small>CEO Friends</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="la la-user-tie"></span>
-                                    <span class="la la-phone"></span>
-                                    <span class="la la-at"></span>
-                                </div>
-                            </div>
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="" width="40px" height="40px" alt="">
-                                    <div>
-                                        <h4>Cao Nguyen Huy Hoang</h4>
-                                        <small>CEO Friends</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="la la-user-tie"></span>
-                                    <span class="la la-phone"></span>
-                                    <span class="la la-at"></span>
-                                </div>
-                            </div>
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="" width="40px" height="40px" alt="">
-                                    <div>
-                                        <h4>Cao Nguyen Huy Hoang</h4>
-                                        <small>CEO Friends</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="la la-user-tie"></span>
-                                    <span class="la la-phone"></span>
-                                    <span class="la la-at"></span>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+
+                <div class="card-list-single">
+                    <div>
+                        <img src = "img/download (1).jpg">
+                        <div class="list-content">Ao cua hoang</div>
+                        <div class="list-content">Price: 100</div>
+                        <div>
+                            <a href="AdminProductlisting.php?view=" class="edit">View <i class="fa-solid fa-eye"></i></a>
+                            <a href="AdminProductlisting.php?delete=" class="delete" onclick="return confirm('Are you sure to delete this product');">Delete <i class="fa-solid fa-trash"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-list-single">
+                    <div>
+                        <img src = "img/download (1).jpg">
+                        <div class="list-content">Ao cua hoang</div>
+                        <div class="list-content">Price: 100</div>
+                        <div>
+                            <a href="AdminProductlisting.php?view=" class="edit">View <i class="fa-solid fa-eye"></i></a>
+                            <a href="AdminProductlisting.php?delete=" class="delete" onclick="return confirm('Are you sure to delete this product');">Delete <i class="fa-solid fa-trash"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-list-single">
+                    <div>
+                        <img src = "img/download (1).jpg">
+                        <div class="list-content">Ao cua hoang</div>
+                        <div class="list-content">Price: 100</div>
+                        <div>
+                            <a href="AdminProductlisting.php?view=" class="edit">View <i class="fa-solid fa-eye"></i></a>
+                            <a href="AdminProductlisting.php?delete=" class="delete" onclick="return confirm('Are you sure to delete this product');">Delete <i class="fa-solid fa-trash"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
     </div>
+
+    <script src="Admin.js"></script>
 </body>
 </html>
