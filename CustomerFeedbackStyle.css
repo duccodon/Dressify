@@ -1,0 +1,338 @@
+.feedback-container {
+    background-color: #fbf3d5;
+    display: flex;
+    gap: 20px;
+    font-weight: 600;
+  }
+  
+  @media (max-width: 991px) {
+    .feedback-container {
+      flex-wrap: wrap;
+    }
+  }
+  
+  .sidebar-image {
+    aspect-ratio: 0.08;
+    object-fit: cover;
+    object-position: center;
+    width: 149px;
+    max-width: 100%;
+  }
+  
+  @media (max-width: 991px) {
+    .sidebar-image {
+      display: none;
+    }
+  }
+  
+  .main-content {
+    align-self: start;
+    display: flex;
+    margin-top: 19px;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 0;
+    width: fit-content;
+    padding: 0 20px;
+  }
+  
+  @media (max-width: 991px) {
+    .main-content {
+      max-width: 100%;
+    }
+  }
+  
+  .continue-shopping {
+    color: #1e1e1e;
+    font: 25px Poppins, sans-serif;
+  }
+  
+  @media (max-width: 991px) {
+    .continue-shopping {
+      max-width: 100%;
+    }
+  }
+  
+  .feedback-form {
+    align-self: center;
+    display: flex;
+    margin-top: 9px;
+    width: 100%;
+    max-width: 1199px;
+    flex-direction: column;
+    font-size: 26px;
+    color: #1c1c1c;
+  }
+  
+  @media (max-width: 991px) {
+    .feedback-form {
+      max-width: 100%;
+    }
+  }
+  
+  .feedback-title {
+    color: #000;
+    text-align: center;
+    align-self: center;
+    font: 45px Roboto, sans-serif;
+  }
+  
+  @media (max-width: 991px) {
+    .feedback-title {
+      max-width: 100%;
+      font-size: 40px;
+    }
+  }
+  
+  .rating-question {
+    font-family: Roboto, sans-serif;
+    align-self: start;
+    margin: 126px 0 0 33px;
+  }
+  
+  @media (max-width: 991px) {
+    .rating-question {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+  }
+  
+  .rating-input {
+    border-radius: 5px;
+    border: 5px solid rgba(156, 175, 170, 1);
+    background-color: #fbf3d5;
+    color: #858585;
+    margin: 20px 0 0 33px;
+    padding: 31px;
+    font: 500 24px Roboto, sans-serif;
+  }
+  
+  @media (max-width: 991px) {
+    .rating-input {
+      max-width: 100%;
+      padding: 20px;
+    }
+  }
+  
+  .package-number-label {
+    font-family: Roboto, sans-serif;
+    align-self: start;
+    margin: 17px 0 0 35px;
+  }
+  
+  @media (max-width: 991px) {
+    .package-number-label {
+      max-width: 100%;
+    }
+  }
+  
+  .package-number-input {
+    border-radius: 5px;
+    border: 5px solid rgba(156, 175, 170, 1);
+    background-color: #fbf3d5;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    font-size: 24px;
+    color: #858585;
+    font-weight: 500;
+    margin: 4px 0 0 33px;
+    padding: 16px 22px;
+  }
+  
+  @media (max-width: 991px) {
+    .package-number-input {
+      max-width: 100%;
+      padding: 20px;
+    }
+  }
+  
+  .package-number-placeholder {
+    font-family: Roboto, sans-serif;
+    padding: 10px;
+  }
+  
+  @media (max-width: 991px) {
+    .package-number-placeholder {
+      max-width: 100%;
+    }
+  }
+  
+  .package-details-label {
+    font-family: Roboto, sans-serif;
+    align-self: start;
+    margin: 45px 0 0 33px;
+  }
+  
+  @media (max-width: 991px) {
+    .package-details-label {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+  }
+  
+  .package-details-input {
+    border-radius: 5px;
+    border: 5px solid rgba(156, 175, 170, 1);
+    background-color: #fbf3d5;
+    color: #858585;
+    margin: 4px 0 0 33px;
+    padding: 31px;
+    font: 500 24px Roboto, sans-serif;
+  }
+  
+  @media (max-width: 991px) {
+    .package-details-input {
+      max-width: 100%;
+      padding: 20px;
+    }
+  }
+  
+  .rating-scale-question {
+    font-family: Roboto, sans-serif;
+    margin: 26px 0 0 31px;
+  }
+  
+  @media (max-width: 991px) {
+    .rating-scale-question {
+      max-width: 100%;
+    }
+  }
+  
+  .rating-scale-input {
+    border-radius: 5px;
+    border: 5px solid rgba(156, 175, 170, 1);
+    background-color: #fbf3d5;
+    color: #858585;
+    margin: 4px 0 0 29px;
+    padding: 31px;
+    font: 500 24px Roboto, sans-serif;
+  }
+  
+  @media (max-width: 991px) {
+    .rating-scale-input {
+      max-width: 100%;
+      padding: 20px;
+    }
+  }
+  
+  .problems-question {
+    font-family: Roboto, sans-serif;
+    align-self: start;
+    margin: 9px 0 0 35px;
+  }
+  
+  @media (max-width: 991px) {
+    .problems-question {
+      max-width: 100%;
+    }
+  }
+  
+  .problems-input {
+    border-radius: 5px;
+    border: 5px solid rgba(156, 175, 170, 1);
+    background-color: #fbf3d5;
+    color: #858585;
+    margin-left: 28px;
+    padding: 30px 32px 99px;
+    font: 500 24px Roboto, sans-serif;
+  }
+  
+  @media (max-width: 991px) {
+    .problems-input {
+      max-width: 100%;
+      padding: 20px;
+    }
+  }
+  
+  .suggestions-question {
+    font-family: Roboto, sans-serif;
+    align-self: start;
+    margin: 22px 0 0 35px;
+  }
+  
+  @media (max-width: 991px) {
+    .suggestions-question {
+      max-width: 100%;
+    }
+  }
+  
+  .suggestions-input {
+    border-radius: 5px;
+    border: 5px solid rgba(156, 175, 170, 1);
+    background-color: #fbf3d5;
+    color: #858585;
+    margin: 17px 0 0 25px;
+    padding: 28px 25px 126px;
+    font: 500 24px Roboto, sans-serif;
+  }
+  
+  @media (max-width: 991px) {
+    .suggestions-input {
+      max-width: 100%;
+      padding: 20px 20px 40px;
+    }
+  }
+  
+  .product-images-label {
+    font-family: Roboto, sans-serif;
+    align-self: start;
+    margin: 29px 0 0 38px;
+  }
+  
+  @media (max-width: 991px) {
+    .product-images-label {
+      max-width: 100%;
+    }
+  }
+  
+  .product-images-upload {
+    border-radius: 5px;
+    border: 5px solid rgba(156, 175, 170, 1);
+    background-color: #fbf3d5;
+    color: #858585;
+    margin-left: 22px;
+    padding: 30px 32px 176px;
+    font: 500 24px Roboto, sans-serif;
+  }
+  
+  @media (max-width: 991px) {
+    .product-images-upload {
+      max-width: 100%;
+      padding: 20px 20px 40px;
+    }
+  }
+  
+  .submit-button {
+    background-color: rgba(239, 188, 155, 1);
+    align-self: center;
+    margin-top: 57px;
+    width: 733px;
+    max-width: 100%;
+    color: #000;
+    text-align: center;
+    padding: 18px 60px 28px;
+    font: 64px Roboto, sans-serif;
+  }
+  
+  @media (max-width: 991px) {
+    .submit-button {
+      max-width: 100%;
+      font-size: 40px;
+      margin-top: 40px;
+      padding: 20px;
+    }
+  }
+  
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  
