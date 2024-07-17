@@ -25,22 +25,14 @@ body {
     flex-grow: 1;
 }
 
-.continue-shopping {
-    font-family: 'Poppins', sans-serif;
-    font-size: 25px;
-    font-weight: 600;
-    color: #1e1e1e;
-    margin-bottom: 20px;
-}
-
 .order-tracking-title,
 .rental-owner-info,
 .package-info {
     font-size: 45px;
     font-weight: 600;
     color: #000;
-    margin-top: 40px;
-    margin-bottom: 20px;
+    margin-top: 90px;
+    margin-bottom: 10px;
 }
 
 .info-label {
@@ -92,15 +84,3 @@ body {
     flex: 1;
 }
 
-@media (max-width: 768px) {
-    .content-wrapper {
-        flex-direction: column;
-    }
-    .sidebar-image {
-        display: none;
-    }
-    .info-columns,
-    .date-info {
-        flex-direction: column;
-    }
-}

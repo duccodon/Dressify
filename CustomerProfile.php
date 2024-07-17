@@ -7,10 +7,9 @@
   <title>Profile  </title>
 </head>
 <body>
+  <?php include 'CustomerSidebar.php'; ?>
   <section class="profile-container">
-    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/945d0dfae47f7a8fe1b6a91afd2e7a6502e0700712796660afef3257b44f36f2?apiKey=2cbb572e4cb94131a46c507d9ddbcac0&" class="sidebar-image" alt="" />
     <main class="main-content">
-      <h1 class="continue-shopping">Continue shopping</h1>
       <form class="profile-form">
         <div class="avatar-container">
           <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/4be34a31d6ae2a4a6578c203ed39a03a77bad7c9c009ff148bb8b463a3e8182f?apiKey=2cbb572e4cb94131a46c507d9ddbcac0&" class="avatar-background" alt="Profile background" />

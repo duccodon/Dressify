@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="CustomerOrderTrackingStyle.css">
 </head>
 <body>
+<?php include 'CustomerSidebar.php'; ?>
     <main class="order-tracking">
         <div class="content-wrapper">
             <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/19b0118d58a94de15cdcd3a14ecc71f089c28565df2b219bc1b01f8a4abfe296?apiKey=06f22fa033964e85a3e6f07dc7f00b07&" alt="" class="sidebar-image">
             <div class="main-content">
-                <h1 class="continue-shopping">Continue shopping</h1>
                 <section class="order-details">
-                    <h2 class="order-tracking-title">Order tracking</h2>
-                    <h3 class="rental-owner-info">Rental owner information</h3>
+                    <h1 class="order-tracking-title">Order tracking</h1>
+                    <h2 class="rental-owner-info">Rental owner information</h2>
                     <form>
                         <label for="ownerName" class="info-label">Name</label>
                         <input id="ownerName" class="info-input" type="text" value="Mehrab">
@@ -40,7 +40,7 @@
                         <input id="ownerContact" class="info-input" type="tel" value="58077.79">
                     </form>
                     
-                    <h3 class="rental-owner-info">Customer information</h3>
+                    <h2 class="rental-owner-info">Customer information</h2>
                     <form>
                         <label for="customerName" class="info-label">Name</label>
                         <input id="customerName" class="info-input" type="text" value="Mehrab">
@@ -66,7 +66,7 @@
                         <input id="customerContact" class="info-input" type="tel" value="58077.79">
                     </form>
                     
-                    <h3 class="package-info">Package information</h3>
+                    <h2 class="package-info">Package information</h2>
                     <form>
                         <label for="packageNumber" class="info-label">Package number</label>
                         <input id="packageNumber" class="info-input" type="text" value="Mehrab">

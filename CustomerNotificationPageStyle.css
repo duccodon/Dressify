@@ -16,27 +16,6 @@
     padding-right: 20px;
   }
   
-  @media (max-width: 991px) {
-    .sidebar {
-      width: 100%;
-      padding-right: 0;
-    }
-  }
-  
-  .sidebar-image {
-    aspect-ratio: 0.09;
-    object-fit: cover;
-    object-position: center;
-    width: 149px;
-    max-width: 100%;
-  }
-  
-  @media (max-width: 991px) {
-    .sidebar-image {
-      display: none;
-    }
-  }
-  
   .main-content {
     display: flex;
     width: 84%;
@@ -59,12 +38,6 @@
     display: flex;
     margin-bottom: 20px;
     align-items: center;
-  }
-  
-  .continue-shopping {
-    color: #1e1e1e;
-    font: 25px Poppins, sans-serif;
-    text-decoration: none;
   }
   
   .notification-item {

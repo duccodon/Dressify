@@ -9,20 +9,7 @@
       flex-wrap: wrap;
     }
   }
-  
-  .sidebar-image {
-    aspect-ratio: 0.09;
-    object-fit: cover;
-    object-position: center;
-    width: 149px;
-    max-width: 100%;
-  }
-  
-  @media (max-width: 991px) {
-    .sidebar-image {
-      display: none;
-    }
-  }
+
   
   .main-content {
     align-self: start;
@@ -37,17 +24,6 @@
   
   @media (max-width: 991px) {
     .main-content {
-      max-width: 100%;
-    }
-  }
-  
-  .continue-shopping {
-    color: #1e1e1e;
-    font: 600 25px Poppins, sans-serif;
-  }
-  
-  @media (max-width: 991px) {
-    .continue-shopping {
       max-width: 100%;
     }
   }

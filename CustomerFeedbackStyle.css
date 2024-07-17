@@ -11,24 +11,10 @@
     }
   }
   
-  .sidebar-image {
-    aspect-ratio: 0.08;
-    object-fit: cover;
-    object-position: center;
-    width: 149px;
-    max-width: 100%;
-  }
-  
-  @media (max-width: 991px) {
-    .sidebar-image {
-      display: none;
-    }
-  }
-  
   .main-content {
     align-self: start;
     display: flex;
-    margin-top: 19px;
+    margin-top: 27px;
     flex-direction: column;
     flex-grow: 1;
     flex-basis: 0;
@@ -42,26 +28,15 @@
     }
   }
   
-  .continue-shopping {
-    color: #1e1e1e;
-    font: 25px Poppins, sans-serif;
-  }
-  
-  @media (max-width: 991px) {
-    .continue-shopping {
-      max-width: 100%;
-    }
-  }
-  
   .feedback-form {
-    align-self: center;
-    display: flex;
-    margin-top: 9px;
-    width: 100%;
-    max-width: 1199px;
-    flex-direction: column;
-    font-size: 26px;
-    color: #1c1c1c;
+  align-self: center;
+  display: flex;
+  margin-top: 76px;
+  width: 100%;
+  max-width: 1082px;
+  flex-direction: column;
+  font-size: 26px;
+  color: #1c1c1c;
   }
   
   @media (max-width: 991px) {

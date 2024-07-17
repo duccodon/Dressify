@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="CustomerFeedbackStyle.css">
   <title>Customer Feedback</title>
 </head>
 <body>
+<?php include 'CustomerSidebar.php'; ?>
 <section class="feedback-container">
-  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/9b384beee964f6be0f0563081af76fc9d34d6b4f97a7d00839dcd2e4ed6839a3?apiKey=06f22fa033964e85a3e6f07dc7f00b07&" class="sidebar-image" alt="" />
   <main class="main-content">
-    <a href="#" class="continue-shopping">Continue shopping</a>
     <form class="feedback-form" method="post" action="submit_feedback.php" enctype="multipart/form-data">
       <h1 class="feedback-title">Customer's Feedback</h1>
       <label for="rating" class="rating-question">How would you rate our product?</label>
