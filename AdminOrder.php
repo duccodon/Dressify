@@ -70,198 +70,180 @@
                 </div>
             </div>
         </header>
-
-        <main>
-            <div class="recent-grid">
-                <div class="orders">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Recent Orders</h3>
-                            <a href="AdminOrder.php">
-                                <button>See all <span class="la la-arrow-right">                              
-                                </span></button>
-                            </a>
-                        </div>
-
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table width="100%"> 
-                                    <thead>
-                                        <tr>
-                                            <td>Order ID</td>
-                                            <td>Order Customer</td>
-                                            <td>Order Owner</td>
-                                            <td>Status</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>UI/UX design</td>
-                                            <td>UI Team</td>
-                                            <td>
-                                                <span class="status finish"></span>
-                                                Finish
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>UI/UX design</td>
-                                            <td>UI Team</td>
-                                            <td>
-                                                <span class="status deli-cus"></span>
-                                                Delivering to customer
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>UI/UX design</td>
-                                            <td>UI Team</td>
-                                            <td>
-                                                <span class="status used"></span>
-                                                In used
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>UI/UX design</td>
-                                            <td>UI Team</td>
-                                            <td>
-                                                <span class="status deli-owner"></span>
-                                                Delivering to owner
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>UI/UX design</td>
-                                            <td>UI Team</td>
-                                            <td>
-                                                <span class="status packaging"></span>
-                                                Packaging
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="customers">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>New customers</h3>
-                            <a href="AdminCustomerinfo.php">
-                                <button>See all <span class="la la-arrow-right">                              
-                                </span></button>
-                            </a>
-                        </div>
-
-                        <div class="card-body">
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="" width="40px" height="40px" alt="">
-                                    <div>
-                                        <h4>Cao Nguyen Huy Hoang</h4>
-                                        <small>CEO Friends</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="la la-user-circle"></span>
-                                    <span class="la la-phone"></span>
-                                    <span class="la la-at"></span>
-                                </div>
-                            </div>
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="" width="40px" height="40px" alt="">
-                                    <div>
-                                        <h4>Cao Nguyen Huy Hoang</h4>
-                                        <small>CEO Friends</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="la la-user-circle"></span>
-                                    <span class="la la-phone"></span>
-                                    <span class="la la-at"></span>
-                                </div>
-                            </div>
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="" width="40px" height="40px" alt="">
-                                    <div>
-                                        <h4>Cao Nguyen Huy Hoang</h4>
-                                        <small>CEO Friends</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="la la-user-circle"></span>
-                                    <span class="la la-phone"></span>
-                                    <span class="la la-at"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="owners">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>New Rental Owners</h3>
-                            <a href="AdminOwnerinfo.php">
-                                <button>See all <span class="la la-arrow-right">                              
-                                </span></button>
-                            </a>
-                        </div>
-                            
-                        <div class="card-body">
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="" width="40px" height="40px" alt="">
-                                    <div>
-                                        <h4>Cao Nguyen Huy Hoang</h4>
-                                        <small>CEO Friends</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="la la-user-tie"></span>
-                                    <span class="la la-phone"></span>
-                                    <span class="la la-at"></span>
-                                </div>
-                            </div>
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="" width="40px" height="40px" alt="">
-                                    <div>
-                                        <h4>Cao Nguyen Huy Hoang</h4>
-                                        <small>CEO Friends</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="la la-user-tie"></span>
-                                    <span class="la la-phone"></span>
-                                    <span class="la la-at"></span>
-                                </div>
-                            </div>
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="" width="40px" height="40px" alt="">
-                                    <div>
-                                        <h4>Cao Nguyen Huy Hoang</h4>
-                                        <small>CEO Friends</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="la la-user-tie"></span>
-                                    <span class="la la-phone"></span>
-                                    <span class="la la-at"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
     </div>
+
+    <div class="container">
+    <div class="inner_left_pannel">
+      <div class="header-left">
+        <select name="user_type">
+          <option value="Inbox">Inbox</option>
+          <option value="Alert">Alert</option>
+          <option value="Feedback">Feedback</option>
+          <option value="Order Tracking">Order Tracking</option>
+        </select>
+        <div>Mark all as read</div>
+      </div>
+      <div class="notification-list">
+        <div class="notification">
+          <img alt="photo" src="1.jpg">
+          <div class="description">
+            <div class="name">cao nguyen huy hoang</div>
+            <article>ersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawef</article>
+            <span>Date</span>      
+          </div>  
+        </div>
+        <div class="notification unread">
+          <img alt="photo" src="1.jpg">
+          <div class="description">
+            <div class="name">cao nguyen huy hoang</div>
+            <article>ersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawef</article>
+            <span>Date</span>      
+          </div>  
+        </div>
+        <div class="notification">
+          <img alt="photo" src="1.jpg">
+          <div class="description">
+            <div class="name">cao nguyen huy hoang</div>
+            <article>ersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawef</article>
+            <span>Date</span>      
+          </div>  
+        </div>
+        <div class="notification">
+          <img alt="photo" src="1.jpg">
+          <div class="description">
+            <div class="name">cao nguyen huy hoang</div>
+            <article>ersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawef</article>
+            <span>Date</span>      
+          </div>  
+        </div>
+        <div class="notification">
+          <img alt="photo" src="1.jpg">
+          <div class="description">
+            <div class="name">cao nguyen huy hoang</div>
+            <article>ersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawef</article>
+            <span>Date</span>      
+          </div>  
+        </div>
+        <div class="notification">
+          <img alt="photo" src="1.jpg">
+          <div class="description">
+            <div class="name">cao nguyen huy hoang</div>
+            <article>ersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawef</article>
+            <span>Date</span>      
+          </div>  
+        </div>
+        <div class="notification">
+          <img alt="photo" src="1.jpg">
+          <div class="description">
+            <div class="name">cao nguyen huy hoang</div>
+            <article>ersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawef</article>
+            <span>Date</span>      
+          </div>  
+        </div>
+        <div class="notification">
+          <img alt="photo" src="1.jpg">
+          <div class="description">
+            <div class="name">cao nguyen huy hoang</div>
+            <article>ersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawef</article>
+            <span>Date</span>      
+          </div>  
+        </div>
+        <div class="notification">
+          <img alt="photo" src="1.jpg">
+          <div class="description">
+            <div class="name">cao nguyen huy hoang</div>
+            <article>ersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawef</article>
+            <span>Date</span>      
+          </div>  
+        </div>
+        <div class="notification">
+          <img alt="photo" src="1.jpg">
+          <div class="description">
+            <div class="name">cao nguyen huy hoang</div>
+            <article>ersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawef</article>
+            <span>Date</span>      
+          </div>  
+        </div>
+        <div class="notification">
+          <img alt="photo" src="1.jpg">
+          <div class="description">
+            <div class="name">cao nguyen huy hoang</div>
+            <article>ersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawef</article>
+            <span>Date</span>      
+          </div>  
+        </div>
+        <div class="notification">
+          <img alt="photo" src="1.jpg">
+          <div class="description">
+            <div class="name">cao nguyen huy hoang</div>
+            <article>ersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawef</article>
+            <span>Date</span>      
+          </div>  
+        </div>
+        <div class="notification">
+          <img alt="photo" src="1.jpg">
+          <div class="description">
+            <div class="name">cao nguyen huy hoang</div>
+            <article>ersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawef</article>
+            <span>Date</span>      
+          </div>  
+        </div>
+      </div>
+    </div>
+    <div class="inner_right_pannel">
+      <h1>Detail</h1>
+      <div class="message-detail">
+      <div> 
+        Order Number: AVN00
+      </div>
+      <div>
+        Hi Nguyen Thien, 
+      </div>
+      <div>
+        We have received your order and will send you a shipping confirmation with your track & trace details as soon as your order ships. We seek your kind understanding and patience in these times. 
+      </div>
+      <div>
+        For answers to your questions, we would encourage you to send message to the administator
+      </div>
+      <div>
+        Your adidas team 
+      </div>
+      <div>
+        DELIVERY ADDRESS 
+        Nguyen Thien Duc
+        360A Bến Vân Đồn Lô D, c/c Khánh Hội 2 Phường 1 Quan 4, 754100 Ho Chi Minh, Vietnam 
+        0931855013
+        Via: GHN Standard 
+      </div>
+      <div>
+
+	      BILLING INFORMATION
+        Nguyen Thien Duc
+        360A Bến Vân Đồn Lô D, c/c Khánh Hội 2 Phường 1 Quan 4, 754100 Ho Chi Minh, Vietnam 
+      </div>
+      <div>
+Via: Cash on delivery 
+	ORDER SUMMARY 
+Products 	₫5,200,000 
+Promo Code 	-₫2,600,000 
+Delivery 	FREE 
+Total 	₫2,600,000 
+(inclusive of tax) 	
+Total Saving 	₫2,600,000 
+ULTRABOOST LIGHT SHOES
+₫2,600,000 ₫5,200,000 
+Colour: Core Black / Core Black / Core Black
+Size: 10 UK
+Quantity: 1
+Article No: GZ5159 
+      </div>
+      <?php
+        for ($i = 0; $i <= 100; $i++) {
+          echo("hello"). "<br>";  // Print each number with a line break
+        }
+      ?>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

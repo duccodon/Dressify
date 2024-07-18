@@ -325,4 +325,74 @@ td .status {
     color: var(--dark-green);
 }
 
+/******************************order feedback******************************/
+.container {
+    margin-left: 250px;
+    margin-top: 100px;
+    color: rgb(0,0,0);
+    display: flex;
+    height: 100%;
+}
+.inner_left_pannel {
+    border-right: 1px solid rgba(0,0,0, 0.4);
+    width: 35%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+}
 
+.header-left {
+    margin: .5rem .5rem .5rem .5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.notification-list {
+    height: 843px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    overscroll-behavior: contain;
+}
+.notification {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+
+    border-top: 1px solid rgba(0,0,0, 0.4);
+    border-bottom: 1px solid rgba(0,0,0, 0.4);
+    width: 100%;
+    min-height: 100px;
+    
+    padding: 1rem ;
+    cursor: pointer;
+}
+.notification img {
+    width: 15%;
+    height: 100%;
+    border-radius: 50%;
+}
+.notification-list article, .notification-list span, .notification .name{
+    margin-left: 0.5rem;
+    width: 33%;
+    overflow: hidden;
+}
+.notification-list span {
+    color: rgba(0,0,0, 0.4);
+}
+.unread {
+    background: hsl(189, 100%, 85%);
+}
+
+.inner_right_pannel h1 {
+  display: flex; 
+  justify-content: center; 
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.message-detail {
+    height: 843px;
+    padding: 1rem 2rem 0 1rem;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    overscroll-behavior: contain;
+}
