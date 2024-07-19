@@ -17,7 +17,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href=""><span class="la la-home"></span>
+                    <a href="AdminProductlisting.php"><span class="la la-home"></span>
                     <span>Home</span></a>
                 </li>
                 <li>
@@ -25,11 +25,11 @@
                     <span>Information</span></a>
                 </li>
                 <li>
-                    <a href="Notification page.php"><span class="la la-bell"></span>
+                    <a href="CustomerNotificationPage.php"><span class="la la-bell"></span>
                     <span>Notification</span></a>
                 </li>
                 <li>
-                    <a href=""><span class="la la-shopping-cart"></span>
+                    <a href="CheckOut.php"><span class="la la-shopping-cart"></span>
                     <span>Cart</span></a>
                 </li>
                 <li>
@@ -37,7 +37,7 @@
                     <span>History</span></a>
                 </li>
                 <li>
-                    <a href="CustomerReview.php"><span class="la la-bullhorn"></span>
+                    <a href="CustomerFeedback.php"><span class="la la-bullhorn"></span>
                     <span>Feedback</span></a>
                 </li>
                 <li>
@@ -71,5 +71,6 @@
             </div>
         </header>
     </div>
+
 </body>
 </html>

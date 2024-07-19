@@ -194,7 +194,7 @@
       <h1>Detail</h1>
       <div class="message-detail">
       <div> 
-        Order Number: AVN00
+        <h2>Order Number: AVN00</h2>
       </div>
       <div>
         Hi Nguyen Thien, 
@@ -206,36 +206,33 @@
         For answers to your questions, we would encourage you to send message to the administator
       </div>
       <div>
-        Your adidas team 
+        Your adidas team
       </div>
       <div>
-        DELIVERY ADDRESS 
-        Nguyen Thien Duc
-        360A Bến Vân Đồn Lô D, c/c Khánh Hội 2 Phường 1 Quan 4, 754100 Ho Chi Minh, Vietnam 
-        0931855013
-        Via: GHN Standard 
-      </div>
-      <div>
-
-	      BILLING INFORMATION
-        Nguyen Thien Duc
-        360A Bến Vân Đồn Lô D, c/c Khánh Hội 2 Phường 1 Quan 4, 754100 Ho Chi Minh, Vietnam 
-      </div>
-      <div>
-Via: Cash on delivery 
-	ORDER SUMMARY 
-Products 	₫5,200,000 
-Promo Code 	-₫2,600,000 
-Delivery 	FREE 
-Total 	₫2,600,000 
-(inclusive of tax) 	
-Total Saving 	₫2,600,000 
-ULTRABOOST LIGHT SHOES
-₫2,600,000 ₫5,200,000 
-Colour: Core Black / Core Black / Core Black
-Size: 10 UK
-Quantity: 1
-Article No: GZ5159 
+      <table> 
+        <tr>  
+        <td> DELIVERY ADDRESS </td>  
+        <td> BILLING INFORMATION </td>
+        <td> ORDER SUMMARY </td>  
+        </tr>
+        <tr>
+          <td> Nguyen Thien Duc <br>
+                360A Bến Vân Đồn Lô D, c/c Khánh Hội 2 Phường 1 Quan 4, 754100 Ho Chi Minh, Vietnam <br>
+                0931855013 <br>
+              <h4> Via: GHN Standard  <h4> </td>
+          <td> Nguyen Thien Duc <br>
+                360A Bến Vân Đồn Lô D, c/c Khánh Hội 2 Phường 1 Quan 4, 754100 Ho Chi Minh, Vietnam <br>
+                <h4> Via: Cash on delivery <h4> </td> 
+          <td> Products 	₫5,200,000 <br>
+        Promo Code 	-₫2,600,000 <br>
+        Delivery 	FREE <br>
+        <h4>Total</h4> 	₫2,600,000 <br>
+        (inclusive of tax) 	<br>
+        <h4>Total Saving</h4> 	₫2,600,000 <br> 
+        ULTRABOOST LIGHT SHOES <br>
+          </td>
+        </tr> 
+        </table>  
       </div>
       <?php
         for ($i = 0; $i <= 100; $i++) {

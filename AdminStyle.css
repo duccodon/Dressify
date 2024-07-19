@@ -396,3 +396,15 @@ td .status {
     overflow: auto;
     overscroll-behavior: contain;
 }
+
+td {
+    height: 50px;
+    vertical-align: top;
+}
+
+table{
+    text-align : left;
+    border: 0px;
+    padding: 3px;
+    border-spacing: 0px;
+}
