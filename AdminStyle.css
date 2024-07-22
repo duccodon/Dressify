@@ -384,10 +384,14 @@ td .status {
 }
 
 .inner_right_pannel h1 {
-  display: flex; 
-  justify-content: center; 
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-}
+    width: 825px;
+    display: flex ;
+    text-align: center;
+    align-content: center;
+    justify-content: center; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    }
 .message-detail {
     height: 843px;
     padding: 1rem 2rem 0 1rem;

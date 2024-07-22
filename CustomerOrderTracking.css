@@ -1,0 +1,34 @@
+h2 {   
+    width: 825px;
+    display: flex;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+}
+.Customer,
+.RentalOwner,
+.Package {
+    display: inline-flex;
+}
+.info-label {
+    display: flex;
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    white-space: nowrap;
+}
+.info-input {
+        float: left;
+        display: flex;
+        width: 100%;
+        border: 3px solid #FF7F7F;
+        border-radius: 5px;
+        background-color: #fbf3d5;
+        font-size: 14px;
+        padding: 0px 20px 0px 20px;
+        margin-bottom: 20px;
+        white-space: nowrap;
+        margin-right: 20px;
+}
+    

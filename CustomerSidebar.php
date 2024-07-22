@@ -29,7 +29,7 @@
                     <span>Notification</span></a>
                 </li>
                 <li>
-                    <a href="CheckOut.php"><span class="la la-shopping-cart"></span>
+                    <a href="Cart.php"><span class="la la-shopping-cart"></span>
                     <span>Cart</span></a>
                 </li>
                 <li>
