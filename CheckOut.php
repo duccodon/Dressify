@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="CheckoutStyle.css">
+  <title>Checkout</title>
+</head>
 <body>
   <?php include 'CustomerSidebar.php'; ?>
   <main class="checkout-container">
@@ -8,12 +16,6 @@
           <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/c30996d5703da71b9f16896489382a2dca74474011131c05ba13ce2a9ac40fe9?apiKey=2cbb572e4cb94131a46c507d9ddbcac0&" class="logo" alt="Company logo" />
         </div>
         <div class="product-info">
-          <div class="back-to-cart">
-            <a href="#" class="back-link">
-              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/f73e71db4be3b243d4de401c086bb58d4b93001097133ea57a59afe4c519b394?apiKey=2cbb572e4cb94131a46c507d9ddbcac0&" class="back-icon" alt="Back arrow icon" />
-              <span class="back-text">Back to cart</span>
-            </a>
-          </div>
           <div class="product-card">
             <div class="product-content">
               <div class="product-image-container">
@@ -123,4 +125,6 @@
     </section>
   </div>
   </main>
-<body>
+</body>
+</html>
+
