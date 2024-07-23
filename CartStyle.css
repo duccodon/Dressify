@@ -1,258 +1,92 @@
-.shopping-cart-container {
-  background-color: #fbf3d5;
+.container {
+  margin-left: 250px;
+  margin-top: 100px;
+  color: rgb(0,0,0);
   display: flex;
-  gap: 20px;
+  height: 100%;
 }
-.cart-content {
-  align-self: start;
-  display: flex;
-  margin-top: 105px;
-  flex-direction: column;
-  flex-grow: 1;
-  flex-basis: 0;
-  width: fit-content;
-  padding: 0 20px;
-}
-.cart-title {
-  color: #1e1e1e;
-  font: 500 25px Poppins, sans-serif;
-}
-.cart-items {
-  margin-top: 33px;
-}
-.cart-layout {
-  gap: 275px;
-  display: flex;
-}
-.product-column {
-  display: flex;
-  flex-direction: column;
-  line-height: normal;
-  width: 56%;
-  margin-left: 0;
-}
-.product-card {
-  border-radius: 15px;
-  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
-  background-color: #d6dac8;
-  display: flex;
-  width: 100%;
-  align-items: center;
-  gap: 20px;
-  font-size: 18px;
-  color: #393939;
-  font-weight: 500;
-  justify-content: space-between;
-  margin: 0px 10px 0px 270px;
-  padding: 10px 50px 10px 10px;
-}
-.product-info {
-  align-self: stretch;
-  display: flex;
-  gap: 18px;
-  color: #1e1e1e;
-}
-.product-image {
-  aspect-ratio: 1;
-  object-fit: auto;
-  object-position: center;
-  width: 127px;
-  height: 134px;
-  mix-blend-mode: multiply;
-}
-.product-details {
-  display: flex;
-  flex-direction: column;
-  margin: auto 0;
-}
-.product-name {
-  font-family: Poppins, sans-serif;
-}
-.product-description {
-  font-family: Nunito, sans-serif;
-  margin-top: 19px;
-}
-.quantity-control {
-  align-self: stretch;
-  display: flex;
-  gap: 9px;
-  font-size: 22px;
-  font-weight: 600;
-  white-space: nowrap;
-  line-height: 100%;
-  margin: auto 0;
-  padding: 0 2px;
-}
-.quantity {
-  font-variant-numeric: lining-nums proportional-nums;
-  font-family: Raleway, sans-serif;
-  margin: auto 0;
-}
-.quantity-icon {
-  aspect-ratio: 0.86;
-  object-fit: auto;
-  object-position: center;
-  width: 19px;
-}
-.price-remove {
-  align-self: stretch;
-  display: flex;
-  gap: 10px;
-  white-space: nowrap;
-  text-align: right;
-  justify-content: space-between;
-  margin: auto 0;
-}
-.price {
-  font-family: Poppins, sans-serif;
-}
-.remove-icon {
-  aspect-ratio: 0.88;
-  object-fit: auto;
-  object-position: center;
-  width: 34px;
-}
-.summary-column {
-  display: flex;
-  flex-direction: column;
-  line-height: normal;
-  width: 44%;
-  margin-left: 20px;
-}
-.order-summary {
-  border-radius: 20px;
-  background-color: #d6dac8;
-  display: flex;
-  flex-grow: 1;
-  flex-direction: column;
-  font-size: 18px;
-  color: #000;
-  font-weight: 500;
-  width: 100%;
-  padding: 80px 27px;
-}
-.discount-section {
-  border-radius: 15px;
-  display: flex;
-  margin-top: 30px;
-  gap: 20px;
-  padding: 18px 29px;
-  border: 5px solid rgba(129, 115, 115, 1);
-}
-.discount-label {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-  font-family: Poppins, sans-serif;
-}
-.discount-code {
-  font-family: Poppins, sans-serif;
-  align-self: start;
-  flex-grow: 1;
-  flex-basis: auto;
-}
-.summary-details {
-  border-radius: 15px;
-  display: flex;
-  margin-top: 39px;
-  flex-direction: column;
-  align-items: start;
-  font-size: 16px;
-  padding: 16px 80px 30px 19px;
-  border: 5px solid rgba(129, 115, 115, 1);
-}
-.summary-title {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-  font: 18px Poppins, sans-serif;
-}
-.summary-item {
-  font-family: Nunito, sans-serif;
-  margin-top: 23px;
-}
-.summary-total {
-  font-family: Nunito, sans-serif;
-  margin-top: 48px;
-}
-.checkout-button {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-  font-family: Poppins, sans-serif;
-  border-radius: 15px;
-  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
-  margin-top: 35px;
-  font-weight: 600;
-  text-align: center;
-  padding: 17px 60px 8px;
-  border: 5px solid rgba(129, 115, 115, 1);
-}
-@media (max-width: 991px) {
-  .shopping-cart-container {
-    flex-wrap: wrap;
-  }
-  .decorative-image {
-    display: none;
-  }
-  .cart-content {
-    max-width: 100%;
-    margin-top: 40px;
-  }
-  .cart-title {
-    max-width: 100%;
-  }
-  .cart-items {
-    max-width: 100%;
-  }
-  .cart-layout {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 157px;
-  }
-  .product-column {
-    width: 100%;
-  }
-  .product-card {
-    max-width: 100%;
-    margin-top: 40px;
-    flex-wrap: wrap;
-    padding-right: 20px;
-  }
-  .quantity-control {
-    white-space: initial;
-  }
-  .price-remove {
-    white-space: initial;
-  }
-  .summary-column {
-    width: 100%;
-  }
-  .order-summary {
-    max-width: 100%;
-    margin-top: 40px;
-    padding: 0 20px;
-  }
-  .discount-section {
-    max-width: 100%;
-    flex-wrap: wrap;
-    padding: 0 20px;
-  }
-  .summary-details {
-    max-width: 100%;
-    padding-right: 20px;
-  }
-  .summary-total {
-    margin-top: 40px;
-  }
-  .checkout-button {
-    max-width: 100%;
-    padding: 0 20px;
-  }
+.inner_left_pannel {
+  border-right: 1px solid rgba(0,0,0, 0.4);
+  width: 35%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+.header-left {
+  margin: .5rem .5rem .5rem .5rem;
+  display: flex;
+  justify-content: space-between;
 }
+
+.notification-list {
+  height: 843px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.notification {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  align-items: center;
+
+  border-top: 1px solid rgba(0,0,0, 0.4);
+  border-bottom: 1px solid rgba(0,0,0, 0.4);
+  width: 100%;
+  min-height: 100px;
+  
+  padding: 1rem ;
+  cursor: pointer;
+}
+.notification img {
+  width: 15%;
+  height: auto;
+  border-radius: 50%;
+}
+.notification .description .name,
+.notification .description article{
+  width: 100%; /* Ensure children take full width */
+}
+.notification .name {
+  margin-left: 0.5rem;
+  width: 100%;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: ellipsis;
+}
+
+.notification-list span {
+  color: rgba(0,0,0, 0.4);
+}
+
+.inner_right_pannel h1 {
+  width: 825px;
+  display: flex ;
+  text-align: center;
+  align-content: center;
+  justify-content: center; 
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  }
+.message-detail {
+  height: 843px;
+  padding: 1rem 2rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+td {
+  height: 50px;
+  vertical-align: top;
+}
+
+table{
+  text-align : left;
+  border: 0px;
+  padding: 3px;
+  border-spacing: 0px;
+}
+

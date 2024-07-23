@@ -89,7 +89,7 @@
           <div class="description">
             <div class="name">cao nguyen huy hoang</div>
             <article>ersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawef</article>
-            <span>Date</span>      
+            <span>Date</span> 
           </div>  
         </div>
         <div class="notification unread">
