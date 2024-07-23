@@ -10,6 +10,7 @@
 
         $filter_password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
         $password = mysqli_real_escape_string($conn, $filter_password);
+        $hash_password = password_hash($password, PASSWORD_DEFAULT);
 
         $filter_cpassword = filter_var($_POST['cpassword'], FILTER_SANITIZE_STRING);
         $cpassword = mysqli_real_escape_string($conn, $filter_cpassword);
@@ -43,7 +44,7 @@
             if ($password != $cpassword){
                 $message_up[] = 'Incorrect confirm password';
             }else{
-                mysqli_query($conn, "INSERT INTO customers (`username`, `email`, `password`, `fullname`, `address`, `country`, `city`, `contact_number`, `user_type`) VALUES('$username', '$email', '$password', '$fullname', '$address', '$country', '$city', '$contact_number', '$user_type')") or die('Query failed');
+                mysqli_query($conn, "INSERT INTO customers (`username`, `email`, `password`, `fullname`, `address`, `country`, `city`, `contact_number`, `user_type`) VALUES('$username', '$email', '$hash_password', '$fullname', '$address', '$country', '$city', '$contact_number', '$user_type')") or die('Query failed');
                 $message_up[] = 'Register successfully';
             }
         }
@@ -56,29 +57,34 @@
         $filter_password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
         $password = mysqli_real_escape_string($conn, $filter_password);
 
-        $select_user = mysqli_query($conn, "SELECT * FROM customers WHERE email = '$email' AND `password` = '$password'") or die('Query failed');
+        $select_user = mysqli_query($conn, "SELECT * FROM customers WHERE email = '$email'") or die('Query failed');
         if (mysqli_num_rows($select_user) > 0){
             $row = mysqli_fetch_assoc($select_user);
+            if (!password_verify($password, $row['password'])){
+                $message_in[] = 'Incorrect password. Please check again';
+            }
+            else{
             if ($row['user_type'] == 'admin'){
-                $_SESSION['admin_name'] = $row['name'];
+                $_SESSION['admin_name'] = $row['username'];
                 $_SESSION['admin_email'] = $row['email'];
-                $_SESSION['admin_id'] = $row['id'];
+                $_SESSION['admin_id'] = $row['cus_id'];
                 header('location:Admin.php');
             }elseif ($row['user_type'] == 'Customer'){
-                $_SESSION['cus_name'] = $row['name'];
+                $_SESSION['cus_name'] = $row['username'];
                 $_SESSION['cus_email'] = $row['email'];
                 $_SESSION['cus_id'] = $row['id'];
-                header('location:CustomerProfile.php');
+                header('location:CustomerProfile.php?id='.$row['cus_id']);
             }
             else if ($row['user_type'] == 'Rental Owner'){
-                $_SESSION['cus_name'] = $row['name'];
+                $_SESSION['cus_name'] = $row['username'];
                 $_SESSION['cus_email'] = $row['email'];
-                $_SESSION['cus_id'] = $row['id'];
-                header('location:OwnerNotification.html');
+                $_SESSION['cus_id'] = $row['cus_id'];
+                header('location:InfoOwner.php?id='.$row['cus_id']);
+            }
             }
         }
         else{
-            $message_in[] = 'Invalid email or incorrect password. Please check again!!!';
+            $message_in[] = 'Invalid email or incorrect password. Please check again';
         }
     }
 ?>
