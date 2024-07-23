@@ -72,11 +72,11 @@
   }
   
   .avatar-icon {
-    aspect-ratio: 1;
-    object-fit: auto;
-    object-position: center;
-    width: 77px;
-    margin-top: 196px;
+    position: absolute;
+    bottom: 10px; 
+    right: 10px; 
+    width: 100px; 
+    height: 100px; 
   }
   
   @media (max-width: 991px) {
