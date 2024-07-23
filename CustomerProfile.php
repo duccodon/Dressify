@@ -18,39 +18,39 @@
         <h2 class="username">Sonali.</h2>
         
         <label for="name" class="form-label">Name</label>
-        <input type="text" id="name" class="form-input" value="Mehrab" />
+        <input type="text" id="name" class="form-input" />
         
         <label for="email" class="form-label">Email</label>
-        <input type="email" id="email" class="form-input" value="Mehrabbozorgi.business@gmail.com" />
+        <input type="email" id="email" class="form-input" />
         
         <div class="form-row">
           <div class="form-columns">
             <div class="form-column">
               <div class="form-group">
                 <label for="country" class="form-label">Country</label>
-                <input type="text" id="country" class="form-input" value="Mehrab" />
+                <input type="text" id="country" class="form-input" />
               </div>
             </div>
             <div class="form-column">
               <div class="form-group">
                 <label for="city" class="form-label">City</label>
-                <input type="text" id="city" class="form-input" value="Mehrab" />
+                <input type="text" id="city" class="form-input" />
               </div>
             </div>
           </div>
         </div>
         
         <label for="address" class="form-label">Address</label>
-        <input type="text" id="address" class="form-input" value="33062 Zboncak isle" />
+        <input type="text" id="address" class="form-input" />
         
         <label for="contact" class="form-label">Contact Number</label>
-        <input type="tel" id="contact" class="form-input" value="58077.79" />
+        <input type="tel" id="contact" class="form-input" />
         
         <label for="username" class="form-label">Username</label>
-        <input type="text" id="username" class="form-input" value="sbdfbnd65sfdvb s" />
+        <input type="text" id="username" class="form-input" />
         
         <label for="password" class="form-label">Password</label>
-        <input type="password" id="password" class="form-input" value="sbdfbnd65sfdvb s" />
+        <input type="password" id="password" class="form-input" />
       </form>
     </main>
   </section>
