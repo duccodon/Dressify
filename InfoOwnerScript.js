@@ -7,5 +7,10 @@ document.getElementById('avatar-upload').addEventListener('change', function(eve
             document.querySelector('.avatar img').src = e.target.result;
         }
         reader.readAsDataURL(file);
+        console.log(file.name);
     }
+});
+
+document.querySelector('form').addEventListener('submit', function() {
+    console.log('Form submitted');
 });
