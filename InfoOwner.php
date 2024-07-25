@@ -10,16 +10,14 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 
-if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-    echo "Error updating record: " . $stmt->error;
-    exit();
-}
+//if (!isset($_SESSION['user_id'])) {
+//    header("Location: login.php");
+//    echo "Error updating record: " . $stmt->error;
+//    exit();
+//}
 
+$_SESSION['user_id'] = 1; // For testing purposes
 $user_id = $_SESSION['user_id']; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -32,14 +30,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $shop_name = $_POST['shop_name'];
     $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
-    $avatar_path = "path/to/default/avatar.jpg";
-    if (isset($_FILES['avatar']['name']) && $_FILES['avatar']['name'] != '') {
-        $avatar_path = 'uploads/' . basename($_FILES['avatar']['name']);
-        move_uploaded_file($_FILES['avatar']['tmp_name'], $avatar_path);
+    $avatar_path = "";
+    if (isset($_FILES['avatar-upload']) && $_FILES['avatar-upload']['error'] == 0) {
+        $file_name = uniqid() . '_' . basename($_FILES['avatar-upload']['name']);
+        $avatar_path = $file_name; // Store just the filename
+        
+        // Validate file type
+        $allowed_types = ['image/jpeg', 'image/png', 'image/gif'];
+        if (!in_array($_FILES['avatar-upload']['type'], $allowed_types)) {
+            echo "Error: Invalid file type. Only JPG, PNG, and GIF are allowed.";
+        } elseif ($_FILES['avatar-upload']['size'] > 5000000) {
+            echo "Error: File size exceeds limit (5MB).";
+        } elseif (move_uploaded_file($_FILES['avatar-upload']['tmp_name'], $file_name)) {
+            echo "File uploaded successfully as $file_name.";
+        } else {
+            echo "Failed to move uploaded file.";
+            $avatar_path = "";
+        }
     }
 
-    $stmt = $conn->prepare("UPDATE rental_owners SET name=?, email=?, country=?, city=?, address=?, contact_number=?, shop_name=?, password=?, avatar_path=? WHERE id=?");
-    $stmt->bind_param("sssssssssi", $name, $email, $country, $city, $address, $contact, $shop_name, $password, $avatar_path, $user_id);
+    // Prepare SQL statement
+    $sql = "UPDATE rental_owners SET name=?, email=?, country=?, city=?, address=?, contact_number=?, shop_name=?, password=?";
+    $params = [$name, $email, $country, $city, $address, $contact, $shop_name, $password];
+    $types = "ssssssss";
+
+    // Add avatar_path to SQL and params if it's not empty
+    if (!empty($avatar_path)) {
+        $sql .= ", avatar_path=?";
+        $params[] = $avatar_path;
+        $types .= "s";
+    }
+
+    $sql .= " WHERE id=?";
+    $params[] = $user_id;
+    $types .= "i";
+
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param($types, ...$params);
 
     if ($stmt->execute()) {
         echo "Record updated successfully";
@@ -50,6 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
 }
 
+// Fetch current user data
 $sql = "SELECT * FROM rental_owners WHERE id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $user_id);
@@ -67,6 +95,11 @@ if ($result->num_rows > 0) {
     $shop_name = $row['shop_name'];
     $password = $row['password'];
     $avatar_path = $row['avatar_path'];
+    
+    // If avatar_path is empty, set it to the default avatar
+    if (empty($avatar_path)) {
+        $avatar_path = 'avatar.jpg';
+    }
 } else {
     echo "No user found";
 }
@@ -143,27 +176,27 @@ $conn->close();
                 </div>
     
                 <div class="user-wrapper">
-                    <img src="<?php echo $avatar_path; ?>" alt="Avatar">
-                    <div>
+                    <div class="user-info">
                         <h4>Friends</h4>
                         <small>Admin</small>
                     </div>
+                    <img src="<?php echo $avatar_path; ?>" alt="Avatar">
                 </div>
             </header>
     
         </nav>
         <main class="content">
             <section class="profile">
-                <div class="black-header"></div>
-                <div class="avatar-wrapper">
-                    <div class="avatar">
-                        <img src="<?php echo $avatar_path; ?>" alt="Sonali's avatar" alt="avatar">
-                    </div>
-                    <input type="file" id="avatar-upload" accept="image/*" style="display: none;">
-                    <label for="avatar-upload" class="avatar-edit-icon"><i class="fas fa-pencil-alt"></i></label>
-                </div>
-                <h2>Sonali.</h2>
                 <form enctype="multipart/form-data" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                    <div class="black-header"></div>
+                    <div class="avatar-wrapper">
+                        <div class="avatar">
+                            <img src="<?php echo $avatar_path; ?>" alt="avatar">
+                        </div>
+                        <input type="file" id="avatar-upload" name="avatar-upload" accept="image/*" style="display: none;">
+                        <label for="avatar-upload" class="avatar-edit-icon"><i class="fas fa-pencil-alt"></i></label>
+                    </div>
+                    <h2>Sonali.</h2>
                     <div class="form-group">
                       <label for="name" class="custom-label">Name</label>
                       <input type="text" id="name" name="name" value="<?php echo $name; ?>">
@@ -197,7 +230,7 @@ $conn->close();
                     
                     <div class="form-group">
                       <label for="username" class="custom-label">Shop name</label>
-                      <input type="text" id="username" name="username"value="<?php echo $shop_name; ?>">
+                      <input type="text" id="shop_name" name="shop_name"value="<?php echo $shop_name; ?>">
                     </div>
                     
                     <div class="form-group">
