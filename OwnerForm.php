@@ -7,7 +7,7 @@
 </head>
 <body>
   <?php include 'OwnerSidebar.php'; ?>
-      <main class="main-content">
+      <main class="main-content1">
         <section class="features">
           <h2 class="feature-title">Widely express your custom</h2>
           <p class="feature-item">Fast Access</p>
