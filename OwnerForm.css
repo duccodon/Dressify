@@ -10,12 +10,12 @@
 }
 
 .upload-status {
-    font-family: Rounded Mplus 1c, sans-serif;
+    font: 30px Jaldi, sans-serif;
     margin-top: 26px;
 }
 
 .new-upload-link {
-    font-family: Rounded Mplus 1c, sans-serif;
+    font: 30px Jaldi, sans-serif;
     text-decoration-line: underline;
     align-self: end;
     margin-top: 123px;
@@ -50,9 +50,18 @@
         display: flex;
         flex-direction: column;
         line-height: normal;
-        width: 77%;
+        width: 100%;
         margin-left: 20px;
+        position: relative;
+        flex-grow: 1;
+        align-items: center;
+        font-size: 30px;
+        color: #000;
+        font-weight: 500;
+        line-height: 100%;
+        padding: 80px 80px 38px;
 }
+
 
 .upload-container {
         background-color: rgba(255, 249, 229, 1);
@@ -122,7 +131,7 @@
       display: flex;
       gap: 20px;
     }
-    
+
     .form-left {
       width: 50%;
       display: flex;
@@ -217,9 +226,9 @@
     .submit-button { 
         justify-content: center; 
         align-items: center; 
-        background-color: #b4ffad; 
-        align-self: center; 
-        margin-top: 79px; 
+        background-color: #b4ffad;  
+        margin-top: 74px; 
+        margin-left: 48px;
         width: 300px; 
         max-width: 100%; 
         padding: 22px 60px; 
@@ -227,6 +236,23 @@
         font-size: larger
     }
 
+
+    .submit-button:hover { 
+      justify-content: center; 
+      align-items: center; 
+      background-color: #85db7f; 
+      margin-top: 74px; 
+      margin-left: 48px;
+      width: 300px; 
+      max-width: 100%; 
+      padding: 22px 60px; 
+      font: 60px Rounded Mplus 1c, sans-serif;
+      font-size: larger
+  }
+
+  .hidden{
+    display: none;
+  }
     
     @media (max-width: 991px) {
       .container {
