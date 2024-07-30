@@ -3,7 +3,7 @@ session_start();
 $servername = "localhost";
 $username = "root"; 
 $password = ""; 
-$dbname = "dressify"; 
+$dbname = "dressify_db"; 
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -11,23 +11,22 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-//if (!isset($_SESSION['user_id'])) {
+//if (!isset($_SESSION['cus_id'])) {
 //    header("Location: login.php");
-//    echo "Error updating record: " . $stmt->error;
 //    exit();
 //}
 
-$_SESSION['user_id'] = 1; // For testing purposes
-$user_id = $_SESSION['user_id']; 
+$_SESSION['cus_id'] = 1; // For testing purposes
+$cus_id = $_SESSION['cus_id']; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'];
+    $username = $_POST['username'];
     $email = $_POST['email'];
+    $fullname = $_POST['fullname'];
     $country = $_POST['country'];
     $city = $_POST['city'];
     $address = $_POST['address'];
-    $contact = $_POST['contact'];
-    $shop_name = $_POST['shop_name'];
+    $contact_number = $_POST['contact_number'];
     $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
     $avatar_path = "";
@@ -50,8 +49,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Prepare SQL statement
-    $sql = "UPDATE rental_owners SET name=?, email=?, country=?, city=?, address=?, contact_number=?, shop_name=?, password=?";
-    $params = [$name, $email, $country, $city, $address, $contact, $shop_name, $password];
+    $sql = "UPDATE customers SET username=?, email=?, fullname=?, country=?, city=?, address=?, contact_number=?, password=?";
+    $params = [$username, $email, $fullname, $country, $city, $address, $contact_number, $password];
     $types = "ssssssss";
 
     // Add avatar_path to SQL and params if it's not empty
@@ -61,8 +60,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $types .= "s";
     }
 
-    $sql .= " WHERE id=?";
-    $params[] = $user_id;
+    $sql .= " WHERE cus_id=?";
+    $params[] = $cus_id;
     $types .= "i";
 
     $stmt = $conn->prepare($sql);
@@ -78,28 +77,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 // Fetch current user data
-$sql = "SELECT * FROM rental_owners WHERE id = ?";
+$sql = "SELECT * FROM customers WHERE cus_id = ?";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("i", $user_id);
+$stmt->bind_param("i", $cus_id);
 $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
-    $name = $row['name'];
+    $username = $row['username'];
     $email = $row['email'];
+    $fullname = $row['fullname'];
     $country = $row['country'];
     $city = $row['city'];
     $address = $row['address'];
-    $contact = $row['contact_number'];
-    $shop_name = $row['shop_name'];
+    $contact_number = $row['contact_number'];
     $password = $row['password'];
-    $avatar_path = $row['avatar_path'];
-    
-    // If avatar_path is empty, set it to the default avatar
-    if (empty($avatar_path)) {
-        $avatar_path = 'avatar.jpg';
-    }
+    $avatar_path = $row['avatar_path'] ?? 'avatar.jpg'; // Use default if not set
 } else {
     echo "No user found";
 }
@@ -113,7 +107,7 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="InfoOwnerStyle.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
     <link href="https://fonts.googleapis.com/css2?family=Text+Me+One&display=swap" rel="stylesheet">
