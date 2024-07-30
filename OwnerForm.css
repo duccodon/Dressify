@@ -79,9 +79,11 @@
         padding: 80px 80px 38px;
 }
     
-.main-content {
+.main-content1 {
       background-color: #fbf3d5;
       margin: 53px auto 0;
+      margin-top: 80px;
+      margin-right: 60px;
       width: 100%;
       max-width: 1298px;
       display: flex;
