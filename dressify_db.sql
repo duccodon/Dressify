@@ -44,6 +44,10 @@ CREATE TABLE `customers` (
 -- Đang đổ dữ liệu cho bảng `customers`
 --
 
+ALTER TABLE `customers`
+ADD COLUMN `avatar_path` VARCHAR(255) AFTER `user_type`,
+MODIFY COLUMN `contact_number` VARCHAR(20) NOT NULL;
+
 INSERT INTO `customers` (`cus_id`, `username`, `email`, `password`, `fullname`, `address`, `country`, `city`, `contact_number`, `user_type`) VALUES
 (1, 'Friends', 'friends@gmail.com', 'friends', 'FriendsIntroSE', '227, Nguyễn Văn Cừ, P4, Q5', 'Việt Nam', 'Hồ Chí Minh', 909111111, 'admin'),
 (3, 'thienduc1', '123@gmail.com', '1234', 'Nguyễn Thiên Đức', '227, Nguyễn Văn Cừ, P4, Q5', 'Việt Nam', 'Hồ Chí Minh ', 909123456, 'Customer'),
