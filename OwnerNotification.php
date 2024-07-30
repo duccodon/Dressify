@@ -126,7 +126,7 @@
 </div>
 <div class="inner_right_pannel">
   <h1>Detail</h1>
-  <?php include 'feedback.php'; ?>
+  <?php include 'Feedback.php'; ?>
   
   
 </div>
