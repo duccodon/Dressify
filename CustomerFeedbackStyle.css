@@ -31,7 +31,6 @@
   .feedback-form {
   align-self: center;
   display: flex;
-  margin-top: 76px;
   width: 100%;
   max-width: 1082px;
   flex-direction: column;
@@ -50,6 +49,8 @@
     text-align: center;
     align-self: center;
     font: 45px Roboto, sans-serif;
+    font-weight: 600;
+    margin-top: 200px;
   }
   
   @media (max-width: 991px) {

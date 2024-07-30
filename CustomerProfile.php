@@ -51,6 +51,8 @@
         
         <label for="password" class="form-label">Password</label>
         <input type="password" id="password" class="form-input" />
+
+        <button type="submit" class="submit-button">Submit</button>
       </form>
     </main>
   </section>

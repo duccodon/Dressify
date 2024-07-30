@@ -81,8 +81,12 @@ body {
 } 
 
 .main-content {
-    margin-left: 250px;
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
     background-color: var(--theme-color);
+    width: calc(100% - 250px); /* Ensure it takes the remaining width */
+    margin-left: 250px; /* Align it right next to the sidebar */
+    
 }
 
 header {

@@ -77,6 +77,8 @@
   </div>
 </div>
     <div class ="submit-button-container">   
+      <a href = "CheckOut.php">
       <button type="submit" class ="submit-button">Check out</button>
+      </a>
     </div>
 </body>
