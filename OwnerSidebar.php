@@ -46,7 +46,7 @@
 
     <div class="main-content">
         <header>
-            <h2>
+            <h2 style ="all: initial; font-size: 1.5em; font-weight: bold; font-family: inherit;">
                 <label for="">
                     <span class="la la-bars"></span>
                 </label>
