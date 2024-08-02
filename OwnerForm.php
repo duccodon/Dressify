@@ -34,7 +34,7 @@
                   <textarea id="description" class="form-textarea"></textarea>
         
                   <div class="model-count">
-                    <label for="model-count" class="model-count-label">Number of models</label>
+                    <label for="model-count" class="model-count-label">Stock</label>
                     <input type="number" id="model-count" class="model-count-input" value="1" min="1" />
                   </div>
                 </div>
