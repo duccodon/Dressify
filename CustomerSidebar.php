@@ -6,6 +6,7 @@
 
     <link rel="stylesheet" href="AdminStyle.css">
     <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
+    <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css" >
 </head>
 <body>
 
@@ -17,12 +18,16 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="AdminProductlisting.php"><span class="la la-home"></span>
+                    <a href="CustomerProductlisting.php"><span class="la la-home"></span>
                     <span>Home</span></a>
                 </li>
                 <li>
                     <a href="CustomerProfile.php"><span class="la la-user"></span>
                     <span>Information</span></a>
+                </li>
+                <li>
+                    <a href="CustomerWishlist.php"><span class="la la-hand-holding-heart"></span>
+                    <span>Wishlist</span></a>
                 </li>
                 <li>
                     <a href="CustomerNotificationPage.php"><span class="la la-bell"></span>
