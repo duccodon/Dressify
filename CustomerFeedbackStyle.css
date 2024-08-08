@@ -1,4 +1,4 @@
-.feedback-container {
+  .feedback-container {
     background-color: #fbf3d5;
     display: flex;
     gap: 20px;
@@ -312,4 +312,3 @@
     white-space: nowrap;
     border: 0;
   }
-  
