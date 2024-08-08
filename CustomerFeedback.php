@@ -1,7 +1,21 @@
+<?php
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "dressify_db";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="CustomerFeedbackStyle.css">
@@ -11,15 +25,15 @@
 <?php include 'CustomerSidebar.php'; ?>
 <section class="feedback-container">
   <main class="main-content">
-    <form class="feedback-form" method="post" action="submit_feedback.php" enctype="multipart/form-data">
+    <form class="feedback-form" method="post" action="CustomerSubmitsFeedback.php" enctype="multipart/form-data">
       <h1 class="feedback-title">Customer's Feedback</h1>
       <label for="rating" class="rating-question">How would you rate our product?</label>
-      <input type="number" id="rating" name="rating" min="1" max="10" class="rating-input" placeholder="Rate from 1 to 10" aria-label="Rate from 1 to 10">
+      <input type="text" id="rating" name="rating" class="rating-input" placeholder="Enter here" aria-label="Enter product rating">
       <label for="package-number" class="package-number-label">Package Number</label>
       <input type="text" id="package-number" name="package-number" class="package-number-input" placeholder="Package Number" aria-label="Enter Package Number">
       <label for="package-details" class="package-details-label">Package details</label>
       <textarea id="package-details" name="package-details" class="package-details-input" placeholder="Enter here" aria-label="Enter package details"></textarea>
-      <label for="rating-scale" class="rating-scale-question">On the scale from 1 to 10, how do rate the product?</label>
+      <label for="rating-scale" class="rating-scale-question">On the scale from 1 to 10, how do you rate the product?</label>
       <input type="number" id="rating-scale" name="rating-scale" min="1" max="10" class="rating-scale-input" placeholder="Rate the product from 1 to 10" aria-label="Rate the product from 1 to 10">
       <label for="problems" class="problems-question">What problem(s) did you encounter while using the product?</label>
       <textarea id="problems" name="problems" class="problems-input" placeholder="Enter here" aria-label="Describe problems encountered"></textarea>
@@ -31,5 +45,38 @@
     </form>
   </main>
 </section>
+<script>
+  function handleSubmit(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Validate form fields (optional)
+    if (validateForm()) {
+      // Show the popup
+      openPopup();
+
+      // Submit the form via AJAX
+      let formData = new FormData(event.target);
+      fetch('submit_feedback.php', {
+        method: 'POST',
+        body: formData
+      }).then(response => {
+        if (response.ok) {
+          console.log('Form submitted successfully.');
+        } else {
+          console.error('Form submission failed.');
+        }
+      }).catch(error => {
+        console.error('Error submitting the form:', error);
+      });
+    } else {
+      console.log('Form validation failed.');
+    }
+  }
+
+  function validateForm() {
+    // Return true if the form is valid; otherwise, false
+    return true; // Simplified for this example
+  }
+</script>
 </body>
 </html>
