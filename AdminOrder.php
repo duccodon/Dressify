@@ -191,7 +191,7 @@
       </div>
     </div>
     <div class="inner_right_pannel">
-      <h1>Detail</h1>
+      <h1 style="width: 100%;">Detail</h1>
       <div class="message-detail">
       <div> 
         Order Number: AVN00

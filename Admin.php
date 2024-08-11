@@ -1,3 +1,17 @@
+<?php
+ 
+$dataPoints = array(
+	array("label"=> "Food + Drinks", "y"=> 590),
+	array("label"=> "Activities and Entertainments", "y"=> 261),
+	array("label"=> "Health and Fitness", "y"=> 158),
+	array("label"=> "Shopping & Misc", "y"=> 72),
+	array("label"=> "Transportation", "y"=> 191),
+	array("label"=> "Rent", "y"=> 573),
+	array("label"=> "Travel Insurance", "y"=> 126)
+);
+	
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +20,69 @@
 
     <link rel="stylesheet" href="AdminStyle.css">
     <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
+
+    <!-- chart -->
+    <script>
+        window.onload = function () {
+ 
+        var chart = new CanvasJS.Chart("chartContainer", {
+	    animationEnabled: true,
+	    exportEnabled: true,
+        backgroundColor: "#D6DAC8",
+	    title:{
+		    text: "User"
+	    },
+	    data: [{
+		    type: "pie",
+		    indexLabelFontSize: 16,
+		    indexLabel: "{label} - #percent%",
+		    yValueFormatString: "##0 $",
+		    dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+	    }]
+        });
+        chart.render();
+
+
+        var barchart = new CanvasJS.Chart("barchartContainer", {
+	    animationEnabled: true,
+	    exportEnabled: true,
+        backgroundColor: "#D6DAC8",
+	    title:{
+		    text: "Average Expense for categories"
+	    },
+	    data: [{
+		    type: "bar",
+            lineColor: "#817373",
+            markerColor: "#9CAFAA",
+		    indexLabelFontSize: 16,
+		    indexLabel: "{y}",
+		    yValueFormatString: "##0 $",
+		    dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+	    }]
+        });
+        barchart.render();
+
+
+        var linechart = new CanvasJS.Chart("linechartContainer", {
+	    animationEnabled: true,
+	    exportEnabled: true,
+        backgroundColor: "#D6DAC8",
+	    title:{
+		    text: "Average Expense for categories"
+	    },
+	    data: [{
+		    type: "line",
+            lineColor: "#817373",
+            markerColor: "#9CAFAA",
+		    indexLabelFontSize: 16,
+		    indexLabel: "{y}",
+		    yValueFormatString: "##0 $",
+		    dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+	    }]
+        });
+        linechart.render();
+        }
+    </script>
 </head>
 <body>
 
@@ -134,196 +211,20 @@
                 </div>
             </div>
 
-            <div class="recent-grid">
-                <div class="orders">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>Recent Orders</h3>
-                            <a href="AdminOrder.php">
-                                <button>See all <span class="la la-arrow-right">                              
-                                </span></button>
-                            </a>
-                        </div>
-
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table width="100%"> 
-                                    <thead>
-                                        <tr>
-                                            <td>Order ID</td>
-                                            <td>Order Customer</td>
-                                            <td>Order Owner</td>
-                                            <td>Status</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>UI/UX design</td>
-                                            <td>UI Team</td>
-                                            <td>
-                                                <span class="status finish"></span>
-                                                Finish
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>UI/UX design</td>
-                                            <td>UI Team</td>
-                                            <td>
-                                                <span class="status deli-cus"></span>
-                                                Delivering to customer
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>UI/UX design</td>
-                                            <td>UI Team</td>
-                                            <td>
-                                                <span class="status used"></span>
-                                                In used
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>UI/UX design</td>
-                                            <td>UI Team</td>
-                                            <td>
-                                                <span class="status deli-owner"></span>
-                                                Delivering to owner
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>UI/UX design</td>
-                                            <td>UI Team</td>
-                                            <td>
-                                                <span class="status packaging"></span>
-                                                Packaging
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="customers">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>New customers</h3>
-                            <a href="AdminCustomerinfo.php">
-                                <button>See all <span class="la la-arrow-right">                              
-                                </span></button>
-                            </a>
-                        </div>
-
-                        <div class="card-body">
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="" width="40px" height="40px" alt="">
-                                    <div>
-                                        <h4>Cao Nguyen Huy Hoang</h4>
-                                        <small>CEO Friends</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="la la-user-circle"></span>
-                                    <span class="la la-phone"></span>
-                                    <span class="la la-at"></span>
-                                </div>
-                            </div>
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="" width="40px" height="40px" alt="">
-                                    <div>
-                                        <h4>Cao Nguyen Huy Hoang</h4>
-                                        <small>CEO Friends</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="la la-user-circle"></span>
-                                    <span class="la la-phone"></span>
-                                    <span class="la la-at"></span>
-                                </div>
-                            </div>
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="" width="40px" height="40px" alt="">
-                                    <div>
-                                        <h4>Cao Nguyen Huy Hoang</h4>
-                                        <small>CEO Friends</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="la la-user-circle"></span>
-                                    <span class="la la-phone"></span>
-                                    <span class="la la-at"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="owners">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>New Rental Owners</h3>
-                            <a href="AdminOwnerinfo.php">
-                                <button>See all <span class="la la-arrow-right">                              
-                                </span></button>
-                            </a>
-                        </div>
-                            
-                        <div class="card-body">
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="" width="40px" height="40px" alt="">
-                                    <div>
-                                        <h4>Cao Nguyen Huy Hoang</h4>
-                                        <small>CEO Friends</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="la la-user-tie"></span>
-                                    <span class="la la-phone"></span>
-                                    <span class="la la-at"></span>
-                                </div>
-                            </div>
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="" width="40px" height="40px" alt="">
-                                    <div>
-                                        <h4>Cao Nguyen Huy Hoang</h4>
-                                        <small>CEO Friends</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="la la-user-tie"></span>
-                                    <span class="la la-phone"></span>
-                                    <span class="la la-at"></span>
-                                </div>
-                            </div>
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="" width="40px" height="40px" alt="">
-                                    <div>
-                                        <h4>Cao Nguyen Huy Hoang</h4>
-                                        <small>CEO Friends</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="la la-user-tie"></span>
-                                    <span class="la la-phone"></span>
-                                    <span class="la la-at"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="chart-grid">
+                <div style="display: flex; padding-top: 50px;">
+                <div id="chartContainer" style="height: 370px; width: 40%; padding-left: 25px;"></div>
+                <div id="barchartContainer" style="height: 370px; width: 50%; padding-left: 105px;"></div>
+                </div>  
+                <div id="linechartContainer" style="height: 370px; width: 50%; padding: 50px 0 0 25px;"></div>
             </div>
         </main>
     </div>
+
+
+    <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
+    <!---->
+    
+    <script src="Admin.js"></script>
 </body>
 </html>
