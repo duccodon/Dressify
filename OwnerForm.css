@@ -38,7 +38,7 @@
     width: 77%; 
     margin-left: 20px; 
 }
-  
+    
 .upload-column {
         display: flex;
         flex-direction: column;
@@ -46,7 +46,6 @@
         width: 100%;
         margin-left: 20px;
         position: relative;
-        flex-grow: 1;
         align-items: center;
         font-size: 30px;
         color: #000;
@@ -78,29 +77,29 @@
       margin-top: 80px;
       margin-right: 60px;
       width: 77%;
-      max-width: auto;
+      max-width: 1239px;
       display: flex;
       gap: 20px;
 }
     
 .features {
-      width: 26%;
-      display: flex;
-      flex-direction: column;
-      font-size: 30px;
-      color: #000;
-      font-weight: 400;
-      line-height: 150%;
+    width: 26%;
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+    color: #000;
+    font-weight: 400;
+    line-height: 150%;
 }
     
 .feature-title {
-      font: 50px/65px Jaldi, sans-serif;
+    font: 50px/65px Jaldi, sans-serif;
 }
     
-    .feature-item {
-      font-family: Jaldi, sans-serif;
-      margin-top: 41px;
-    }
+.feature-item {
+    font-family: Jaldi, sans-serif;
+    margin-top: 41px;
+}
     
     .product-form {
       width: 77%;
@@ -143,21 +142,29 @@
       margin: 20px 0 0 17px;
     }
     
+    .error {
+      font-family: Inter, sans-serif;
+      color: red;
+      justify-content: center; 
+    }
+
     .form-input {
       border-radius: 20px;
       border: 1px solid #000;
       background-color: rgba(240, 238, 237, 0);
       margin-top: 16px;
+      padding: 13px 15px;
       height: 43px;
+      font: 18px Plus Jakarta Sans, sans-serif;
     }
     
     .form-textarea {
       border-radius: 20px;
       border: 1px solid #000;
       background-color: rgba(240, 238, 237, 0);
-      margin-top: 29px;
+      margin-top: 10px;
       padding: 13px 15px;
-      font: 23px Plus Jakarta Sans, sans-serif;
+      font: 18px Plus Jakarta Sans, sans-serif;
       resize: vertical;
     }
     
@@ -175,12 +182,12 @@
     }
     
     .model-count-input {
-      font-family: Plus Jakarta Sans, sans-serif;
+      font: 18px Plus Jakarta Sans, sans-serif;
       border-radius: 20px;
       border: 1px solid #000;
       background-color: rgba(240, 238, 237, 0);
       text-align: center;
-      padding: 14px 26px;
+      padding: 10px 1px;
     }
     
     .form-right {
@@ -203,27 +210,44 @@
       margin-top: 12px;
       flex-direction: column;
       text-align: center;
-      padding: 19px 23px 80px;
+      padding: 19px 23px 40px;
     }
     
     .image-upload-button {
       font-family: Inter, sans-serif;
       border-radius: 10px;
       background-color: #f3f1f1;
-      margin-bottom: 96px;
+      margin-bottom: 30px;
       width: 90px;
       height: 90px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
+
+  .image-preview {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+  }
+  
+  .image-preview img {
+      width: 90px;
+      height: 90px;
+      border-radius: 10px;
+      margin-left: 5.5px;
+      margin-right: 5.5px;
+      border: 1px solid #000;
+  }
     
     .submit-button { 
         justify-content: center; 
         align-items: center; 
         background-color: #b4ffad;  
-        margin-top: 74px; 
-        margin-left: 48px;
+        margin-top: 60px; 
+        margin-right: 20px;
+        margin-left: 23px;
+        margin-bottom: 15px;
         width: 300px; 
         max-width: 100%; 
         padding: 22px 60px; 
@@ -236,8 +260,10 @@
       justify-content: center; 
       align-items: center; 
       background-color: #85db7f; 
-      margin-top: 74px; 
-      margin-left: 48px;
+      margin-top: 60px; 
+      margin-right: 20px;
+      margin-left: 23px;
+      margin-bottom: 15px;
       width: 300px; 
       max-width: 100%; 
       padding: 22px 60px; 
@@ -250,7 +276,7 @@
   }
     
     @media (max-width: 991px) {
-     
+
       .main-content1 {
         max-width: 100%;
         margin-top: 40px;
@@ -258,7 +284,7 @@
       }
     
       .features {
-        width: 100%;
+        max-width: 100%;
         margin-top: 40px;
       }
     
@@ -272,7 +298,7 @@
       }
     
       .product-form {
-        width: 100%;
+        max-width: 100%;
         margin-top: 40px;
       }
     
