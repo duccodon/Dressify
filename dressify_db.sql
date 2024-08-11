@@ -182,6 +182,23 @@ CREATE TABLE `products` (
 
 -- --------------------------------------------------------
 
+-- Cấu trúc bảng cho bảng `form`
+--
+
+CREATE TABLE `form` (
+  `id` int(255) NOT NULL,
+  `item_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `item_price` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `item_category` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `item_description` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `item_stock` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `image1` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `image2` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `image3` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
 --
 -- Cấu trúc bảng cho bảng `wishlist`
 --
@@ -256,6 +273,13 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`product_id`);
 
 --
+-- Chỉ mục cho bảng `form`
+--
+ALTER TABLE `form`
+  ADD PRIMARY KEY (`id`);
+
+
+--
 -- Chỉ mục cho bảng `wishlist`
 --
 ALTER TABLE `wishlist`
@@ -324,6 +348,12 @@ ALTER TABLE `order_tracking`
 --
 ALTER TABLE `products`
   MODIFY `product_id` int(255) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT cho bảng `form`
+--
+ALTER TABLE `form`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `wishlist`
