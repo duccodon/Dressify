@@ -1,20 +1,7 @@
 <?php
-$servername = "localhost";
-$dbname = "dressify_db";
-$username = "username";
-$password = "password";
+  include 'ConnectDB.php';
 
-
-//connect database
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-//check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-
-$uploadsDir = 'uploads/';
+$uploadsDir = 'img/product/';
 if (!file_exists($uploadsDir)) {
     mkdir($uploadsDir, 0775, true);
 }
@@ -54,7 +41,7 @@ $image1 = isset($imagePaths[0]) ? $imagePaths[0] : '';
 $image2 = isset($imagePaths[1]) ? $imagePaths[1] : '';
 $image3 = isset($imagePaths[2]) ? $imagePaths[2] : '';
 
-$sql = "INSERT INTO form (item_name, item_price, item_category, item_description, item_stock, image1, image2, image3)
+$sql = "INSERT INTO products (product_name, `description`, price, category, image3, image1, image2, stock)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 $stmt = $conn->prepare($sql);
 
