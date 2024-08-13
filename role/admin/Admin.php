@@ -118,7 +118,7 @@ $dataPoints = array(
                     <span>Feedback</span></a>
                 </li>
                 <li>
-                    <a href="join.php"><span class="la la-sign-out"></span>
+                    <a href="../../join.php"><span class="la la-sign-out"></span>
                     <span>Log out</span></a>
                 </li>
             </ul>
@@ -213,8 +213,8 @@ $dataPoints = array(
 
             <div class="chart-grid">
                 <div style="display: flex; padding-top: 50px;">
-                <div id="chartContainer" style="height: 370px; width: 40%; padding-left: 25px;"></div>
-                <div id="barchartContainer" style="height: 370px; width: 50%; padding-left: 105px;"></div>
+                    <div id="chartContainer" style="height: 370px; width: 40%; padding-left: 25px;"></div>
+                    <div id="barchartContainer" style="height: 370px; width: 50%; padding-left: 105px;"></div>
                 </div>  
                 <div id="linechartContainer" style="height: 370px; width: 50%; padding: 50px 0 0 25px;"></div>
             </div>

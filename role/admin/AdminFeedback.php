@@ -41,7 +41,7 @@
                     <span>Feedback</span></a>
                 </li>
                 <li>
-                    <a href="join.php"><span class="la la-sign-out"></span>
+                    <a href="../../join.php"><span class="la la-sign-out"></span>
                     <span>Log out</span></a>
                 </li>
             </ul>

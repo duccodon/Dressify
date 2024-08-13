@@ -42,7 +42,7 @@
                     <span>Feedback</span></a>
                 </li>
                 <li>
-                    <a href="Login.php"><span class="la la-sign-out"></span>
+                    <a href="../../join.php"><span class="la la-sign-out"></span>
                     <span>Log out</span></a>
                 </li>
             </ul>
@@ -77,7 +77,7 @@
                 <div class="card-list-single">
                     <div>
                         <a class="wish"><i class="fa-solid fa-heart"></i></a>
-                        <img src = "img/download (1).jpg">
+                        <img src = "../../img/download (1).jpg">
                         <div class="list-content">Ao cua hoang</div>
                         <div class="list-content">Price: 100</div>
                         <div>
@@ -90,7 +90,7 @@
                 <div class="card-list-single">
                     <div>
                         <a class="wish"><i class="fa-solid fa-heart"></i></a>
-                        <img src="img/1.jpg">
+                        <img src="../../img/download (1).jpg">
                         <div class="list-content">Ao cua hoang</div>
                         <div class="list-content">Price: 100</div>
                         <div>
@@ -103,7 +103,7 @@
                 <div class="card-list-single">
                     <div>
                         <a class="wish"><i class="fa-solid fa-heart"></i></a>
-                        <img src = "img/download (1).jpg">
+                        <img src = "../../img/download (1).jpg">
                         <div class="list-content">Ao cua hoang</div>
                         <div class="list-content">Price: 100</div>
                         <div>
@@ -115,7 +115,7 @@
 
                 <div class="card-list-single">
                     <div>
-                        <img src = "img/download (1).jpg">
+                        <img src = "../../img/download (1).jpg">
                         <div class="list-content">Ao cua hoang</div>
                         <div class="list-content">Price: 100</div>
                         <div>
@@ -127,7 +127,7 @@
 
                 <div class="card-list-single">
                     <div>
-                        <img src = "img/download (1).jpg">
+                        <img src = "../../img/download (1).jpg">
                         <div class="list-content">Ao cua hoang</div>
                         <div class="list-content">Price: 100</div>
                         <div>
@@ -139,7 +139,7 @@
 
                 <div class="card-list-single">
                     <div>
-                        <img src = "img/download (1).jpg">
+                        <img src = "../../img/download (1).jpg">
                         <div class="list-content">Ao cua hoang</div>
                         <div class="list-content">Price: 100</div>
                         <div>

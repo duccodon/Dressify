@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Friends Admin</title>
 
-    <link rel="stylesheet" href="AdminStyle.css">
+    <link rel="stylesheet" href="../admin/AdminStyle.css">
     <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
     <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css" >
 </head>
@@ -46,7 +46,7 @@
                     <span>Feedback</span></a>
                 </li>
                 <li>
-                    <a href="join.php"><span class="la la-sign-out"></span>
+                    <a href="../../join.php"><span class="la la-sign-out"></span>
                     <span>Log out</span></a>
                 </li>
             </ul>

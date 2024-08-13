@@ -12,7 +12,7 @@
     <main class="main-content">
       <form class="profile-form">
         <div class="avatar-container">
-          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/4be34a31d6ae2a4a6578c203ed39a03a77bad7c9c009ff148bb8b463a3e8182f?apiKey=2cbb572e4cb94131a46c507d9ddbcac0&" class="avatar-background" alt="Profile background" />
+          <img src="../../img/1.jpg" class="avatar-background" alt="Profile background" style="border-radius: 50%;"/>
           <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/f0ff525f8f701695d4c0f9c4a79c121f4bda49dee8aec8044b7c4ed7cc911cf7?apiKey=2cbb572e4cb94131a46c507d9ddbcac0&" class="avatar-icon" alt="User avatar" />
         </div>
         <h2 class="username">Sonali.</h2>

@@ -115,71 +115,8 @@ $conn->close();
     <title>Dressify Profile</title>
 </head>
 <body>
-    <div class="container">
-        <div class="sidebar">
-            <div class="sidebar-brand">
-                <h2><span class=""></span>Dressify</h2>
-            </div>
-    
-            <div class="sidebar-menu">
-                <ul>
-                    <li>
-                        <a href="Admin.php"><span class="la la-chalkboard"></span>
-                        <span>Dashboard</span></a>
-                    </li>
-                    <li>
-                        <a href="AdminCustomerinfo.php"><span class="la la-user-circle"></span>
-                        <span>Customers</span></a>
-                    </li>
-                    <li>
-                        <a href="AdminOwnerinfo.php" class="active"><span class="la la-user-tie"></span>
-                        <span>Rental owner</span></a>
-                    </li>
-                    <li>
-                        <a href="AdminOrder.php"><span class="la la-shipping-fast"></span>
-                        <span>Orders</span></a>
-                    </li>
-                    <li>
-                        <a href="AdminProductlisting.php"><span class="la la-warehouse"></span>
-                        <span>Inventory</span></a>
-                    </li>
-                    <li>
-                        <a href="AdminFeedback.php"><span class="la la-bullhorn"></span>
-                        <span>Feedback</span></a>
-                    </li>
-                    <li>
-                        <a href="join.php"><span class="la la-sign-out"></span>
-                        <span>Log out</span></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    
-        <div class="main-content">
-            <header>
-                <h2>
-                    <label for="">
-                        <span class="la la-bars"></span>
-                    </label>
-                    <div class="rent">Rental Owner</div>
-                </h2>
-    
-                <div class="search-wrapper">
-                    <span class="la la-search"></span>
-                    <input type="search" placeholder="Search"/>
-                </div>
-    
-                <div class="user-wrapper">
-                    <div class="user-info">
-                        <h4>Friends</h4>
-                        <small>Admin</small>
-                    </div>
-                    <img src="<?php echo $avatar_path; ?>" alt="Avatar">
-                </div>
-            </header>
-    
-        </nav>
-        <main class="content">
+        <?php include 'Ownersidebar.php'?>
+        <main class="content" style="margin-left: 250px;">
             <section class="profile">
                 <form enctype="multipart/form-data" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                     <div class="black-header"></div>
