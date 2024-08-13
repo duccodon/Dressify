@@ -41,7 +41,7 @@
                         <div class="list-content"><?php echo $fetch_products['price'] ?></div>
                         <div>
                             <a href="CustomerProductlisting.php?view=<?php echo $fetch_products['product_id']; ?>" class="edit">View <i class="fa-solid fa-eye"></i></a>
-                            <a href="CustomerProductlisting.php?delete=<?php echo $fetch_products['product_id']; ?>" class="delete" onclick="return confirm('Are you sure to delete this product');">Delete <i class="fa-solid fa-trash"></i></a>
+                            <a href="CustomerProductlisting.php?add-cart=<?php echo $fetch_products['product_id']; ?>" class="delete" onclick="return confirm('Added to cart!!');">Cart <i class="fa-solid fa-shopping-cart"></i></a>
                         </div>
                     </div>
                 </div>
