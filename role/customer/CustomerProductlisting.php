@@ -16,7 +16,7 @@
             <div class="card-list-single">
                 <div>
                     <a class="wish" onclick = "return confirm('Added to wishlist');"><i class="fa-solid fa-heart"></i></a>
-                    <img src = "img/download (1).jpg">
+                    <img src = "../../img/download (1).jpg">
                     <div class="list-content">Ao cua hoang</div>
                     <div class="list-content">Price: 1000</div>
                     <div>
