@@ -41,7 +41,7 @@ $image1 = isset($imagePaths[0]) ? $imagePaths[0] : '';
 $image2 = isset($imagePaths[1]) ? $imagePaths[1] : '';
 $image3 = isset($imagePaths[2]) ? $imagePaths[2] : '';
 
-$sql = "INSERT INTO products (product_name, `description`, price, category, image3, image1, image2, stock)
+$sql = "INSERT INTO products (product_name, `description`, price, category, stock, image1, image2, image3)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 $stmt = $conn->prepare($sql);
 
@@ -51,7 +51,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
     die(mysqli_error($conn));
 }
 
-mysqli_stmt_bind_param($stmt, "ssssssss", $itemname, $price, $category, $description, $stock, $image1, $image2, $image3);
+mysqli_stmt_bind_param($stmt, "ssssssss", $itemname, $description, $price, $category, $stock, $image1, $image2, $image3);
 
 if (!mysqli_stmt_execute($stmt)) {
     echo "Error: " . $sql . "<br>" . $conn->error;
