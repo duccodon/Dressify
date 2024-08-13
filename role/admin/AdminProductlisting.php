@@ -1,5 +1,8 @@
 <?php
     include '../../ConnectDB.php';
+    session_start();
+
+    require 'check.php';
 
     if (isset($_GET['agree'])){
         $view_id = $_GET['agree'];

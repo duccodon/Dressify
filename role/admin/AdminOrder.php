@@ -1,3 +1,11 @@
+<?php
+    include '../../ConnectDB.php';
+    session_start();
+
+    require 'check.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

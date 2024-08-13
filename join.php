@@ -1,6 +1,10 @@
 <?php
     include 'ConnectDB.php';
     session_start();
+    session_unset();
+    session_destroy();
+
+    session_start();
 
     if(isset($_POST['submit-create'])){
         $filter_username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
@@ -73,7 +77,7 @@
             }elseif ($row['user_type'] == 'Customer'){
                 $_SESSION['cus_name'] = $row['username'];
                 $_SESSION['cus_email'] = $row['email'];
-                $_SESSION['cus_id'] = $row['id'];
+                $_SESSION['cus_id'] = $row['cus_id'];
                 header('location:role/customer/CustomerProfile.php?id='.$row['cus_id']);
             }
             else if ($row['user_type'] == 'Rental Owner'){

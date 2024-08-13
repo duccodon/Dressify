@@ -1,6 +1,9 @@
 <?php
     include '../../ConnectDB.php';
+    session_start();
 
+    require 'check.php';
+    
     $dataPoints = array(
 	    array("label"=> "Food + Drinks", "y"=> 590),
 	    array("label"=> "Activities and Entertainments", "y"=> 261),
