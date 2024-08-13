@@ -1,5 +1,6 @@
 <?php
   include 'ConnectDB.php';
+  session_start();
 ?>
 
 <!DOCTYPE html>
