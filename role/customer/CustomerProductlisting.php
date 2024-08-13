@@ -1,3 +1,17 @@
+<?php
+    include '../../ConnectDB.php';
+    session_start();
+
+    if (isset($_GET['add-wishlist'])){
+        $product_id = $_GET['add-wishlist'];
+        $product_query = mysqli_query($conn, "SELECT * FROM products where product_id='$product_id'") or die('Query failed');
+        if (mysqli_num_rows($product_query) > 0){ 
+           $wish_product = mysqli_query($conn, "INSERT INTO wishlist (`product_id`, `cus_id`) VALUES('$product_id', '$_SESSION[cus_id]')") or die('Query failed');
+        }
+        header('location:CustomerProductlisting.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,31 +27,29 @@
 <div class="main-content">
     <main>
         <div class="cards-list">
-            <div class="card-list-single">
-                <div>
-                    <a class="wish" onclick = "return confirm('Added to wishlist');"><i class="fa-solid fa-heart"></i></a>
-                    <img src = "../../img/download (1).jpg">
-                    <div class="list-content">Ao cua hoang</div>
-                    <div class="list-content">Price: 1000</div>
+            <?php
+                $select_products = mysqli_query($conn, "SELECT * FROM products") or die('Query failed');
+                if (mysqli_num_rows($select_products) > 0){
+                    while($fetch_products = mysqli_fetch_assoc($select_products)){
+                        if ($fetch_products['approve'] == 'True'){
+            ?>
+                <div class="card-list-single">
                     <div>
-                        <a href="CustomerProductlising.php?view=" class="view">View <i class="fa-solid fa-eye"></i></a>
-                        <a href="CustomerProductlisting.php?Add-to-cart=" class="atc" onclick="return confirm('Added to cart');">Cart <i class="fa-solid fa-shopping-cart"></i></a>
+                        <a href="CustomerProductlisting.php?add-wishlist=<?php echo $fetch_products['product_id']; ?>" class="wish" onclick = "return confirm('Added to wishlist');"><i class="fa-solid fa-heart"></i></a>
+                        <img src = "../../img/product/<?php echo $fetch_products['image1'];?>">
+                        <div class="list-content"><?php echo $fetch_products['product_name'] ?></div>
+                        <div class="list-content"><?php echo $fetch_products['price'] ?></div>
+                        <div>
+                            <a href="CustomerProductlisting.php?view=<?php echo $fetch_products['product_id']; ?>" class="edit">View <i class="fa-solid fa-eye"></i></a>
+                            <a href="CustomerProductlisting.php?delete=<?php echo $fetch_products['product_id']; ?>" class="delete" onclick="return confirm('Are you sure to delete this product');">Delete <i class="fa-solid fa-trash"></i></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="card-list-single">
-                <div>
-                    <a class="wish" onclick = "return confirm('Added to wishlist');"><i class="fa-solid fa-heart"></i></a>
-                    <img src="img/1.jpg">
-                    <div class="list-content">Ao da den</div>
-                    <div class="list-content">Price: 100</div>
-                    <div>
-                        <a href="CustomerProductlisting.php?view=" class="edit">View <i class="fa-solid fa-eye"></i></a>
-                        <a href="CustomerProductlisting.php?Add-to-cart=" class="atc" onclick="return confirm('Added to cart!!');">Cart <i class="fa-solid fa-shopping-cart"></i></a>
-                    </div>
-                </div>
-            </div>
+            <?php
+                        }
+                    }
+                }
+            ?>
         </div>
     </main>
 </div>
