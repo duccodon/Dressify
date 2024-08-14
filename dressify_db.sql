@@ -283,7 +283,25 @@ ALTER TABLE `form`
 -- Chỉ mục cho bảng `wishlist`
 --
 ALTER TABLE `wishlist`
-  ADD PRIMARY KEY (`product_id`);
+  ADD PRIMARY KEY (product_id, cus_id),
+
+--Them fk
+ALTER TABLE orders
+ADD CONSTRAINT fk_orders_customer FOREIGN KEY (cus_id) REFERENCES customers(cus_id),
+ADD CONSTRAINT fk_orders_product FOREIGN KEY (product_id) REFERENCES products(product_id),
+ADD CONSTRAINT fk_orders_owner FOREIGN KEY (owner_id) REFERENCES customers(cus_id);
+
+ALTER TABLE cart
+ADD CONSTRAINT fk_cart_customer FOREIGN KEY (cus_id) REFERENCES customers(cus_id),
+ADD CONSTRAINT fk_cart_product FOREIGN KEY (product_id) REFERENCES products(product_id);
+
+ALTER TABLE inventory
+ADD CONSTRAINT fk_inventory_product FOREIGN KEY (product_id) REFERENCES products(product_id),
+ADD CONSTRAINT fk_inventory_owner FOREIGN KEY (owner_id) REFERENCES customers(cus_id);
+
+ALTER TABLE wishlist
+ADD CONSTRAINT fk_wishlist_product FOREIGN KEY (product_id) REFERENCES products(product_id),
+ADD CONSTRAINT fk_wishlist_customer FOREIGN KEY (cus_id) REFERENCES customers(cus_id);
 
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
