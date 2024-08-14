@@ -2,6 +2,14 @@
     include '../../ConnectDB.php';
     session_start();
 
+    if (isset($_GET['delete-wishlist'])){
+        $product_id = $_GET['delete-wishlist'];
+        $product_query = mysqli_query($conn, "SELECT * FROM wishlist where product_id='$product_id'") or die('Query failed');
+        if (mysqli_num_rows($product_query) > 0){ 
+           $wish_product = mysqli_query($conn, "DELETE FROM wishlist WHERE product_id = '$product_id' AND cus_id = '$_SESSION[cus_id]'") or die('Query failed');
+        }
+        header('location:CustomerWishlist.php');
+    }
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +38,7 @@
             ?>
                 <div class="card-list-single">
                     <div>
-                        <a href="CustomerProductlisting.php?add-wishlist=<?php echo $fetch_products['product_id']; ?>" class="wish" onclick = "return confirm('Added to wishlist');"><i class="fa-solid fa-heart"></i></a>
+                        <a href="CustomerProductlisting.php?delete-wishlist=<?php echo $fetch_products['product_id']; ?>" class="wish" onclick = "return confirm('Added to wishlist');"><i class="fa-solid fa-heart-circle-xmark"></i></a>
                         <img src = "../../img/product/<?php echo $fetch_products['image1'];?>">
                         <div class="list-content"><?php echo $fetch_products['product_name'] ?></div>
                         <div class="list-content"><?php echo $fetch_products['price'] ?></div>
