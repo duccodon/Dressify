@@ -1,10 +1,50 @@
+<?php
+session_start();
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "dressify_db";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+
+//if (!isset($_SESSION['cus_id'])) {
+//    header("Location: login.php");
+//    exit();
+//}
+
+$_SESSION['cus_id'] = 3; // For testing purposes
+$cus_id = $_SESSION['cus_id'];
+
+// Fetch current user data
+$sql = "SELECT * FROM customers WHERE cus_id = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $cus_id);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc(); 
+    $avatar = !empty($row['avatar']) ? $row['avatar'] : 'img/default_avatar.jpg';
+} else {
+    echo "No user found";
+}
+
+$stmt->close();
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Friends Admin</title>
 
-    <link rel="stylesheet" href="role/admin/AdminStyle.css">
+    <link rel="stylesheet" href="AdminStyle.css">
     <link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" >
 </head>
 <body>
@@ -59,7 +99,7 @@
             </div>
 
             <div class="user-wrapper">
-                <img src="img/1.jpg">
+                <img src="<?php echo htmlspecialchars($avatar); ?>">
                 <div>
                     <h4>Friends</h4>
                     <small>Admin</small>
