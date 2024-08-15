@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 01, 2024 lúc 08:08 PM
+-- Thời gian đã tạo: Th8 15, 2024 lúc 11:32 AM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -50,7 +50,7 @@ CREATE TABLE `customers` (
   `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `country` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `city` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `contact_number` int(255) NOT NULL,
+  `contact_number` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `avatar` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `user_type` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -60,12 +60,12 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`cus_id`, `username`, `email`, `password`, `fullname`, `address`, `country`, `city`, `contact_number`, `avatar`, `user_type`) VALUES
-(1, 'Friends', 'friends@gmail.com', '$2y$10$G..7g77YHRui7X3.V7V9ue3aXQ18dJlNPlgeErrio0akpoltpiB2a', 'FriendsIntroSE', '227, Nguyễn Văn Cừ, P4, Q5', 'Việt Nam', 'Hồ Chí Minh', 909111111, '', 'admin'),
-(3, 'thienduc1', '123@gmail.com', '1234', 'Nguyễn Thiên Đức', '227, Nguyễn Văn Cừ, P4, Q5', 'Việt Nam', 'Hồ Chí Minh ', 909123456, '', 'Customer'),
-(4, 'owner1', 'abc@gmail.com', '$2y$10$G..7g77YHRui7X3.V7V9ue3aXQ18dJlNPlgeErrio0akpoltpiB2a', 'qwerqewr', '227, Nguyễn Văn Cừ, P4, Q5', 'Việt Nam', 'Ha Noi', 909123123, '', 'Rental Owner'),
-(5, 'test', 'test@gmail.com', '$2y$10$A6DH2a0B2vgutZTfeKRgfOklqIQuK7WuvKQeW2T4n8XpAM5UXXeoK', 'tester', '227, Nguyễn Văn Cừ, P4, Q5', 'Việt Nam', 'Hồ Chí Minh ', 909123456, '', 'Customer'),
-(6, 'test1', 'test1@gmail.com', '$2y$10$G..7g77YHRui7X3.V7V9ue3aXQ18dJlNPlgeErrio0akpoltpiB2a', 'tester1', '227, Nguyễn Văn Cừ, P4, Q5', 'Việt Nam', 'Hồ Chí Minh ', 1231233, '', 'Customer'),
-(7, 'Minh Quan', 'quan@gmail.com', '$2y$10$jf09FxzxeW2jmW6LQuk84e2KK9txsyMiYrGk8b2KD7Z4kus5HdtQ6', 'HMQ', '227, Nguyễn Văn Cừ, P4, Q5', 'Việt Nam', 'Hồ Chí Minh ', 1231233, '', 'Customer');
+(1, 'Friends', 'friends@gmail.com', '$2y$10$G..7g77YHRui7X3.V7V9ue3aXQ18dJlNPlgeErrio0akpoltpiB2a', 'admin', '227, Nguyễn Văn Cừ, P4, Q5', 'Việt Nam', 'Hồ Chí Minh', '909111111', '', 'admin'),
+(3, 'thienduc1', '123@gmail.com', '1234', 'thienduc', '227, Nguyễn Văn Cừ, P4, Q5', 'Việt Nam', 'Hồ Chí Minh ', '909123456', '', 'Customer'),
+(4, 'owner1', 'abc@gmail.com', '$2y$10$G..7g77YHRui7X3.V7V9ue3aXQ18dJlNPlgeErrio0akpoltpiB2a', 'owner1', '227, Nguyễn Văn Cừ, P4, Q5', 'Việt Nam', 'Ha Noi', '909123123', '', 'Rental Owner'),
+(5, 'hoang tester', 'test@gmail.com', '$2y$10$A6DH2a0B2vgutZTfeKRgfOklqIQuK7WuvKQeW2T4n8XpAM5UXXeoK', 'tester', '227, Nguyễn Văn Cừ, P4, Q5', 'Việt Nam', 'Hồ Chí Minh ', '0909123456', '', 'Customer'),
+(6, 'test1', 'test1@gmail.com', '$2y$10$G..7g77YHRui7X3.V7V9ue3aXQ18dJlNPlgeErrio0akpoltpiB2a', 'test1', '227, Nguyễn Văn Cừ, P4, Q5', 'Việt Nam', 'Hồ Chí Minh ', '1231233', '', 'Customer'),
+(7, 'Minh Quan', 'quan@gmail.com', '$2y$10$jf09FxzxeW2jmW6LQuk84e2KK9txsyMiYrGk8b2KD7Z4kus5HdtQ6', 'quan', '227, Nguyễn Văn Cừ, P4, Q5', 'Việt Nam', 'Hồ Chí Minh ', '1231233', '', 'Customer');
 
 -- --------------------------------------------------------
 
@@ -106,17 +106,6 @@ CREATE TABLE `feedback` (
   `image2` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `image3` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `problem_detail` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `inventory`
---
-
-CREATE TABLE `inventory` (
-  `product_id` int(255) NOT NULL,
-  `owner_id` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -173,29 +162,26 @@ CREATE TABLE `order_tracking` (
 
 CREATE TABLE `products` (
   `product_id` int(255) NOT NULL,
+  `owner_id` int(255) NOT NULL,
   `product_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `description` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `price` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `category` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `image` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
--- Cấu trúc bảng cho bảng `form`
---
-
-CREATE TABLE `form` (
-  `id` int(255) NOT NULL,
-  `item_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `item_price` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `item_category` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `item_description` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `item_stock` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `image3` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `image1` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `image2` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `image3` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+  `stock` int(255) NOT NULL,
+  `approve` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'false'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `products`
+--
+
+INSERT INTO `products` (`product_id`, `owner_id`, `product_name`, `description`, `price`, `category`, `image3`, `image1`, `image2`, `stock`, `approve`) VALUES
+(39, 0, 'ao cua hoang', 'hoang rat thich', '2000000', 'ao', '', 'ao.jpg', '', 10, 'True'),
+(42, 0, 'quan cua hoang ', 'hoang rat thich', '111111', 'quan', '', 'short.jpg', '', 5, 'True'),
+(43, 0, 'vay', 'hoang ko thich', '1000000', 'vay', '', 'vay.jpg', '', 1, 'false');
 
 -- --------------------------------------------------------
 
@@ -207,6 +193,15 @@ CREATE TABLE `wishlist` (
   `product_id` int(255) NOT NULL,
   `cus_id` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `wishlist`
+--
+
+INSERT INTO `wishlist` (`product_id`, `cus_id`) VALUES
+(0, 5),
+(39, 5),
+(42, 5);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -243,12 +238,6 @@ ALTER TABLE `feedback`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `inventory`
---
-ALTER TABLE `inventory`
-  ADD PRIMARY KEY (`product_id`);
-
---
 -- Chỉ mục cho bảng `message`
 --
 ALTER TABLE `message`
@@ -273,35 +262,10 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`product_id`);
 
 --
--- Chỉ mục cho bảng `form`
---
-ALTER TABLE `form`
-  ADD PRIMARY KEY (`id`);
-
-
---
 -- Chỉ mục cho bảng `wishlist`
 --
 ALTER TABLE `wishlist`
-  ADD PRIMARY KEY (product_id, cus_id),
-
---Them fk
-ALTER TABLE orders
-ADD CONSTRAINT fk_orders_customer FOREIGN KEY (cus_id) REFERENCES customers(cus_id),
-ADD CONSTRAINT fk_orders_product FOREIGN KEY (product_id) REFERENCES products(product_id),
-ADD CONSTRAINT fk_orders_owner FOREIGN KEY (owner_id) REFERENCES customers(cus_id);
-
-ALTER TABLE cart
-ADD CONSTRAINT fk_cart_customer FOREIGN KEY (cus_id) REFERENCES customers(cus_id),
-ADD CONSTRAINT fk_cart_product FOREIGN KEY (product_id) REFERENCES products(product_id);
-
-ALTER TABLE inventory
-ADD CONSTRAINT fk_inventory_product FOREIGN KEY (product_id) REFERENCES products(product_id),
-ADD CONSTRAINT fk_inventory_owner FOREIGN KEY (owner_id) REFERENCES customers(cus_id);
-
-ALTER TABLE wishlist
-ADD CONSTRAINT fk_wishlist_product FOREIGN KEY (product_id) REFERENCES products(product_id),
-ADD CONSTRAINT fk_wishlist_customer FOREIGN KEY (cus_id) REFERENCES customers(cus_id);
+  ADD PRIMARY KEY (`product_id`);
 
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
@@ -338,12 +302,6 @@ ALTER TABLE `feedback`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `inventory`
---
-ALTER TABLE `inventory`
-  MODIFY `product_id` int(255) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT cho bảng `message`
 --
 ALTER TABLE `message`
@@ -365,19 +323,7 @@ ALTER TABLE `order_tracking`
 -- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(255) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT cho bảng `form`
---
-ALTER TABLE `form`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT cho bảng `wishlist`
---
-ALTER TABLE `wishlist`
-  MODIFY `product_id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `product_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

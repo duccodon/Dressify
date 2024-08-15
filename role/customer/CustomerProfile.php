@@ -36,7 +36,7 @@
       $filter_number = filter_var($_POST['number'], FILTER_SANITIZE_STRING);
       $new_number = mysqli_real_escape_string($conn, $filter_number);
       if (!empty($new_number)){
-        mysqli_query($conn, "UPDATE customers SET `number`='$new_number' WHERE cus_id ='$_SESSION[cus_id]'") or die('Query failed');
+        mysqli_query($conn, "UPDATE customers SET `contact_number`='$new_number' WHERE cus_id ='$_SESSION[cus_id]'") or die('Query failed');
       }
 
       $filter_username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
