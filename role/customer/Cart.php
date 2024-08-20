@@ -1,131 +1,67 @@
+<?php
+
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "dressify_db";
+
+// Assuming you have the customer ID stored in the session
+$customerId = $_SESSION['customer_id'];
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Fetch notifications for the logged-in customer
+$notifications = [];
+$sql = "SELECT * FROM notifications WHERE customer_id = ? ORDER BY created_at DESC";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $customerId);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $notifications[] = $row;
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="CartStyle.css">
-  <title>Notification Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CartStyle.css">
+    <title>Notification Page</title>
 </head>
 <body>
 <?php include 'CustomerSidebar.php'; ?>
 <div class="container">
-<div class="inner_left_pannel">
-  <div class="header-left">
-    <div>Cart</div>
-    <div>Mark all as read</div>
-  </div>
-  <div class="notification-list">
-    <div class="notification">
-      <img alt="photo" src="../../img/1.jpg">
-      <div class="description">
-        <div class="name">Friends</div>
-        <article>Total products: 3</article>   
-      </div>  
+    <div class="inner_left_pannel">
+        <div class="header-left">
+            <div>Cart</div>
+            <div><a href="mark_all_read.php">Mark all as read</a></div>
+        </div>
+        <div class="notification-list">
+            <?php foreach ($notifications as $notification): ?>
+                <div class="notification <?php echo $notification['is_read'] ? 'read' : 'unread'; ?>">
+                    <div class="description">
+                        <article><?php echo htmlspecialchars($notification['message']); ?></article>
+                        <span><?php echo htmlspecialchars($notification['created_at']); ?></span>      
+                    </div>  
+                </div>
+            <?php endforeach; ?>
+        </div>
     </div>
-    <div class="notification-list">
-      <img alt="photo" src="../../img/1.jpg">
-      <div class="description">
-        <div class="name">cao nguyen huy hoang</div>
-        <article>ersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawef</article>
-        <span>Date</span>      
-      </div>  
+    <div class="inner_right_pannel">
+        <h1>Detail</h1>
+        <?php include 'CartDetails.php'; ?>
     </div>
-    <div class="notification">
-      <img alt="photo" src="img/1.jpg">
-      <div class="description">
-        <div class="name">cao nguyen huy hoang</div>
-        <article>ersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawef</article>
-        <span>Date</span>      
-      </div>  
-    </div>
-    <div class="notification">
-      <img alt="photo" src="1.jpg">
-      <div class="description">
-        <div class="name">cao nguyen huy hoang</div>
-        <article>ersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawef</article>
-        <span>Date</span>      
-      </div>  
-    </div>
-    <div class="notification">
-      <img alt="photo" src="1.jpg">
-      <div class="description">
-        <div class="name">cao nguyen huy hoang</div>
-        <article>ersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawef</article>
-        <span>Date</span>      
-      </div>  
-    </div>
-    <div class="notification">
-      <img alt="photo" src="1.jpg">
-      <div class="description">
-        <div class="name">cao nguyen huy hoang</div>
-        <article>ersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawef</article>
-        <span>Date</span>      
-      </div>  
-    </div>
-    <div class="notification">
-      <img alt="photo" src="1.jpg">
-      <div class="description">
-        <div class="name">cao nguyen huy hoang</div>
-        <article>ersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawef</article>
-        <span>Date</span>      
-      </div>  
-    </div>
-    <div class="notification">
-      <img alt="photo" src="1.jpg">
-      <div class="description">
-        <div class="name">cao nguyen huy hoang</div>
-        <article>ersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawef</article>
-        <span>Date</span>      
-      </div>  
-    </div>
-    <div class="notification">
-      <img alt="photo" src="1.jpg">
-      <div class="description">
-        <div class="name">cao nguyen huy hoang</div>
-        <article>ersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawef</article>
-        <span>Date</span>      
-      </div>  
-    </div>
-    <div class="notification">
-      <img alt="photo" src="1.jpg">
-      <div class="description">
-        <div class="name">cao nguyen huy hoang</div>
-        <article>ersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawef</article>
-        <span>Date</span>      
-      </div>  
-    </div>
-    <div class="notification">
-      <img alt="photo" src="1.jpg">
-      <div class="description">
-        <div class="name">cao nguyen huy hoang</div>
-        <article>ersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawef</article>
-        <span>Date</span>      
-      </div>  
-    </div>
-    <div class="notification">
-      <img alt="photo" src="1.jpg">
-      <div class="description">
-        <div class="name">cao nguyen huy hoang</div>
-        <article>ersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawef</article>
-        <span>Date</span>      
-      </div>  
-    </div>
-    <div class="notification">
-      <img alt="photo" src="1.jpg">
-      <div class="description">
-        <div class="name">cao nguyen huy hoang</div>
-        <article>ersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawef</article>
-        <span>Date</span>      
-      </div>  
-    </div>
-  </div>
-</div>
-<div class="inner_right_pannel">
-  <h1>Detail</h1>
-  <?php include 'CartDetails.php'; ?>
-  
-  
-</div>
 </div>
 </body>
 </html>
