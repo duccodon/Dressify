@@ -9,8 +9,8 @@ $dbname = "dressify_db";
 session_start();
 
 // Check if the customer ID is set in the session
-if(isset($_SESSION['customer_id'])) {
-    $customerId = $_SESSION['customer_id'];
+if(isset($_SESSION['cus_id'])) {
+    $customerId = $_SESSION['cus_id'];
     // Now you can use $customerId in your code
 } else {
     // Handle the case where the customer ID is not set
@@ -57,7 +57,7 @@ if ($result->num_rows > 0) {
             <div>Cart</div>
             <div><a href="mark_all_read.php">Mark all as read</a></div>
         </div>
-        <div class="notification-list">
+        <div class="cart-list">
             <?php foreach ($notifications as $notification): ?>
                 <div class="notification <?php echo $notification['is_read'] ? 'read' : 'unread'; ?>">
                     <div class="description">

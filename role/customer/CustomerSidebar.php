@@ -71,7 +71,7 @@
                 <img src="../../img/1.jpg">
                 <div>
                     <h4>Friends</h4>
-                    <small>Admin</small>
+                    <small>Customer</small>
                 </div>
             </div>
         </header>
