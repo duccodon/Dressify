@@ -5,25 +5,25 @@ $username = "username";
 $password = "password";
 $dbname = "dressify_db";
 
-// Start the session
-session_start();
-
-// Check if the customer ID is set in the session
-if(isset($_SESSION['customer_id'])) {
-    $customerId = $_SESSION['customer_id'];
-    // Now you can use $customerId in your code
-} else {
-    // Handle the case where the customer ID is not set
-    echo "Customer ID is not set in the session.";
-    // Redirect to a login page or show an error
-}
-
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
+}
+
+// Start the session
+session_start();
+
+// Check if the customer ID is set in the session
+if(isset($_SESSION['cus_id'])) {
+    $customerId = $_SESSION['cus_id'];
+    // Now you can use $customerId in your code
+} else {
+    // Handle the case where the customer ID is not set
+    echo "Customer ID is not set in the session.";
+    // Redirect to a login page or show an error
 }
 
 // Fetch notifications for the logged-in customer
@@ -47,7 +47,7 @@ if ($result->num_rows > 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CartStyle.css">
-    <title>Notification Page</title>
+    <title>Cart</title>
 </head>
 <body>
 <?php include 'CustomerSidebar.php'; ?>
