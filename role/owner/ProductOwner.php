@@ -41,6 +41,30 @@ $cus_id = $_SESSION['cus_id'];
                     <button class="filter-button">Uniform</button>
                     <button class="filter-button">Casual</button>
                 </div>
+                <div class="promotion-section">
+                    <div class="promotion-content"></div>
+                    <button id="addPromotionBtn" class="add-promotion-btn">Add Promotion</button>
+                </div>
+                <div id="promotionModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h2>Add Promotion</h2>
+                        <form id="promotionForm">
+                            <label for="discountCode">Discount Code:</label>
+                            <input type="text" id="discountCode" name="discountCode" required>
+                            
+                            <label for="promotionImage">Promotion Image:</label>
+                            <input type="file" id="promotionImage" name="promotionImage" accept="image/*">
+                            
+                            <h3>Apply Discount to:</h3>
+                            <div id="itemCheckboxes">
+                                <!-- Checkboxes will be dynamically added here -->
+                            </div>
+                            
+                            <button type="submit">Save Promotion</button>
+                        </form>
+                    </div>
+                </div>
                 <div class="clothing-grid">
                     <div class="clothing-item">
                         <img src="default_avatar.jpg" alt="Denim Jacket">
