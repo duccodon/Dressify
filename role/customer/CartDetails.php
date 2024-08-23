@@ -1,17 +1,7 @@
 <?php
-$servername = "localhost";
-$username = "username";
-$password = "password";
-$dbname = "dressify_db";
+include "../../ConnectDB.php";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
+$stmt = mysqli_stmt_init($conn);
 // Initialize the cart if it doesn't exist
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];

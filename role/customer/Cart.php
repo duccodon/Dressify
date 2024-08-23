@@ -1,9 +1,6 @@
 <?php
 
-$servername = "localhost";
-$username = "username";
-$password = "password";
-$dbname = "dressify_db";
+include "../../ConnectDB.php";
 
 // Start the session
 session_start();
@@ -19,16 +16,11 @@ if(isset($_SESSION['cus_id'])) {
 }
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+$stmt = mysqli_stmt_init($conn);
 
 // Fetch notifications for the logged-in customer
 $notifications = [];
-$sql = "SELECT * FROM notifications WHERE customer_id = ? ORDER BY created_at DESC";
+$sql = "SELECT * FROM cart WHERE cus_id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $customerId);
 $stmt->execute();
@@ -47,7 +39,7 @@ if ($result->num_rows > 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CartStyle.css">
-    <title>Notification Page</title>
+    <title>Cart</title>
 </head>
 <body>
 <?php include 'CustomerSidebar.php'; ?>
