@@ -1,18 +1,10 @@
 <?php
+include "../../ConnectDB.php";
 session_start();
 
-$servername = "localhost";
-$username = "username";
-$password = "password";
-$dbname = "dressify_db";
+$customerId = $_SESSION['cus_id'];
 
-$customerId = $_SESSION['customer_id'];
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+$stmt = mysqli_stmt_init($conn);
 
 // Mark all notifications as read for the logged-in customer
 $sql = "UPDATE notifications SET is_read = 1 WHERE customer_id = ?";
