@@ -47,6 +47,10 @@ $conn->close();
         <div class="sidebar-menu">
             <ul>
                 <li>
+                    <a href="Owner.php" class="active"><span class="la la-chalkboard"></span>
+                    <span>Dashboard</span></a>
+                </li>
+                <li>
                     <a href="ProductOwner.php"><span class="la la-home"></span>
                     <span>Home</span></a>
                 </li>
