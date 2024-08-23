@@ -1,11 +1,9 @@
 <?php
-$servername = "localhost";
-$username = "username";
-$password = "password";
-$dbname = "dressify_db";
 
+  include '../../ConnectDB.php';
+  session_start();
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$stmt = mysqli_stmt_init($conn);
 
 // Check connection
 if ($conn->connect_error) {
