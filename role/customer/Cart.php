@@ -5,8 +5,18 @@ $username = "username";
 $password = "password";
 $dbname = "dressify_db";
 
-// Assuming you have the customer ID stored in the session
-$customerId = $_SESSION['customer_id'];
+// Start the session
+session_start();
+
+// Check if the customer ID is set in the session
+if(isset($_SESSION['customer_id'])) {
+    $customerId = $_SESSION['customer_id'];
+    // Now you can use $customerId in your code
+} else {
+    // Handle the case where the customer ID is not set
+    echo "Customer ID is not set in the session.";
+    // Redirect to a login page or show an error
+}
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
