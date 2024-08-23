@@ -19,11 +19,9 @@ session_start();
 // Check if the customer ID is set in the session
 if(isset($_SESSION['cus_id'])) {
     $customerId = $_SESSION['cus_id'];
-    // Now you can use $customerId in your code
 } else {
     // Handle the case where the customer ID is not set
     echo "Customer ID is not set in the session.";
-    // Redirect to a login page or show an error
 }
 
 // Fetch notifications for the logged-in customer
