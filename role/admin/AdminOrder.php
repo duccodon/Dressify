@@ -97,7 +97,7 @@
           <div class="description">
             <div class="name">cao nguyen huy hoang</div>
             <article>ersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawefersgsergaefawefawefawefawefawef</article>
-            <span>Date</span> 
+            <a href="Admin.php">View</a>
           </div>  
         </div>
         <div class="notification unread">

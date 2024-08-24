@@ -1,69 +1,89 @@
 <?php
-
-include "../../ConnectDB.php";
-
-// Start the session
-session_start();
-
-// Check if the customer ID is set in the session
-if(isset($_SESSION['cus_id'])) {
-    $customerId = $_SESSION['cus_id'];
-    // Now you can use $customerId in your code
-} else {
-    // Handle the case where the customer ID is not set
-    echo "Customer ID is not set in the session.";
-    // Redirect to a login page or show an error
-}
-
-// Create connection
-$stmt = mysqli_stmt_init($conn);
-
-// Fetch notifications for the logged-in customer
-$notifications = [];
-$sql = "SELECT * FROM cart WHERE cus_id = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("i", $customerId);
-$stmt->execute();
-$result = $stmt->get_result();
-
-if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        $notifications[] = $row;
-    }
-}
+    include '../../ConnectDB.php';
+    session_start();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification Page</title>
     <link rel="stylesheet" href="CartStyle.css">
-    <title>Cart</title>
 </head>
 <body>
-<?php include 'CustomerSidebar.php'; ?>
-<div class="container">
-    <div class="inner_left_pannel">
-        <div class="header-left">
+    <?php include 'CustomerSidebar.php'; ?>
+    <div class="container">
+        <div class="inner_left_pannel">
+            <div class="header-left">
             <div>Cart</div>
-            <div><a href="mark_all_read.php">Mark all as read</a></div>
-        </div>
-        <div class="cart-list">
-            <?php foreach ($notifications as $notification): ?>
-                <div class="notification <?php echo $notification['is_read'] ? 'read' : 'unread'; ?>">
-                    <div class="description">
-                        <article><?php echo htmlspecialchars($notification['message']); ?></article>
-                        <span><?php echo htmlspecialchars($notification['created_at']); ?></span>      
-                    </div>  
+            <div>Mark all as read</div>
+            </div>
+        <div class="notification-list">
+                <div class="notification">
+                <img alt="photo" src="../../img/1.jpg">
+                <div class="description">
+                    <div class="name">Friends</div>
+                    <article>Total product: 3</article>
+                    <a href="Cart.php?view-cart="<?php ?>>View</a>
+                </div>  
                 </div>
-            <?php endforeach; ?>
+        </div>
+        </div>
+        <div class="inner_right_pannel">
+            <h1 style="width: 950px;">Detail</h1>
+            <?php
+                if(isset($_GET['view-cart'])){
+            ?>
+            <h2 style="display:flex; justify-content:center; width: 100%;">Order Information</h2> 
+            <div class="recent-grid">
+                <div class="orders">
+                    <div class="card" style="width: 140%">
+                        <div class="card-header">
+                            <h3>Product List</h3>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table width="100%"> 
+                                    <thead>
+                                        <tr>
+                                            <td>Product Image</td>
+                                            <td>Product Name</td>
+                                            <td>Quantity</td>
+                                            <td>Price per product</td>
+                                            <td>Discount</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="model-count">
+                                                    <label>Amount</label>
+                                                    <input type="number" style="width: 35px;" name="amount" value="1" min="1" />
+                                                </div>
+                                            </td>
+                                            <td>UI/UX design</td>
+                                            <td>UI Team</td>
+                                            <td>Packaging</td>
+                                            <td>50%</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="submit-button-container">   
+  <a href="CheckOut.php">
+    <button type="button" class="submit-button">Check out</button>
+  </a>
+</div>
+            <?php
+                }
+            ?>
         </div>
     </div>
-    <div class="inner_right_pannel">
-        <h1>Detail</h1>
-        <?php include 'CartDetails.php'; ?>
-    </div>
-</div>
 </body>
 </html>

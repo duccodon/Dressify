@@ -1,3 +1,14 @@
+:root{
+  --theme-color:#FBF3D5;
+  --bright-orange:#efbc9b;
+  --dark-orange:#ff7008;
+  --bright-green:#D6DAC8;
+  --dark-green:#9CAFAA;
+  --black:#1c1c1c;
+  --red-murrey:#817373;
+  --bright-yellow:#F5D8B8;
+}
+
 .container {
   margin-left: 250px;
   margin-top: 20px;
@@ -48,7 +59,9 @@
 .notification .description article{
   width: 100%; /* Ensure children take full width */
 }
-.notification .name {
+
+.notification .name,
+.notification a{
   margin-left: 0.5rem;
   width: 100%;
   white-space: normal;
@@ -60,8 +73,8 @@
   color: rgba(0,0,0, 0.4);
 }
 
+
 .inner_right_pannel h1 {
-  width: 825px;
   display: flex ;
   text-align: center;
   align-content: center;
@@ -90,3 +103,20 @@ table{
   border-spacing: 0px;
 }
 
+.submit-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.submit-button {
+  background-color: white;
+  width: 500px;
+  align-self: center;
+  margin-top: 50px;
+  max-width: 100%;
+  color: #000;
+  text-align: center;
+  padding: 28px 60px 28px;
+  font-weight: 600;
+}
