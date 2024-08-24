@@ -1,5 +1,5 @@
 <?php
-  include 'ConnectDB.php';
+  include '../../ConnectDB.php';
   session_start();
 ?>
 
@@ -14,7 +14,7 @@
   <?php include 'OwnerSidebar.php'; ?>
   <main class="main-content1">
     <section class="features">
-      <h2 class="feature-title">Widely express your custom</h2>
+      <h2 class="feature-title">Widely express your custom<?php echo '$_SESSION[cus_id]';?></h2>
       <p class="feature-item">Fast Access</p>
       <p class="feature-item">Easy Transaction</p>
       <p class="feature-item">Neat and Safe</p>

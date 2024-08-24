@@ -10,6 +10,15 @@
         }
         header('location:CustomerProductlisting.php');
     }
+
+    // if (isset($_GET['add-cart'])){
+    //     $product_id = $_GET['add-cart'];
+    //     $product_query = mysqli_query($conn, "SELECT * FROM products where product_id='$product_id'") or die('Query failed');
+    //     if (mysqli_num_rows($product_query) > 0){ 
+    //        $buy_product = mysqli_query($conn, "INSERT INTO cart `cus_id`, `owner_id`, `product_id`) VALUES('$_SESSION[cus_id]', '', '$product_id')") or die('Query failed');
+    //     }
+    //     header('location:CustomerProductlisting.php');
+    // }
 ?>
 
 <!DOCTYPE html>

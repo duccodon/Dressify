@@ -1,31 +1,31 @@
 <?php
 include '../../ConnectDB.php';
-
+session_start();
 //if (!isset($_SESSION['cus_id'])) {
 //    header("Location: login.php");
 //    exit();
 //}
 
 
-$_SESSION['cus_id'] = 3; // For testing purposes
-$cus_id = $_SESSION['cus_id'];
+// $_SESSION['cus_id'] = 3; // For testing purposes
+// $cus_id = $_SESSION['cus_id'];
 
-// Fetch current user data
-$sql = "SELECT * FROM customers WHERE cus_id = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("i", $cus_id);
-$stmt->execute();
-$result = $stmt->get_result();
+// // Fetch current user data
+// $sql = "SELECT * FROM customers WHERE cus_id = ?";
+// $stmt = $conn->prepare($sql);
+// $stmt->bind_param("i", $cus_id);
+// $stmt->execute();
+// $result = $stmt->get_result();
 
-if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc(); 
-    $avatar = !empty($row['avatar']) ? $row['avatar'] : 'img/default_avatar.jpg';
-} else {
-    echo "No user found";
-}
+// if ($result->num_rows > 0) {
+//     $row = $result->fetch_assoc(); 
+//     $avatar = !empty($row['avatar']) ? $row['avatar'] : 'img/default_avatar.jpg';
+// } else {
+//     echo "No user found";
+// }
 
-$stmt->close();
-$conn->close();
+// $stmt->close();
+// $conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -59,7 +59,7 @@ $conn->close();
                     <span>Information</span></a>
                 </li>
                 <li>
-                    <a href="OwnerNotification.php"><span class="la la-bell" id = "notifcount">5</span>
+                    <a href="OwnerNotification.php"><span class="la la-bell" id = "notifcount"></span>
                     <span>Notification</span></a>
                 </li>
                 <li>
@@ -67,11 +67,11 @@ $conn->close();
                     <span>History</span></a>
                 </li>
                 <li>
-                    <a href="ViewFeedback.php"><span class="la la-bullhorn"id = "fbcount">5</span>
+                    <a href="ViewFeedback.php"><span class="la la-bullhorn"id = "fbcount"></span>
                     <span>Feedback</span></a>
                 </li>
                 <li>
-                    <a href="join.php"><span class="la la-sign-out"></span>
+                    <a href="../../join.php"><span class="la la-sign-out"></span>
                     <span>Log out</span></a>
                 </li>
             </ul>

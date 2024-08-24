@@ -107,31 +107,6 @@
         </header>
 
         <main>
-            <div class="cards-list">
-            <?php
-                $select_products = mysqli_query($conn, "SELECT * FROM products") or die('Query failed');
-                if (mysqli_num_rows($select_products) > 0){
-                    while($fetch_products = mysqli_fetch_assoc($select_products)){
-                        if ($fetch_products['approve'] == 'True'){
-            ?>
-                <div class="card-list-single">
-                    <div>
-                        <img src = "../../img/product/<?php echo $fetch_products['image1'];?>">
-                        <div class="list-content"><?php echo $fetch_products['product_name'] ?></div>
-                        <div class="list-content"><?php echo $fetch_products['price'] ?></div>
-                        <div>
-                            <a href="AdminProductlisting.php?view=<?php echo $fetch_products['product_id']; ?>" class="edit">View <i class="fa-solid fa-eye"></i></a>
-                            <a href="AdminProductlisting.php?delete=<?php echo $fetch_products['product_id']; ?>" class="delete" onclick="return confirm('Are you sure to delete this product');">Delete <i class="fa-solid fa-trash"></i></a>
-                        </div>
-                    </div>
-                </div>
-            <?php
-                        }
-                    }
-                }
-            ?>
-            </div>
-
             <div class="recent-grid">
                 <div class="orders">
                     <div class="card">
@@ -291,6 +266,31 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            
+            <div class="cards-list">
+            <?php
+                $select_products = mysqli_query($conn, "SELECT * FROM products") or die('Query failed');
+                if (mysqli_num_rows($select_products) > 0){
+                    while($fetch_products = mysqli_fetch_assoc($select_products)){
+                        if ($fetch_products['approve'] == 'True'){
+            ?>
+                <div class="card-list-single">
+                    <div>
+                        <img src = "../../img/product/<?php echo $fetch_products['image1'];?>">
+                        <div class="list-content"><?php echo $fetch_products['product_name'] ?></div>
+                        <div class="list-content"><?php echo $fetch_products['price'] ?></div>
+                        <div>
+                            <a href="AdminProductlisting.php?view=<?php echo $fetch_products['product_id']; ?>" class="edit">View <i class="fa-solid fa-eye"></i></a>
+                            <a href="AdminProductlisting.php?delete=<?php echo $fetch_products['product_id']; ?>" class="delete" onclick="return confirm('Are you sure to delete this product');">Delete <i class="fa-solid fa-trash"></i></a>
+                        </div>
+                    </div>
+                </div>
+            <?php
+                        }
+                    }
+                }
+            ?>
             </div>
         </main>
     </div>

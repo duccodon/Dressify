@@ -84,7 +84,7 @@
                 $_SESSION['cus_name'] = $row['username'];
                 $_SESSION['cus_email'] = $row['email'];
                 $_SESSION['cus_id'] = $row['cus_id'];
-                header('location:InfoOwner.php?id='.$row['cus_id']);
+                header('location:role/owner/InfoOwner.php?id='.$row['cus_id']);
             }
             }
         }
@@ -106,9 +106,7 @@
     <link rel="stylesheet" href="join.css">
     <title>Customer Sign in|Sign up Page</title>
 </head>
-
 <body>
-
     <div class="container" id="container">
         <div class="form-container sign-up">
             <?php

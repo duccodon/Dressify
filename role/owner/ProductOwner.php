@@ -1,25 +1,6 @@
 <?php
-session_start();
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "dressify_db";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-
-//if (!isset($_SESSION['cus_id'])) {
-//    header("Location: login.php");
-//    exit();
-//}
-
-$_SESSION['cus_id'] = 3; // For testing purposes
-$cus_id = $_SESSION['cus_id'];
-
+    include '../../ConnectDB.php';
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -28,6 +9,7 @@ $cus_id = $_SESSION['cus_id'];
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="ProductOwnerStyle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <title>Profile</title>
 </head>
 <body>
@@ -41,6 +23,7 @@ $cus_id = $_SESSION['cus_id'];
                     <button class="filter-button">Uniform</button>
                     <button class="filter-button">Casual</button>
                 </div>
+                
                 <div class="promotion-section">
                     <div class="promotion-content"></div>
                     <button id="addPromotionBtn" class="add-promotion-btn">Add Promotion</button>
@@ -52,35 +35,51 @@ $cus_id = $_SESSION['cus_id'];
                         <form id="promotionForm">
                             <label for="discountCode">Discount Code:</label>
                             <input type="text" id="discountCode" name="discountCode" required>
-                            
+
                             <label for="promotionImage">Promotion Image:</label>
                             <input type="file" id="promotionImage" name="promotionImage" accept="image/*">
-                            
+
                             <h3>Apply Discount to:</h3>
                             <div id="itemCheckboxes">
                                 <!-- Checkboxes will be dynamically added here -->
                             </div>
-                            
+
                             <button type="submit">Save Promotion</button>
                         </form>
                     </div>
                 </div>
-                <div class="clothing-grid">
-                    <div class="clothing-item">
-                        <img src="default_avatar.jpg" alt="Denim Jacket">
-                        <p>Denim Jacket</p>
+
+                <div class="cards-list">
+                    <div class="card-list-single">
+                        <a style="font-size:10px;" href="OwnerForm.php">
+                        <div style="align-content:center;">
+                            <div class="list-content"><i class="fa-solid fa-plus"></i></div>
+                            <div class="list-content">Add products</div>
+                        </div>
+                        </a>
                     </div>
-                    <div class="clothing-item">
-                        <img src="default_avatar.jpg" alt="Blue Jeans">
-                        <p>Blue Jeans</p>
+                <?php
+                    $select_products = mysqli_query($conn, "SELECT * FROM products") or die('Query failed');
+                    if (mysqli_num_rows($select_products) > 0){
+                        while($fetch_products = mysqli_fetch_assoc($select_products)){
+                            if ($fetch_products['approve'] == 'True'){
+                ?>
+                    <div class="card-list-single">
+                        <div>
+                            <img src = "../../img/product/">
+                            <div class="list-content">sertsertsr</div>
+                            <div class="list-content">sertsretsert</div>
+                        <div>
+                            <a href="ProductOwner.php?view=<?php echo $fetch_products['product_id']; ?>" class="edit">View <i class="fa-solid fa-eye"></i></a>
+                            <a href="ProductOwner.php?delete=<?php echo $fetch_products['product_id']; ?>" class="delete" onclick="return confirm('Are you sure to delete this product');">Delete <i class="fa-solid fa-trash"></i></a>
+                        </div>
                     </div>
-                    <div class="clothing-item">
-                        <img src="default_avatar.jpg" alt="Blue Sweater">
-                        <p>Blue Sweater</p>
-                    </div>
-                    <div class="add-photo">
-                        <span>+ Add Photo</span>
-                    </div>
+                </div>
+                <?php
+                            }
+                        }
+                    }
+                ?>
                 </div>
             </main>
     </section>
