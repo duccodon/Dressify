@@ -107,7 +107,7 @@
                 </div>
             </div>
             <div class="submit-button-container">   
-                <a href="CheckOut.php">
+                <a href="CheckOut.php?owner_id=<?php echo$owner_id?>">
                 <button type="button" class="submit-button">Check out</button>
                 </a>
             </div>
