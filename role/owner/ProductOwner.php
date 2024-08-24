@@ -49,6 +49,7 @@
                     </div>
                 </div>
 
+                <div style="margin-left: 2rem;">
                 <div class="cards-list">
                     <div class="card-list-single">
                         <a style="font-size:10px;" href="OwnerForm.php">
@@ -59,16 +60,16 @@
                         </a>
                     </div>
                 <?php
-                    $select_products = mysqli_query($conn, "SELECT * FROM products") or die('Query failed');
+                    $select_products = mysqli_query($conn, "SELECT * FROM products WHERE owner_id='$_SESSION[cus_id]'") or die('Query failed');
                     if (mysqli_num_rows($select_products) > 0){
                         while($fetch_products = mysqli_fetch_assoc($select_products)){
                             if ($fetch_products['approve'] == 'True'){
                 ?>
                     <div class="card-list-single">
                         <div>
-                            <img src = "../../img/product/">
-                            <div class="list-content">sertsertsr</div>
-                            <div class="list-content">sertsretsert</div>
+                            <img src = "../../img/product/<?php echo $fetch_products['image1'];?>">
+                            <div class="list-content"><?php echo $fetch_products['product_name'] ?></div>
+                            <div class="list-content"><?php echo $fetch_products['price'] ?></div>
                         <div>
                             <a href="ProductOwner.php?view=<?php echo $fetch_products['product_id']; ?>" class="edit">View <i class="fa-solid fa-eye"></i></a>
                             <a href="ProductOwner.php?delete=<?php echo $fetch_products['product_id']; ?>" class="delete" onclick="return confirm('Are you sure to delete this product');">Delete <i class="fa-solid fa-trash"></i></a>
@@ -81,9 +82,10 @@
                     }
                 ?>
                 </div>
+                </div>
             </main>
     </section>
-    <script src="ProductOwnerScript.js"></script>
+    <!-- <script src="ProductOwnerScript.js"></script> -->
 </body>
 </html>
 

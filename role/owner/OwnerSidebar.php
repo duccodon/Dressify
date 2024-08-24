@@ -47,7 +47,7 @@ session_start();
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="Owner.php" class="active"><span class="la la-chalkboard"></span>
+                    <a href="Owner.php"><span class="la la-chalkboard"></span>
                     <span>Dashboard</span></a>
                 </li>
                 <li>
@@ -59,7 +59,7 @@ session_start();
                     <span>Information</span></a>
                 </li>
                 <li>
-                    <a href="OwnerNotification.php"><span class="la la-bell" id = "notifcount"></span>
+                    <a href="OwnerNotification.php"><span class="la la-bell"></span>
                     <span>Notification</span></a>
                 </li>
                 <li>
@@ -67,7 +67,7 @@ session_start();
                     <span>History</span></a>
                 </li>
                 <li>
-                    <a href="ViewFeedback.php"><span class="la la-bullhorn"id = "fbcount"></span>
+                    <a href="ViewFeedback.php"><span class="la la-bullhorn"></span>
                     <span>Feedback</span></a>
                 </li>
                 <li>
