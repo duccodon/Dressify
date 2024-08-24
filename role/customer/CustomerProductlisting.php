@@ -16,7 +16,7 @@
         $product_query = mysqli_query($conn, "SELECT * FROM products where product_id='$product_id'") or die('Query failed');
         $owner = mysqli_fetch_assoc($product_query)['owner_id'];
         if (mysqli_num_rows($product_query) > 0){ 
-           $buy_product = mysqli_query($conn, "INSERT INTO cart `cus_id`, `owner_id`, `product_id`) VALUES('$_SESSION[cus_id]', '$owner', '$product_id')") or die('Query failed');
+           $buy_product = mysqli_query($conn, "INSERT INTO cart (`cus_id`, `owner_id`, `product_id`) VALUES('$_SESSION[cus_id]', '$owner', '$product_id')") or die('Query failed');
         }
         header('location:CustomerProductlisting.php');
     }

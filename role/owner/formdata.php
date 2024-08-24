@@ -2,7 +2,7 @@
   include '../../ConnectDB.php';
   session_start();
 
-$uploadsDir = 'img/product/';
+$uploadsDir = '../../img/product/';
 if (!file_exists($uploadsDir)) {
     mkdir($uploadsDir, 0775, true);
 }
