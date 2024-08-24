@@ -96,7 +96,7 @@ session_start();
                 <img src="<?php echo htmlspecialchars($avatar); ?>">
                 <div>
                     <h4>Friends</h4>
-                    <small>Admin</small>
+                    <small>Owner</small>
                 </div>
             </div>
         </header>
