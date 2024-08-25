@@ -1,12 +1,11 @@
 .feature-image { 
-    aspect-ratio: 1.85; 
     object-fit: cover; 
     object-position: center; 
     width: 100%; 
     margin-top: 20px; 
     min-height: 20px; 
     min-width: 20px; 
-    max-width: 297px; 
+    max-width: 297px;
 }
 
 .upload-status {
@@ -56,7 +55,7 @@
 
 
 .upload-container {
-        background-color: rgba(255, 249, 229, 1);
+        background-color: rgb(255, 255, 255);
         box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
         position: relative;
         display: flex;
@@ -72,7 +71,7 @@
 }
     
 .main-content1 {
-      background-color: #fbf3d5;
+      background-color: #E5EDFD;
       margin: 53px auto 0;
       margin-top: 80px;
       margin-right: 60px;
@@ -115,7 +114,7 @@
     }
     
     .form-container {
-      background-color: #fff9e5;
+      background-color: #ffff;
       box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.3);
       margin-top: 18px;
       padding: 19px 73px 49px;
@@ -154,7 +153,7 @@
       background-color: rgba(240, 238, 237, 0);
       margin-top: 16px;
       padding: 13px 15px;
-      height: 43px;
+      height: 50px;
       font: 18px Plus Jakarta Sans, sans-serif;
     }
     
@@ -223,6 +222,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     }
 
   .image-preview {
@@ -243,7 +243,7 @@
     .submit-button { 
         justify-content: center; 
         align-items: center; 
-        background-color: #b4ffad;  
+        background-color: #779DF8;  
         margin-top: 60px; 
         margin-right: 20px;
         margin-left: 23px;
@@ -259,7 +259,7 @@
     .submit-button:hover { 
       justify-content: center; 
       align-items: center; 
-      background-color: #85db7f; 
+      background-color: #417BF7; 
       margin-top: 60px; 
       margin-right: 20px;
       margin-left: 23px;
