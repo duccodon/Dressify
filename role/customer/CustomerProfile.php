@@ -73,10 +73,9 @@
     <main class="main-content">
       <form class="profile-form" method="post">
         <div class="avatar-container">
-          <img src="../../img/1.jpg" class="avatar-background" alt="Profile background" style="border-radius: 50%;"/>
-          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/f0ff525f8f701695d4c0f9c4a79c121f4bda49dee8aec8044b7c4ed7cc911cf7?apiKey=2cbb572e4cb94131a46c507d9ddbcac0&" class="avatar-icon" alt="User avatar" />
+          <img src="../../img/default_avatar.jpg" class="avatar-background" alt="Profile background" style="border-radius: 50%;"/>
         </div>
-        <h2 class="username">Sonali.</h2>
+        <h2 class="username"><?php echo $name?></h2>
         
         <label for="name" class="form-label">Full name</label>
         <input type="text" id="name" name="name" class="form-input" placeholder="<?php echo"$name";?>"/>

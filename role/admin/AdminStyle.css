@@ -275,6 +275,8 @@ td .status {
     justify-content: space-between;
     align-items: center;
     padding: .5rem 1rem;
+    overflow: hidden;
+
 }
 
 .customer .info {
@@ -282,6 +284,8 @@ td .status {
     align-items: center;
     margin-right: .1rem;
     display: inline-block;
+    overflow: hidden;
+    width: 75%; 
 }
 .info img {
     border-radius: 50%;

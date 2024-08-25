@@ -64,7 +64,7 @@
             </div>
 
             <div class="user-wrapper">
-                <img src="../../img/1.jpg">
+                <img src="../../img/default_avatar.jpg">
                 <div>
                     <h4>Friends</h4>
                     <small>Customer</small>

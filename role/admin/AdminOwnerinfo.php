@@ -77,258 +77,133 @@
                 </div>
             </div>
         </header>
-
         <main>
-            <div class="cards">
-                <div class="card-single">
-                    <div>
-                        <h1>54</h1>
-                        <span>Customers</span>
-                    </div>
-                    <div>
-                        <span class="la la-users"></span>
-                    </div>
-                </div>
-
-                <div class="card-single">
-                    <div>
-                        <h1>122</h1>
-                        <span>Rental owners</span>
-                    </div>
-                    <div>
-                        <span class="la la-user-tie"></span>
-                    </div>
-                </div>
-
-                <div class="card-single">
-                    <div>
-                        <h1>122</h1>
-                        <span>Comments</span>
-                    </div>
-                    <div>
-                        <span class="la la-comments"></span>
-                    </div>
-                </div>
-
-                <div class="card-single">
-                    <div>
-                        <h1>122</h1>
-                        <span>Total Orders</span>
-                    </div>
-                    <div>
-                        <span class="la la-shopping-bag"></span>
-                    </div>
-                </div>
-
-                <div class="card-single">
-                    <div>
-                        <h1>122</h1>
-                        <span>Revenue</span>
-                    </div>
-                    <div>
-                        <span class="la la-money-bill-wave"></span>
-                    </div>
-                </div>
-
-                <div class="card-single">
-                    <div>
-                        <h1>122</h1>
-                        <span>Total Visit</span>
-                    </div>
-                    <div>
-                        <span class="la la-globe"></span>
-                    </div>
-                </div>
-            </div>
-
             <div class="recent-grid">
                 <div class="orders">
                     <div class="card">
                         <div class="card-header">
                             <h3>Recent Orders</h3>
-                            <a href="AdminOrder.php">
-                                <button>See all <span class="la la-arrow-right">                              
-                                </span></button>
-                            </a>
                         </div>
-
                         <div class="card-body">
-                            <div class="table-responsive">
-                                <table width="100%"> 
-                                    <thead>
-                                        <tr>
-                                            <td>Order ID</td>
-                                            <td>Order Customer</td>
-                                            <td>Order Owner</td>
-                                            <td>Status</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>UI/UX design</td>
-                                            <td>UI Team</td>
-                                            <td>
-                                                <span class="status finish"></span>
-                                                Finish
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>UI/UX design</td>
-                                            <td>UI Team</td>
-                                            <td>
-                                                <span class="status deli-cus"></span>
-                                                Delivering to customer
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>UI/UX design</td>
-                                            <td>UI Team</td>
-                                            <td>
-                                                <span class="status used"></span>
-                                                In used
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>UI/UX design</td>
-                                            <td>UI Team</td>
-                                            <td>
-                                                <span class="status deli-owner"></span>
-                                                Delivering to owner
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>UI/UX design</td>
-                                            <td>UI Team</td>
-                                            <td>
-                                                <span class="status packaging"></span>
-                                                Packaging
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                        <div class="table-responsive">
+                            <table width="100%"> 
+                                <thead>
+                                    <tr>
+                                        <td>Owner ID</td>
+                                        <td>Full name</td>
+                                        <td>Email</td>
+                                        <td>City</td>
+                                        <td>Country</td>
+                                        <td>Contact Number</td>
+                                    </tr>
+                                </thead>
+            <?php
+                $select_owner = mysqli_query($conn, "SELECT * FROM customers WHERE user_type = 'Rental Owner'") or die('Query failed');
+                if (mysqli_num_rows($select_owner) > 0){
+                    while($fetch_owner = mysqli_fetch_assoc($select_owner)){
+            ?>
+                <tbody>
+                    <tr>
+                        <td><?php echo $fetch_owner['cus_id'] ?></td>
+                        <td><?php echo $fetch_owner['fullname'] ?></td>
+                        <td><?php echo $fetch_owner['email'] ?></td>
+                        <td><?php echo $fetch_owner['city'] ?></td>
+                        <td><?php echo $fetch_owner['country'] ?></td>
+                        <td><?php echo $fetch_owner['contact_number'] ?></td>
+                    </tr>
+                </tbody>
+            <?php
+                    }
+                }
+            ?>
+                            </table>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="customers">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>New customers</h3>
-                            <a href="AdminCustomerinfo.php">
-                                <button>See all <span class="la la-arrow-right">                              
-                                </span></button>
-                            </a>
-                        </div>
-
-                        <div class="card-body">
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="" width="40px" height="40px" alt="">
-                                    <div>
-                                        <h4>Cao Nguyen Huy Hoang</h4>
-                                        <small>CEO Friends</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="la la-user-circle"></span>
-                                    <span class="la la-phone"></span>
-                                    <span class="la la-at"></span>
-                                </div>
-                            </div>
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="" width="40px" height="40px" alt="">
-                                    <div>
-                                        <h4>Cao Nguyen Huy Hoang</h4>
-                                        <small>CEO Friends</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="la la-user-circle"></span>
-                                    <span class="la la-phone"></span>
-                                    <span class="la la-at"></span>
-                                </div>
-                            </div>
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="" width="40px" height="40px" alt="">
-                                    <div>
-                                        <h4>Cao Nguyen Huy Hoang</h4>
-                                        <small>CEO Friends</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="la la-user-circle"></span>
-                                    <span class="la la-phone"></span>
-                                    <span class="la la-at"></span>
-                                </div>
-                            </div>
-                        </div>
+            <div class="customers">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>New customers</h3>
                     </div>
-                </div>
-
-                <div class="owners">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>New Rental Owners</h3>
-                            <a href="AdminOwnerinfo.php">
-                                <button>See all <span class="la la-arrow-right">                              
-                                </span></button>
-                            </a>
-                        </div>
-                            
                         <div class="card-body">
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="" width="40px" height="40px" alt="">
-                                    <div>
-                                        <h4>Cao Nguyen Huy Hoang</h4>
-                                        <small>CEO Friends</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="la la-user-tie"></span>
-                                    <span class="la la-phone"></span>
-                                    <span class="la la-at"></span>
-                                </div>
-                            </div>
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="" width="40px" height="40px" alt="">
-                                    <div>
-                                        <h4>Cao Nguyen Huy Hoang</h4>
-                                        <small>CEO Friends</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="la la-user-tie"></span>
-                                    <span class="la la-phone"></span>
-                                    <span class="la la-at"></span>
-                                </div>
-                            </div>
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="" width="40px" height="40px" alt="">
-                                    <div>
-                                        <h4>Cao Nguyen Huy Hoang</h4>
-                                        <small>CEO Friends</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <span class="la la-user-tie"></span>
-                                    <span class="la la-phone"></span>
-                                    <span class="la la-at"></span>
-                                </div>
-                            </div>
-                        </div>
+            <?php
+                $select_cus = mysqli_query($conn, "SELECT * FROM customers WHERE user_type = 'Customer' ORDER BY cus_id DESC LIMIT 3") or die('Query failed');
+                if (mysqli_num_rows($select_cus) > 0){
+                    while($fetch_cus = mysqli_fetch_assoc($select_cus)){
+            ?>
+                    
+                <div class="customer">
+                <?php
+                    if(empty($fetch_cus['avatar'])) {
+                ?>
+                <img src="../../img/default_avatar.jpg" width="40px" height="40px" style="border-radius: 50%; display: block; float: left; margin-right: 25px;"  alt="Avatar">
+
+                <?php } else {?>
+                <img src = "../../img/ <?php echo $fetch_cus['avatar'];?>" width="40px" height="40px" alt="Avatar">
+                <?php
+                    }
+                ?>
+                    <div class="info">
+                        <h4><?php echo $fetch_cus['fullname'] ?></h4>
+                        <small><?php echo $fetch_cus['email'] ?></small>
                     </div>
+                    <div class="contact">
+                                <span class="la la-user-circle"></span>
+                                <span class="la la-at"></span>
+                    </div>
+                </div>    
+                    
+            <?php
+                
+                }
+                }
+            ?>
+                        </div>
                 </div>
+            </div>
+            <div class="owners">
+            <div class="card">
+                    <div class="card-header">
+                        <h3>New customers</h3>
+                    </div>
+                        <div class="card-body">
+            <?php
+                $select_cus = mysqli_query($conn, "SELECT * FROM customers WHERE user_type = 'Rental Owner' ORDER BY cus_id DESC LIMIT 3") or die('Query failed');
+                if (mysqli_num_rows($select_cus) > 0){
+                    while($fetch_cus = mysqli_fetch_assoc($select_cus)){
+            ?>
+                    
+                <div class="customer">
+                <?php
+                    if(empty($fetch_cus['avatar'])) {
+                ?>
+                <img src="../../img/default_avatar.jpg" width="40px" height="40px" style="border-radius: 50%; display: block; float: left; margin-right: 25px;"  alt="Avatar">
+
+                <?php } else {?>
+                <img src = "../../img/ <?php echo $fetch_cus['avatar'];?>" width="40px" height="40px" alt="Avatar">
+                <?php
+                    }
+                ?>
+                    <div class="info">
+                        <h4><?php echo $fetch_cus['fullname'] ?></h4>
+                        <small><?php echo $fetch_cus['email'] ?></small>
+                    </div>
+                    <div class="contact">
+                                <span class="la la-user-circle"></span>
+                                <span class="la la-at"></span>
+                    </div>
+                </div>    
+                    
+            <?php
+                
+                }
+                }
+            ?>
+                        </div>
+                </div>
+        </div>
             </div>
         </main>
     </div>
