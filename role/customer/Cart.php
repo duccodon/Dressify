@@ -31,7 +31,7 @@
             </div>
         <div class="notification-list">
             <?php
-                $cart_query = mysqli_query($conn, "SELECT DISTINCT owner_id FROM cart");
+                $cart_query = mysqli_query($conn, "SELECT DISTINCT owner_id FROM cart WHERE `status`='checkout'");
                 if (mysqli_num_rows($cart_query) > 0){
                     while($fetch_owner = mysqli_fetch_assoc($cart_query)){
                         $owner = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM customers WHERE cus_id='$fetch_owner[owner_id]'"));

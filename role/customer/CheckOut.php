@@ -3,6 +3,28 @@
     session_start();
 
     $customer = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM customers WHERE cus_id='$_SESSION[cus_id]'"));
+    $total=0;
+    $owner_id_main = $_GET['owner_id'];
+
+    if(isset($_POST['cus-info'])){
+        // $filter_fullname = filter_var($_POST['fullname'], FILTER_SANITIZE_STRING);
+        // $fullname = mysqli_real_escape_string($conn, $filter_fullname);
+
+        // $filter_contact_number = filter_var($_POST['contact_number'], FILTER_SANITIZE_STRING);
+        // $contact_number = mysqli_real_escape_string($conn, $filter_contact_number);
+
+        // $filter_shipping_address = filter_var($_POST['shipping_address'], FILTER_SANITIZE_STRING);
+        // $shipping_address = mysqli_real_escape_string($conn, $filter_shipping_address);
+
+        // $filter_city = filter_var($_POST['city'], FILTER_SANITIZE_STRING);
+        // $city = mysqli_real_escape_string($conn, $filter_city);
+
+        // $filter_country = filter_var($_POST['country'], FILTER_SANITIZE_STRING);
+        // $country = mysqli_real_escape_string($conn, $filter_country);
+
+        // mysqli_query($conn, "INSERT INTO orders (`cus_id`, `owner_id, `fullname`, `contact_number`, `shipping_address`, `city`, `country`) VALUES('$_SESSION[cus_id]', '$owner_id_main', '$fullname', '$contact_number', '$shipping_address', '$city', '$country')") or die('Query failed');
+        $message_up[] = 'Add customer information successfully';
+    }
 ?>
 
 <!DOCTYPE html>
@@ -11,9 +33,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="CheckoutStyle.css">
+
+  <link href = "https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel = 'stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
   <title>Checkout</title>
 </head>
 <body>
+    <?php
+                if (isset($message_up)){
+                    foreach($message_up as $message_up){
+                      echo '
+                      <div style="border-radius: 15px; background-color: rgba(0,0,0,0.6); width: 400px; height: 200px; color: #fff; padding: 40px; margin: 10px 0 0 40%; z-index: 100; position: relative;">
+                          <span style="margin-top: 15%; display: flex; justify-content: center;">'.$message_up.'<i style="margin-left: 1rem;" class="fa-solid fa-trash" onclick="this.closest(\'div\').remove()"></i></span>
+                      </div>
+                      ';
+                    }
+                }
+    ?>
+
+
   <?php include 'CustomerSidebar.php'; ?>
   <main class="checkout-container">
   <div class="checkout-content">
@@ -29,6 +68,7 @@
                 $product_id = mysqli_query($conn, "SELECT * FROM cart as c JOIN products as p ON c.product_id=p.product_id WHERE p.owner_id ='$owner_id'");
                 $owner = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM customers WHERE cus_id='$owner_id'"));//ready
                 while($fetch_product = mysqli_fetch_assoc($product_id)){  
+                  $total = $total + $fetch_product['price']; 
         ?>
 
           <div class="product-card">
@@ -69,36 +109,36 @@
             <div class="form-column">
               <div class="form-group">
                 <label for="firstName">Full Name</label>
-                <input type="text" id="fullName" class="form-input" placeholder="<?php echo$customer['fullname'];?>" required />
+                <input type="text" name="fullname" class="form-input" placeholder="<?php echo$customer['fullname'];?>" required />
               </div>
             </div>
             <div class="form-column">
               <div class="form-group">
                 <label for="firstName">Phone Number</label>
-                <input type="text" id="fullName" class="form-input" placeholder="<?php echo$customer['contact_number'];?>" required />
+                <input type="text" name="contact_number" class="form-input" placeholder="<?php echo$customer['contact_number'];?>" required />
               </div>
             </div>  
           </div>
           <div class="form-group">
             <label for="houseNumber">Shipping Address</label>
-            <input type="text" id="houseNumber" class="form-input"  placeholder="<?php echo$customer['address'];?>" required />
+            <input type="text" name="shipping_address" class="form-input"  placeholder="<?php echo$customer['address'];?>" required />
           </div>
           <div class="form-row">
             <div class="form-column">
               <div class="form-group">
                 <label for="city">City</label>
-                <input type="text" id="city" class="form-input" placeholder="<?php echo$customer['city'];?>" required />
+                <input type="text" name="city" class="form-input" placeholder="<?php echo$customer['city'];?>" required />
               </div>
             </div>
             <div class="form-column">
               <div class="form-group">
                 <label for="zipCode">Country</label>
-                <input type="text" id="zipCode" class="form-input" placeholder="<?php echo$customer['country'];?>" required />
+                <input type="text" name="country" class="form-input" placeholder="<?php echo$customer['country'];?>" required />
               </div>
             </div>
           </div>
           <div class="form-actions">
-            <button type="submit" class="btn btn-save">Save this Customer Information</button>
+            <button type="submit" name="cus-info" class="btn btn-save">Save this Customer Information</button>
           </div>
         </form>
 
@@ -108,13 +148,13 @@
                 <div class="form-column">
                 <div class="form-group">
                     <label for="firstName">Starting Date</label>
-                    <input type="text" id="fullName" class="form-input" placeholder="01/01/2024" required />
+                    <input type="date" name="date_start" class="form-input" placeholder="01/01/2024" required />
                 </div>
                 </div>
                 <div class="form-column">
                 <div class="form-group">
                     <label for="firstName">Duration (days)</label>
-                    <input type="number" id="fullName" class="form-input" value="1" min="1" required />
+                    <input type="number" duration="duration" class="form-input" value="1" min="1" required />
                 </div>
                 </div>  
             </div>
@@ -130,15 +170,16 @@
             </div>
 
           <label for="packageNote" class="visually-hidden">Leave your note here</label>
-          <textarea id="packageNote" class="note-input" placeholder="Leave your note here"></textarea>
+          <textarea name="note" class="note-input" placeholder="Leave your note here"></textarea>
           <div class="form-actions">
-            <button type="submit" class="btn btn-save">Save this Package Information</button>
+            <button type="submit" name="package-info" class="btn btn-save">Save this Package Information</button>
           </div>
         </form>
 
         <h2 class="section-title">Order Confirmation</h2>
+        <form method="post">
         <div class="order-summary">
-          <button type="button" class="place-order-btn">Place Order</button>
+          <button type="button" name="confirm" class="place-order-btn">Place Order</button>
           <p class="terms">
             By placing your order, you agree to our company
             <a href="#" style="color: rgba(0, 0, 0, 1)">Privacy policy</a> and
@@ -148,20 +189,21 @@
           <h3 class="section-title">Order Summary</h3>
           <div class="summary-details">
             <div class="summary-labels">
-              <p>Items (3)</p>
+              <p>Items (<?php echo mysqli_num_rows($product_id)?>)</p>
               <p>Delivery</p>
             </div>
             <div class="summary-values">
-              <p>56.73</p>
+              <p name="total"><?php echo $total?></p>
               <p>5.50</p>
             </div>
           </div>
           <hr class="divider" />
           <div class="total">
             <p>Order Total:</p>
-            <p>70.44</p>
+            <p><?php echo $total?></p>
           </div>
         </div>
+        </form>    
 
       </div>
     </section>
