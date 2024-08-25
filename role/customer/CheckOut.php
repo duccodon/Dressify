@@ -4,27 +4,51 @@
 
     $customer = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM customers WHERE cus_id='$_SESSION[cus_id]'"));
     $total=0;
+
     $owner_id_main = $_GET['owner_id'];
+    $product_id_main = mysqli_query($conn, "SELECT * FROM cart as c JOIN products as p ON c.product_id=p.product_id WHERE p.owner_id ='$owner_id_main'");
+    while($fetch_product = mysqli_fetch_assoc($product_id_main))
+        $total = $total + $fetch_product['price']; 
 
-    if(isset($_POST['cus-info'])){
-        // $filter_fullname = filter_var($_POST['fullname'], FILTER_SANITIZE_STRING);
-        // $fullname = mysqli_real_escape_string($conn, $filter_fullname);
+    if(isset($_POST['confirm'])){
+        $filter_fullname = filter_var($_POST['fullname'], FILTER_SANITIZE_STRING);
+        $fullname = mysqli_real_escape_string($conn, $filter_fullname);
 
-        // $filter_contact_number = filter_var($_POST['contact_number'], FILTER_SANITIZE_STRING);
-        // $contact_number = mysqli_real_escape_string($conn, $filter_contact_number);
+        $filter_contact_number = filter_var($_POST['contact_number'], FILTER_SANITIZE_STRING);
+        $contact_number = mysqli_real_escape_string($conn, $filter_contact_number);
 
-        // $filter_shipping_address = filter_var($_POST['shipping_address'], FILTER_SANITIZE_STRING);
-        // $shipping_address = mysqli_real_escape_string($conn, $filter_shipping_address);
+        $filter_shipping_address = filter_var($_POST['shipping_address'], FILTER_SANITIZE_STRING);
+        $shipping_address = mysqli_real_escape_string($conn, $filter_shipping_address);
 
-        // $filter_city = filter_var($_POST['city'], FILTER_SANITIZE_STRING);
-        // $city = mysqli_real_escape_string($conn, $filter_city);
+        $filter_city = filter_var($_POST['city'], FILTER_SANITIZE_STRING);
+        $city = mysqli_real_escape_string($conn, $filter_city);
 
-        // $filter_country = filter_var($_POST['country'], FILTER_SANITIZE_STRING);
-        // $country = mysqli_real_escape_string($conn, $filter_country);
+        $filter_country = filter_var($_POST['country'], FILTER_SANITIZE_STRING);
+        $country = mysqli_real_escape_string($conn, $filter_country);
 
-        // mysqli_query($conn, "INSERT INTO orders (`cus_id`, `owner_id, `fullname`, `contact_number`, `shipping_address`, `city`, `country`) VALUES('$_SESSION[cus_id]', '$owner_id_main', '$fullname', '$contact_number', '$shipping_address', '$city', '$country')") or die('Query failed');
-        $message_up[] = 'Add customer information successfully';
+        $filter_date_start = filter_var($_POST['date_start'], FILTER_SANITIZE_STRING);
+        $date_start = mysqli_real_escape_string($conn, $filter_date_start);
+
+        $filter_duration = filter_var($_POST['duration'], FILTER_SANITIZE_STRING);
+        $duration = mysqli_real_escape_string($conn, $filter_duration);
+
+        $filter_delivery_unit = filter_var($_POST['delivery_unit'], FILTER_SANITIZE_STRING);
+        $delivery_unit = mysqli_real_escape_string($conn, $filter_delivery_unit);
+
+        $filter_note = filter_var($_POST['note'], FILTER_SANITIZE_STRING);
+        $note = mysqli_real_escape_string($conn, $filter_note);
+
+
+        $delivery_price= mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM delivery_unit WHERE `name`='$delivery_unit'"))['price'];
+        $total = $total + $delivery_price;
+
+
+        mysqli_query($conn, "INSERT INTO orders (`cus_id`, `owner_id`, `fullname`, `contact_number`, `shipping_address`, `city`, `country`,  `date_start`, `duration`, `status`, `delivery_code`, `total`, `note`) 
+        VALUES('$_SESSION[cus_id]', '$owner_id_main', '$fullname', '$contact_number', '$shipping_address', '$city', '$country', '$date_start', '$duration', 'in progress', '$delivery_unit', '$total', '$note')") or die('Query failed');
+        $message_up[] = 'Place an order successfully' .$delivery_price;
     }
+
+    $total=0;
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +69,8 @@
                     foreach($message_up as $message_up){
                       echo '
                       <div style="border-radius: 15px; background-color: rgba(0,0,0,0.6); width: 400px; height: 200px; color: #fff; padding: 40px; margin: 10px 0 0 40%; z-index: 100; position: relative;">
-                          <span style="margin-top: 15%; display: flex; justify-content: center;">'.$message_up.'<i style="margin-left: 1rem;" class="fa-solid fa-trash" onclick="this.closest(\'div\').remove()"></i></span>
+                          <span style="margin-left: 20%">'.$message_up.'<i style="margin-left: 1rem;" class="fa-solid fa-trash" onclick="this.closest(\'div\').remove()"></i></span>
+                          <span style="margin-left: 20%"> <a style="color: #fff;" href="Cart.php">Click here to return to carts</a> </span>
                       </div>
                       ';
                     }
@@ -103,8 +128,8 @@
 
     <section class="order-section">
       <div class="order-content">
-        <h2 class="section-title">Customer Information</h2>
         <form class="address-form" method="post">
+        <h2 class="section-title" style="margin-bottom: 1rem; margin-top: -2rem;">Customer Information</h2>
           <div class="form-row">
             <div class="form-column">
               <div class="form-group">
@@ -137,13 +162,8 @@
               </div>
             </div>
           </div>
-          <div class="form-actions">
-            <button type="submit" name="cus-info" class="btn btn-save">Save this Customer Information</button>
-          </div>
-        </form>
 
         <h2 class="section-title">Package Information</h2>
-        <form class="note-form" method="post">
             <div class="form-row">
                 <div class="form-column">
                 <div class="form-group">
@@ -154,32 +174,31 @@
                 <div class="form-column">
                 <div class="form-group">
                     <label for="firstName">Duration (days)</label>
-                    <input type="number" duration="duration" class="form-input" value="1" min="1" required />
+                    <input type="number" name="duration" class="form-input" value="1" min="1" required />
                 </div>
                 </div>  
             </div>
             <div class="form-group">
             <label for="houseNumber">Delivery Unit</label>
-                <select name="delivery_unit" class="form-input">
+                <select name="delivery_unit" class="form-input" id="getDelivery">
                     <option value="Giao Hang Tiet Kiem">Giao Hang Tiet Kiem</option>
                     <option value="GHN">GHN</option>
                     <option value="Ahamove">Ahamove</option>
                     <option value="Grab">Grab</option>
                     <option value="Shopee">Shopee</option>
                 </select>
+                <?php
+                    // $getDelivery = $_POST['delivery_unit'];
+                    // $price = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM delivery_unit WHERE `name`='$getDelivery'"))['price'];
+                ?>
             </div>
 
           <label for="packageNote" class="visually-hidden">Leave your note here</label>
           <textarea name="note" class="note-input" placeholder="Leave your note here"></textarea>
-          <div class="form-actions">
-            <button type="submit" name="package-info" class="btn btn-save">Save this Package Information</button>
-          </div>
-        </form>
 
-        <h2 class="section-title">Order Confirmation</h2>
-        <form method="post">
+        <h2 style="margin-top: 1rem;" class="section-title">Order Confirmation</h2>
         <div class="order-summary">
-          <button type="button" name="confirm" class="place-order-btn">Place Order</button>
+          <button type="submit" name="confirm" class="place-order-btn">Place Order</button>
           <p class="terms">
             By placing your order, you agree to our company
             <a href="#" style="color: rgba(0, 0, 0, 1)">Privacy policy</a> and
@@ -193,8 +212,8 @@
               <p>Delivery</p>
             </div>
             <div class="summary-values">
-              <p name="total"><?php echo $total?></p>
-              <p>5.50</p>
+              <p><?php echo $total?></p>
+              <p id="selected_delivery_unit"></p>
             </div>
           </div>
           <hr class="divider" />
@@ -211,4 +230,12 @@
   </div>
   </main>
 </body>
+
+<script>
+  function updateSelectedDeliveryUnit() {
+    var selectedDeliveryUnit = document.getElementById("getDelivery").value;
+    document.getElementById("selected_delivery_unit").textContent = selectedDeliveryUnit;
+  }
+</script>
+
 </html>
