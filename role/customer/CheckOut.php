@@ -205,7 +205,7 @@
             <a href="#" style="color: rgba(0, 0, 0, 1)">Conditions of use.</a>
           </p>
           <hr class="divider" />
-          <h3 class="section-title">Order Summary</h3>
+          <h3 class="section-title-1">Order Summary</h3>
           <div class="summary-details">
             <div class="summary-labels">
               <p>Items (<?php echo mysqli_num_rows($product_id)?>)</p>
