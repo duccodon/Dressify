@@ -75,8 +75,8 @@
   
   .rating-input {
     border-radius: 5px;
-    border: 5px solid rgba(156, 175, 170, 1);
-    background-color: #fbf3d5;
+    border: 2px solid rgba(0, 0, 0);
+    background-color: #E5EDFD;
     color: #858585;
     margin: 7px 0 0 33px;
     padding: 31px;
@@ -104,8 +104,8 @@
   
   .package-number-input {
     border-radius: 5px;
-    border: 5px solid rgba(156, 175, 170, 1);
-    background-color: #fbf3d5;
+    border: 2px solid rgba(0, 0, 0);
+    background-color: #E5EDFD;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -149,8 +149,8 @@
   
   .package-details-input {
     border-radius: 5px;
-    border: 5px solid rgba(156, 175, 170, 1);
-    background-color: #fbf3d5;
+    border: 2px solid rgba(0, 0, 0);
+    background-color: #E5EDFD;
     color: #858585;
     margin: 4px 0 0 33px;
     padding: 31px;
@@ -177,8 +177,8 @@
   
   .rating-scale-input {
     border-radius: 5px;
-    border: 5px solid rgba(156, 175, 170, 1);
-    background-color: #fbf3d5;
+    border: 2px solid rgba(0, 0, 0);
+    background-color: #E5EDFD;
     color: #858585;
     margin: 4px 0 0 29px;
     padding: 31px;
@@ -206,8 +206,8 @@
   
   .problems-input {
     border-radius: 5px;
-    border: 5px solid rgba(156, 175, 170, 1);
-    background-color: #fbf3d5;
+    border: 2px solid rgba(0, 0, 0);
+    background-color: #E5EDFD;
     color: #858585;
     margin-left: 28px;
     padding: 30px 32px 99px;
@@ -235,8 +235,8 @@
   
   .suggestions-input {
     border-radius: 5px;
-    border: 5px solid rgba(156, 175, 170, 1);
-    background-color: #fbf3d5;
+    border: 2px solid rgba(0, 0, 0);
+    background-color: #E5EDFD;
     color: #858585;
     margin: 17px 0 0 25px;
     padding: 28px 25px 126px;
@@ -264,8 +264,8 @@
   
   .product-images-upload {
     border-radius: 5px;
-    border: 5px solid rgba(156, 175, 170, 1);
-    background-color: #fbf3d5;
+    border: 2px solid rgba(0, 0, 0);
+    background-color: #E5EDFD;
     color: #858585;
     margin-left: 22px;
     padding: 30px 32px 176px;
@@ -280,13 +280,13 @@
   }
   
   .submit-button {
-    background-color: rgba(239, 188, 155, 1);
+    background-color: #417BF7;
     align-self: center;
     margin-top: 57px;
     margin-bottom: 57px;
     width: 733px;
     max-width: 100%;
-    color: #000;
+    color: #ffffff;
     text-align: center;
     padding: 28px 60px 28px;
     font: 64px Roboto, sans-serif;
