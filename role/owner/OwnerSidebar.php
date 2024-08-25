@@ -67,8 +67,8 @@ session_start();
                     <span>History</span></a>
                 </li>
                 <li>
-                    <a href="ViewFeedback.php"><span class="la la-bullhorn"></span>
-                    <span>Feedback</span></a>
+                    <a href="OwnerOrder.php"><span class="la la-shipping-fast"></span>
+                    <span>Orders</span></a>
                 </li>
                 <li>
                     <a href="../../join.php"><span class="la la-sign-out"></span>
