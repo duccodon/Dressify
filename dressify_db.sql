@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th8 15, 2024 lúc 11:32 AM
+-- Thời gian đã tạo: Th8 25, 2024 lúc 05:58 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -30,10 +30,18 @@ SET time_zone = "+00:00";
 CREATE TABLE `cart` (
   `id` int(255) NOT NULL,
   `cus_id` int(255) NOT NULL,
+  `owner_id` int(255) NOT NULL,
   `product_id` int(255) NOT NULL,
-  `delivery_unit` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `discount_code` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+  `status` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'checkout'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `cart`
+--
+
+INSERT INTO `cart` (`id`, `cus_id`, `owner_id`, `product_id`, `status`) VALUES
+(5, 0, 4, 47, 'checkout'),
+(15, 5, 4, 44, 'checkout');
 
 -- --------------------------------------------------------
 
@@ -78,6 +86,17 @@ CREATE TABLE `delivery_unit` (
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `price` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `delivery_unit`
+--
+
+INSERT INTO `delivery_unit` (`id`, `name`, `price`) VALUES
+(1, 'Giao Hang Tiet Kiem', '5000'),
+(2, 'GHN', '15000'),
+(3, 'Ahamove', '12000'),
+(4, 'Grab', '10000'),
+(5, 'Shopee', '8000');
 
 -- --------------------------------------------------------
 
@@ -129,29 +148,19 @@ CREATE TABLE `message` (
 
 CREATE TABLE `orders` (
   `id` int(255) NOT NULL,
-  `product_id` int(255) NOT NULL,
   `cus_id` int(255) NOT NULL,
   `owner_id` int(255) NOT NULL,
+  `fullname` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `contact_number` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `city` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `country` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `date_start` date NOT NULL,
   `duration` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `status` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `shipping_address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `delivery_code` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `order_tracking`
---
-
-CREATE TABLE `order_tracking` (
-  `id` int(255) NOT NULL,
-  `order_id` int(255) NOT NULL,
-  `image` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `update_time` date NOT NULL,
-  `status` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+  `delivery_code` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `total` int(255) NOT NULL,
+  `note` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -179,9 +188,8 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `owner_id`, `product_name`, `description`, `price`, `category`, `image3`, `image1`, `image2`, `stock`, `approve`) VALUES
-(39, 0, 'ao cua hoang', 'hoang rat thich', '2000000', 'ao', '', 'ao.jpg', '', 10, 'True'),
-(42, 0, 'quan cua hoang ', 'hoang rat thich', '111111', 'quan', '', 'short.jpg', '', 5, 'True'),
-(43, 0, 'vay', 'hoang ko thich', '1000000', 'vay', '', 'vay.jpg', '', 1, 'false');
+(44, 4, 'test', 'aefawefawef', '1234123413', 'aeraewr', '', 'short.jpg', '', 10, 'True'),
+(47, 4, 'ao cua hoang', 'hoang rat thich', '1200000', 'ao', '', 'ao.jpg', '', 5, 'True');
 
 -- --------------------------------------------------------
 
@@ -190,6 +198,7 @@ INSERT INTO `products` (`product_id`, `owner_id`, `product_name`, `description`,
 --
 
 CREATE TABLE `wishlist` (
+  `id` int(255) NOT NULL,
   `product_id` int(255) NOT NULL,
   `cus_id` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -198,10 +207,9 @@ CREATE TABLE `wishlist` (
 -- Đang đổ dữ liệu cho bảng `wishlist`
 --
 
-INSERT INTO `wishlist` (`product_id`, `cus_id`) VALUES
-(0, 5),
-(39, 5),
-(42, 5);
+INSERT INTO `wishlist` (`id`, `product_id`, `cus_id`) VALUES
+(1, 39, 5),
+(2, 44, 5);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -250,12 +258,6 @@ ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `order_tracking`
---
-ALTER TABLE `order_tracking`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Chỉ mục cho bảng `products`
 --
 ALTER TABLE `products`
@@ -265,7 +267,7 @@ ALTER TABLE `products`
 -- Chỉ mục cho bảng `wishlist`
 --
 ALTER TABLE `wishlist`
-  ADD PRIMARY KEY (`product_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
@@ -275,7 +277,7 @@ ALTER TABLE `wishlist`
 -- AUTO_INCREMENT cho bảng `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT cho bảng `customers`
@@ -287,7 +289,7 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT cho bảng `delivery_unit`
 --
 ALTER TABLE `delivery_unit`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `discount`
@@ -311,19 +313,19 @@ ALTER TABLE `message`
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT cho bảng `order_tracking`
---
-ALTER TABLE `order_tracking`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `product_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+
+--
+-- AUTO_INCREMENT cho bảng `wishlist`
+--
+ALTER TABLE `wishlist`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
