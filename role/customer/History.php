@@ -1,3 +1,9 @@
+<?php
+include '../../ConnectDB.php';
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,80 +42,27 @@
 
         <main>
             <div class="cards-list">
+            <?php
+                $select_orders = mysqli_query($conn, "SELECT * FROM orders WHERE cus_id='$_SESSION[cus_id]'") or die('Query failed');
+                if (mysqli_num_rows($select_orders) > 0){
+                    while($fetch_orders = mysqli_fetch_assoc($select_orders)){
+                        if ($fetch_orders['status'] == 'accepted'){
+                            $customer = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM customers WHERE cus_id='$fetch_orders[cus_id]' "));
+            ?>
                 <div class="card-list-single">
                     <div>
                         <a class="wish"><i class="fa-solid fa-heart"></i></a>
                         <img src = "../../img/download (1).jpg">
-                        <div class="list-content">Ao cua hoang</div>
-                        <div class="list-content">Date: 10/10/2010</div>
-                        <div>
-                            <a href="AdminProductlisting.php?view=" class="edit">View <i class="fa-solid fa-eye"></i></a>
-                            <a href="AdminProductlisting.php?delete=" class="delete" onclick="return confirm('Are you sure to delete this product');">Delete <i class="fa-solid fa-trash"></i></a>
-                        </div>
+                        <div class="list-content"><?php echo $customer['fullname']?></div>
+                        <div class="list-content"><?php echo $fetch_orders['date_start']?></div>
+                        <a style="margin-left: 35%;" href="AdminProductlisting.php?view=" class="edit">View <i class="fa-solid fa-eye"></i></a>
                     </div>
                 </div>
-
-                <div class="card-list-single">
-                    <div>
-                        <a class="wish"><i class="fa-solid fa-heart"></i></a>
-                        <img src="../../img/download (1).jpg">
-                        <div class="list-content">Ao cua hoang</div>
-                        <div class="list-content">Date: 10/10/2010</div>
-                        <div>
-                            <a href="AdminProductlisting.php?view=" class="edit">View <i class="fa-solid fa-eye"></i></a>
-                            <a href="AdminProductlisting.php?delete=" class="delete" onclick="return confirm('Are you sure to delete this product');">Delete <i class="fa-solid fa-trash"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-list-single">
-                    <div>
-                        <a class="wish"><i class="fa-solid fa-heart"></i></a>
-                        <img src = "../../img/download (1).jpg">
-                        <div class="list-content">Ao cua hoang</div>
-                        <div class="list-content">Date: 10/10/2010</div>
-                        <div>
-                            <a href="AdminProductlisting.php?view=" class="edit">View <i class="fa-solid fa-eye"></i></a>
-                            <a href="AdminProductlisting.php?delete=" class="delete" onclick="return confirm('Are you sure to delete this product');">Delete <i class="fa-solid fa-trash"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-list-single">
-                    <div>
-                        <img src = "../../img/download (1).jpg">
-                        <div class="list-content">Ao cua hoang</div>
-                        <div class="list-content">Date: 10/10/2010</div>
-                        <div>
-                            <a href="AdminProductlisting.php?view=" class="edit">View <i class="fa-solid fa-eye"></i></a>
-                            <a href="AdminProductlisting.php?delete=" class="delete" onclick="return confirm('Are you sure to delete this product');">Delete <i class="fa-solid fa-trash"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-list-single">
-                    <div>
-                        <img src = "../../img/download (1).jpg">
-                        <div class="list-content">Ao cua hoang</div>
-                        <div class="list-content">Date: 10/10/2010</div>
-                        <div>
-                            <a href="AdminProductlisting.php?view=" class="edit">View <i class="fa-solid fa-eye"></i></a>
-                            <a href="AdminProductlisting.php?delete=" class="delete" onclick="return confirm('Are you sure to delete this product');">Delete <i class="fa-solid fa-trash"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-list-single">
-                    <div>
-                        <img src = "../../img/download (1).jpg">
-                        <div class="list-content">Ao cua hoang</div>
-                        <div class="list-content">Date: 10/10/2010</div>
-                        <div>
-                            <a href="AdminProductlisting.php?view=" class="edit">View <i class="fa-solid fa-eye"></i></a>
-                            <a href="AdminProductlisting.php?delete=" class="delete" onclick="return confirm('Are you sure to delete this product');">Delete <i class="fa-solid fa-trash"></i></a>
-                        </div>
-                    </div>
-                </div>
+            <?php
+                        }
+                    }
+                }
+            ?>
             </div>
         </main>
     </div>

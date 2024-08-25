@@ -7,6 +7,9 @@
         $view_query = mysqli_query($conn, "SELECT * FROM orders where id='$view_id'") or die('Query failed');
         if (mysqli_num_rows($view_query) > 0){ 
            mysqli_query($conn, "UPDATE orders SET `status` = 'accepted' WHERE id = '$view_id'") or die('Query failed');
+
+           $order = mysqli_fetch_assoc($view_query);
+           mysqli_query($conn, "UPDATE cart SET `status` = 'accepted' WHERE owner_id = '$_SESSION[cus_id]' AND cus_id='$order[cus_id]' ") or die('Query failed');
         }
         header('location:OwnerOrder.php');
     }

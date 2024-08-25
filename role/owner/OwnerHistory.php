@@ -1,3 +1,9 @@
+<?php
+    include '../../ConnectDB.php';
+    session_start();    
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,73 +39,29 @@
             </div>
         </header>
     <main>
+        <?php
+                $select_orders = mysqli_query($conn, "SELECT * FROM orders WHERE owner_id='$_SESSION[cus_id]'") or die('Query failed');
+                if (mysqli_num_rows($select_orders) > 0){
+                    while($fetch_orders = mysqli_fetch_assoc($select_orders)){
+                        if ($fetch_orders['status'] == 'accepted'){
+                            $customer = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM customers WHERE cus_id='$fetch_orders[cus_id]' "));
+        ?>
         <div class="cards-list">
-            <div class="card-list-single-owner">
+            <div style="width: 200px;" class="card-list-single-owner">
                 <div>
-                    <div class="list-content">Order from Duc</div>
-                    <div class="list-content">Date: 10/08/2013</div>
+                    <div class="list-content">Order from <?php echo $customer['fullname'];?></div>
+                    <div class="list-content">Date: <?php echo $fetch_orders['date_start'];?> </div>
                     <div>
-                        <a href="ViewOrder.php?view=" class="edit">View <i class="fa-solid fa-eye"></i></a>
-                        <a href="Feedback.php?view=" class="delete">View Feedback <i class="fa-solid fa-trash"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-list-single-owner">
-                <div>
-                    <div class="list-content">Order from Hoang</div>
-                    <div class="list-content">Date: 10/10/2010</div>
-                    <div>
-                        <a href="ViewOrder.php?view=" class="edit">View <i class="fa-solid fa-eye"></i></a>
-                        <a href="Feedback.php?view=" class="delete">View Feedback <i class="fa-solid fa-trash"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-list-single-owner">
-                <div>
-                    <div class="list-content">Order from Khoa</div>
-                    <div class="list-content">Order date: 10/10/2010</div>
-                    <div>
-                        <a href="ViewOrder.php?view=" class="edit">View <i class="fa-solid fa-eye"></i></a>
-                        <a href="Feedback.php?view=" class="delete">View Feedback <i class="fa-solid fa-trash"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-list-single-owner">
-                <div>
-                    <div class="list-content">Order from Thinh</div>
-                    <div class="list-content">Date: 10/10/2010</div>
-                    <div>
-                        <a href="ViewOrder.php?view=" class="edit">View <i class="fa-solid fa-eye"></i></a>
-                        <a href="Feedback.php?view=" class="edit">View Feedback <i class="fa-solid fa-trash"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-list-single-owner">
-                <div>
-                    <div class="list-content">Order from Han</div>
-                    <div class="list-content">Date: 10/10/2010</div>
-                    <div>
-                        <a href="ViewOrder.php?view=" class="edit">View <i class="fa-solid fa-eye"></i></a>
-                        <a href="Feedback.php?view=" class="edit">View Feedback <i class="fa-solid fa-trash"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-list-single-owner">
-                <div>
-                    <div class="list-content">Order from Duc</div>
-                    <div class="list-content">Date: 10/10/2010</div>
-                    <div>
-                        <a href="ViewOrder.php?view=" class="edit">View <i class="fa-solid fa-eye"></i></a>
-                        <a href="Feedback.php?view=" class="edit">View Feedback <i class="fa-solid fa-trash"></i></a>
+                        <a style="margin-left: 10px;" href="ViewOrder.php?view=<?php echo $fetch_orders['id']?>" class="delete">View Order<i class="fa-solid fa-eye"></i></a>
                     </div>
                 </div>
             </div>
         </div>
+        <?php
+                        }
+                    }
+                }
+        ?>
     </main>
 </body>
 </html>
