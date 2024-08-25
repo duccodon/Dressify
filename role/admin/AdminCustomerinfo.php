@@ -131,38 +131,46 @@
                     </div>
                         <div class="card-body">
             <?php
-                $select_owner = mysqli_query($conn, "SELECT * FROM customers WHERE user_type = 'Customer' ORDER BY cus_id DESC LIMIT 3") or die('Query failed');
-                if (mysqli_num_rows($select_owner) > 0){
-                    while($fetch_owner = mysqli_fetch_assoc($select_owner)){
+                $select_cus = mysqli_query($conn, "SELECT * FROM customers WHERE user_type = 'Customer' ORDER BY cus_id DESC LIMIT 3") or die('Query failed');
+                if (mysqli_num_rows($select_cus) > 0){
+                    while($fetch_cus = mysqli_fetch_assoc($select_cus)){
             ?>
                     
                 <div class="customer">
-                <img src = "../../img/product/ <?php echo $fetch_owner['avatar'];?>" width="40px" height="40px" alt="Avatar">
+                <?php
+                    if(empty($fetch_cus['avatar'])) {
+                ?>
+                <img src="../../img/default_avatar.jpg" width="40px" height="40px" style="border-radius: 50%; display: block; float: left; margin-right: 25px;"  alt="Avatar">
+
+                <?php } else {?>
+                <img src = "../../img/ <?php echo $fetch_cus['avatar'];?>" width="40px" height="40px" alt="Avatar">
+                <?php
+                    }
+                ?>
                     <div class="info">
-                        <h4><?php echo $fetch_owner['fullname'] ?></h4>
-                        <small><?php echo $fetch_owner['email'] ?></small>
+                        <h4><?php echo $fetch_cus['fullname'] ?></h4>
+                        <small><?php echo $fetch_cus['email'] ?></small>
                     </div>
                     <div class="contact">
                                 <span class="la la-user-circle"></span>
-                                <span class="la la-phone"></span>
                                 <span class="la la-at"></span>
                     </div>
                 </div>    
                     
             <?php
-                    }
+                
+                }
                 }
             ?>
                         </div>
                 </div>
             </div>
             <div class="owners">
-                <div class="card">
+            <div class="card">
                     <div class="card-header">
-                        <h3>New Rental Owners</h3>
+                        <h3>New customers</h3>
                     </div>
-                        
-                    <div class="card-body">
+                        <div class="card-body">
             <?php
                 $select_cus = mysqli_query($conn, "SELECT * FROM customers WHERE user_type = 'Rental Owner' ORDER BY cus_id DESC LIMIT 3") or die('Query failed');
                 if (mysqli_num_rows($select_cus) > 0){
@@ -170,24 +178,33 @@
             ?>
                     
                 <div class="customer">
-                <img src = "../../img/product/ <?php echo $fetch_cus['avatar'];?>" width="40px" height="40px" alt="Avatar">
+                <?php
+                    if(empty($fetch_cus['avatar'])) {
+                ?>
+                <img src="../../img/default_avatar.jpg" width="40px" height="40px" style="border-radius: 50%; display: block; float: left; margin-right: 25px;"  alt="Avatar">
+
+                <?php } else {?>
+                <img src = "../../img/ <?php echo $fetch_cus['avatar'];?>" width="40px" height="40px" alt="Avatar">
+                <?php
+                    }
+                ?>
                     <div class="info">
                         <h4><?php echo $fetch_cus['fullname'] ?></h4>
                         <small><?php echo $fetch_cus['email'] ?></small>
                     </div>
                     <div class="contact">
                                 <span class="la la-user-circle"></span>
-                                <span class="la la-phone"></span>
                                 <span class="la la-at"></span>
                     </div>
                 </div>    
                     
             <?php
-                    }
+                
+                }
                 }
             ?>
+                        </div>
                 </div>
-            </div>
         </div>
     </main>
 </div>
