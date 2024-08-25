@@ -17,8 +17,6 @@
   <main class="main-content">
     <form class="feedback-form" method="post" action="CustomerSubmitsFeedback.php" enctype="multipart/form-data">
       <h1 class="feedback-title">Customer's Feedback</h1>
-      <label for="rating" class="rating-question">How would you rate our product?</label>
-      <input type="text" id="rating" name="rating" class="rating-input" placeholder="Enter here" aria-label="Enter product rating">
       <label for="package-number" class="package-number-label">Package Number</label>
       <input type="text" id="package-number" name="package-number" class="package-number-input" placeholder="Package Number" aria-label="Enter Package Number">
       <label for="package-details" class="package-details-label">Package details</label>
