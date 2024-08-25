@@ -1,3 +1,11 @@
+:root{
+    --theme-color:#E5EDFD;
+    --dark-blue:#417BF7;
+    --light-blue:#779DF8;
+    --light-sky:#E5EDFD;
+    --black:#1c1c1c;
+}
+
 h2 {   
     width: 825px;
     display: flex;
@@ -22,9 +30,9 @@ h2 {
         float: left;
         display: flex;
         width: 100%;
-        border: 3px solid #FF7F7F;
+        border: 3px solid var(--dark-blue);
         border-radius: 5px;
-        background-color: #fbf3d5;
+        background-color: powderblue;
         font-size: 14px;
         padding: 0px 20px 0px 20px;
         margin-bottom: 20px;

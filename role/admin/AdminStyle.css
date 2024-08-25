@@ -204,7 +204,7 @@ main {
     margin-left: 10px;
     padding: 1.5rem;
     border-radius: 20px;
-    background: var(--light-sky);
+    background: mintcream;
 }
 .card-header, .card-body{
     padding-left: 1rem;
