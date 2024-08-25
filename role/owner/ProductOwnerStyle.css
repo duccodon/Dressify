@@ -82,7 +82,7 @@
 .promotion-content {
     width: 100%;
     height: 400px;
-    background-color: #F0EEED; 
+    background-color: #ffff; 
     border: 2px solid #000;
     border-radius: 20px;
 }
@@ -92,8 +92,8 @@
     margin-top: -20px;
     margin-right: 20px;
     padding: 10px 20px;
-    background-color: #000;
-    color: #fff;
+    background-color: #779DF8;
+    color: #000;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -101,7 +101,7 @@
 }
 
 .add-promotion-btn:hover {
-    background-color: #333;
+    background-color: #417BF7;
 }
 
 .modal {
