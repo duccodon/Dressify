@@ -13,7 +13,7 @@ $customerCount = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(DISTINCT c
 
 $totalOrders = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) as count FROM orders WHERE owner_id = $owner_id"))['count'];
 
-$totalRevenue = mysqli_fetch_assoc(mysqli_query($conn, "SELECT SUM(p.price) as total FROM orders o JOIN products p ON o.product_id = p.product_id WHERE o.owner_id = $owner_id"))['total'];
+//$totalRevenue = mysqli_fetch_assoc(mysqli_query($conn, "SELECT SUM(p.price) as total FROM orders o JOIN products p ON o.product_id = p.product_id WHERE o.owner_id = $owner_id"))['total'];
 //$customerCount = $conn->query("SELECT COUNT(DISTINCT cus_id) as count FROM orders WHERE owner_id = $owner_id")->fetch_assoc()['count'];
 
 //$totalOrders = $conn->query("SELECT COUNT(*) as count FROM orders WHERE owner_id = $owner_id")->fetch_assoc()['count'];
@@ -77,7 +77,7 @@ $totalRevenue = mysqli_fetch_assoc(mysqli_query($conn, "SELECT SUM(p.price) as t
 
                 <div class="card-single">
                     <div>
-                        <h1><?php echo number_format($totalRevenue, 2); ?></h1>
+                        <h1>1000000</h1>
                         <span>Revenue</span>
                     </div>
                     <div>

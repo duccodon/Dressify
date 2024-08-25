@@ -31,11 +31,11 @@
             </div>
         <div class="notification-list">
             <?php
-                $cart_query = mysqli_query($conn, "SELECT DISTINCT owner_id FROM cart WHERE `status`='checkout'");
+                $cart_query = mysqli_query($conn, "SELECT DISTINCT owner_id FROM cart WHERE `status`='checkout' AND `cus_id`='$_SESSION[cus_id]' ");
                 if (mysqli_num_rows($cart_query) > 0){
                     while($fetch_owner = mysqli_fetch_assoc($cart_query)){
                         $owner = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM customers WHERE cus_id='$fetch_owner[owner_id]'"));
-                        $amount = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS count FROM cart WHERE owner_id='$owner[cus_id]'"))['count'];    
+                        $amount = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(*) AS count FROM cart WHERE `status`='checkout' AND `cus_id`='$_SESSION[cus_id]' "))['count'];    
             ?>
 
                 <a class="notification" href="Cart.php?view-cart=<?php echo $owner['cus_id']?>" >
@@ -57,7 +57,7 @@
             <?php
                 if(isset($_GET['view-cart'])){
                     $owner_id = $_GET['view-cart'];
-                    $product_id = mysqli_query($conn, "SELECT * FROM cart as c JOIN products as p ON c.product_id=p.product_id WHERE p.owner_id ='$owner_id'");
+                    $product_id = mysqli_query($conn, "SELECT * FROM cart as c JOIN products as p ON c.product_id=p.product_id WHERE p.owner_id ='$owner_id' AND `status`='checkout' AND `cus_id`='$_SESSION[cus_id]'");
                     $owner = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM customers WHERE cus_id='$owner_id'"));//ready
             ?>
             <h2 style="display:flex; justify-content:center; width: 100%;">Order Information From <?php echo $owner['username']?></h2> 

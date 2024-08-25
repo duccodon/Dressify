@@ -6,7 +6,7 @@
     $total=0;
 
     $owner_id_main = $_GET['owner_id'];
-    $product_id_main = mysqli_query($conn, "SELECT * FROM cart as c JOIN products as p ON c.product_id=p.product_id WHERE p.owner_id ='$owner_id_main'");
+    $product_id_main = mysqli_query($conn, "SELECT * FROM cart as c JOIN products as p ON c.product_id=p.product_id WHERE p.owner_id ='$owner_id_main' AND `status`='checkout' AND `cus_id`='$_SESSION[cus_id]'");
     while($fetch_product = mysqli_fetch_assoc($product_id_main))
         $total = $total + $fetch_product['price']; 
 
@@ -45,7 +45,9 @@
 
         mysqli_query($conn, "INSERT INTO orders (`cus_id`, `owner_id`, `fullname`, `contact_number`, `shipping_address`, `city`, `country`,  `date_start`, `duration`, `status`, `delivery_code`, `total`, `note`) 
         VALUES('$_SESSION[cus_id]', '$owner_id_main', '$fullname', '$contact_number', '$shipping_address', '$city', '$country', '$date_start', '$duration', 'in progress', '$delivery_unit', '$total', '$note')") or die('Query failed');
-        $message_up[] = 'Place an order successfully' .$delivery_price;
+        
+        mysqli_query($conn, "UPDATE cart SET `status`= 'in progress' WHERE cus_id='$_SESSION[cus_id]' AND owner_id='$owner_id_main' AND `status`='checkout'");
+        $message_up[] = 'Place an order successfully';
     }
 
     $total=0;
@@ -90,7 +92,7 @@
         <?php
             if(isset($_GET['owner_id'])){
                 $owner_id = $_GET['owner_id'];
-                $product_id = mysqli_query($conn, "SELECT * FROM cart as c JOIN products as p ON c.product_id=p.product_id WHERE p.owner_id ='$owner_id'");
+                $product_id = mysqli_query($conn, "SELECT * FROM cart as c JOIN products as p ON c.product_id=p.product_id WHERE p.owner_id ='$owner_id' AND `status`='checkout' AND `cus_id`='$_SESSION[cus_id]'");
                 $owner = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM customers WHERE cus_id='$owner_id'"));//ready
                 while($fetch_product = mysqli_fetch_assoc($product_id)){  
                   $total = $total + $fetch_product['price']; 
@@ -180,21 +182,18 @@
             </div>
             <div class="form-group">
             <label for="houseNumber">Delivery Unit</label>
-                <select name="delivery_unit" class="form-input" id="getDelivery">
-                    <option value="Giao Hang Tiet Kiem">Giao Hang Tiet Kiem</option>
-                    <option value="GHN">GHN</option>
-                    <option value="Ahamove">Ahamove</option>
-                    <option value="Grab">Grab</option>
-                    <option value="Shopee">Shopee</option>
+                <select name="delivery_unit" class="form-input" id="getDelivery" required>
+                  <option value="" disabled selected>Select a delivery unit</option>
+                  <option value="Giao Hang Tiet Kiem" cost="5000">Giao Hang Tiet Kiem</option>
+                  <option value="GHN" cost="15000">GHN</option>
+                  <option value="Ahamove" cost="12000">Ahamove</option>
+                  <option value="Grab" cost="10000">Grab</option>
+                  <option value="Shopee" cost="8000">Shopee</option>
                 </select>
-                <?php
-                    // $getDelivery = $_POST['delivery_unit'];
-                    // $price = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM delivery_unit WHERE `name`='$getDelivery'"))['price'];
-                ?>
             </div>
 
           <label for="packageNote" class="visually-hidden">Leave your note here</label>
-          <textarea name="note" class="note-input" placeholder="Leave your note here"></textarea>
+          <textarea name="note" class="note-input" placeholder="Leave your note here" required></textarea>
 
         <h2 style="margin-top: 1rem;" class="section-title">Order Confirmation</h2>
         <div class="order-summary">
@@ -213,13 +212,13 @@
             </div>
             <div class="summary-values">
               <p><?php echo $total?></p>
-              <p id="selected_delivery_unit"></p>
+              <p id="displayDelivery"></p>
             </div>
           </div>
           <hr class="divider" />
           <div class="total">
             <p>Order Total:</p>
-            <p><?php echo $total?></p>
+            <p id="displayTotal"></p>
           </div>
         </div>
         </form>    
@@ -232,10 +231,23 @@
 </body>
 
 <script>
-  function updateSelectedDeliveryUnit() {
-    var selectedDeliveryUnit = document.getElementById("getDelivery").value;
-    document.getElementById("selected_delivery_unit").textContent = selectedDeliveryUnit;
-  }
+    const baseAmount = <?php echo json_encode($total); ?>;
+
+    const selectElement = document.getElementById('getDelivery');
+    const displayElement = document.getElementById('displayDelivery');
+    const totalElement = document.getElementById('displayTotal');
+
+    // Add an event listener to detect changes in the select element
+    selectElement.addEventListener('change', function() {
+        const selectedValue = selectElement.value;
+        const selectedOption = selectElement.options[selectElement.selectedIndex];
+
+        const cost = parseInt(selectedOption.getAttribute('cost'), 10);
+        const finalTotal = cost + baseAmount;
+
+        displayElement.textContent = `${cost}`;
+        totalElement.textContent = `${finalTotal}`;
+    });
 </script>
 
 </html>
