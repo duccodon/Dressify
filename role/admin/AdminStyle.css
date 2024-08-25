@@ -1,12 +1,9 @@
 :root{
-    --theme-color:#FBF3D5;
-    --bright-orange:#efbc9b;
-    --dark-orange:#ff7008;
-    --bright-green:#D6DAC8;
-    --dark-green:#9CAFAA;
+    --theme-color:#E5EDFD;
+    --dark-blue:#417BF7;
+    --light-blue:#779DF8;
+    --light-sky:#E5EDFD;
     --black:#1c1c1c;
-    --red-murrey:#817373;
-    --bright-yellow:#F5D8B8;
 }
 
 * {
@@ -47,13 +44,13 @@ body {
     left: 0;
     top: 0;
     height: 100%;
-    background: var(--bright-orange);
+    background: var(--dark-blue);
     z-index: 2;
 }
 
 .sidebar-brand {
     font-size: 50px;
-    color: var(--dark-orange);
+    color: #ffffff;
     height: 300px;
     writing-mode: vertical-rl;  
     text-orientation: mixed;    /* Keeps characters horizontal */
@@ -73,10 +70,10 @@ body {
 }
 
 .sidebar-menu li:hover{
-    background: var(--theme-color);
+    background: var(--light-blue);
     padding-top: 1rem;
     padding-bottom: 1rem;
-    color: var(--dark-orange);
+    color: var(--light-sky);
     border-radius: 30px 0px 0px 30px;
 }
 
@@ -84,14 +81,14 @@ body {
     padding-left: 1rem;
     display: block;
     font-size: 20px;
-    color: var(--dark-orange);
+    color: #ffffff;
 }
 
 .sidebar-menu a.active {
-    background: var(--theme-color);
+    background: var(--light-blue);
     padding-top: 1rem;
     padding-bottom: 1rem;
-    color: var(--dark-orange);
+    color: var(--light-sky);
     border-radius: 30px 0px 0px 30px;
 }
 
@@ -127,7 +124,7 @@ header label span {
 }
 
 .search-wrapper {
-    border: 1px solid var(--dark-green);
+    border: 1px solid var(--light-sky);
     border-radius: 30px;
     height: 50px;
     width: 250px;
@@ -179,14 +176,14 @@ main {
 .card-single {
     display: flex;
     justify-content: space-between;
-    background: var(--bright-green);
+    background: var(--light-blue);
     padding: 1.5rem;
     border-radius: 20px;
 }
 
 .card-single div:last-child span{
     font-size: 35px;
-    color: var(--red-murrey)
+    color: var(--black)
 }
 .card-single div:first-child span{
     color:var(--black);
@@ -207,7 +204,7 @@ main {
     margin-left: 10px;
     padding: 1.5rem;
     border-radius: 20px;
-    background: var(--dark-green);
+    background: var(--light-sky);
 }
 .card-header, .card-body{
     padding-left: 1rem;
@@ -219,9 +216,9 @@ main {
 }
 
 .card-header button, tbody a{
-    background-color: var(--red-murrey);
+    background-color: var(--light-blue);
     border-radius: 4px;
-    color: var(--bright-green);
+    color: var(--black);
     font-size: .8rem;
     padding: .5rem .1rem;
     border: 2px var();
@@ -232,8 +229,8 @@ table {
 }
 
 thead tr{
-    border-top: 2px solid var(--bright-yellow);
-    border-bottom: 2px solid var(--bright-yellow);
+    border-top: 2px solid var(--light-blue);
+    border-bottom: 2px solid var(--light-blue);
 }
 
 thead td {
@@ -254,7 +251,7 @@ td .status {
 
 
 .status.finish{
-    background: var(--bright-yellow);
+    background: var(--light-blue);
 }
 .status.deli-cus{
     background: #19223F;
@@ -295,7 +292,7 @@ td .status {
 
 .contact {
     font-size: 20px;
-    color: var(--red-murrey);
+    color: var(--black);
 }
 
 /*****************************AdminProductlisting*****************************/
@@ -308,7 +305,7 @@ td .status {
 
 .card-list-single {
     display: flex;
-    background: var(--bright-green);
+    background: var(--light-blue);
     padding: 1.5rem;
     border-radius: 20px;
     width: 300px;
@@ -318,7 +315,7 @@ td .status {
 
 .card-list-single-owner {
     display: flex;
-    background: var(--bright-green);
+    background: var(--light-blue);
     padding: 1.5rem;
     border-radius: 20px;
     width: 300px;
@@ -330,14 +327,14 @@ td .status {
     width: 100%;
     height: 70%;
     filter: drop-shadow(
-        0 10px 10px var(--red-murrey)
+        0 10px 10px var(--black)
     );
     border-radius: 20px;
 }
 .card-list-single .list-content{
     display: flex;
     justify-content: center;
-    color: var(--red-murrey);
+    color: var(--black);
     font-size: 20px;
     padding-bottom: 0.3rem;
 }
@@ -345,7 +342,7 @@ td .status {
 .card-list-single-owner .list-content{
     display: flex;
     justify-content: left;
-    color: var(--red-murrey);
+    color: var(--black);
     font-size: 15px;
     padding-bottom: 0.3rem;
 }
@@ -354,20 +351,20 @@ td .status {
     display: inline-flex;
     justify-content:space-between;
     margin-left: 2.2rem;
-    background: var(--dark-green);
+    background: var(--light-sky);
     padding: .4rem;
     border-radius: 10px;
-    color: var(--red-murrey);
+    color: var(--black);
 }
 
 .card-list-single-owner a {
     display: inline-flex;
     justify-content: center;
     margin-left: 20px;
-    background: var(--dark-green);
+    background: var(--light-sky);
     padding: 5px;
     border-radius: 10px;
-    color: var(--red-murrey);
+    color: var(--black);
 }
 
 .wish {
@@ -377,13 +374,13 @@ td .status {
     z-index: 2;
 }
 .card-list-single a:hover, .wish:hover {
-    background-color: var(--red-murrey);
-    color: var(--dark-green);
+    background-color: var(--dark-blue);
+    color: var(--light-sky);
 }
 
 .card-list-single-owner a:hover {
-    background-color: var(--red-murrey);
-    color: var(--dark-green);
+    background-color: var(--dark-blue);
+    color: var(--light-sky);
 }
 
 /******************************order feedback******************************/
