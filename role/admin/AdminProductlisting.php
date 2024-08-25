@@ -4,31 +4,40 @@
 
     require 'check.php';
 
+    $message_up = array();
+
     if (isset($_GET['agree'])){
         $view_id = $_GET['agree'];
         $view_query = mysqli_query($conn, "SELECT * FROM products where product_id='$view_id'") or die('Query failed');
+        $_SESSION['message_up'] = 'Add a product successfully';
         if (mysqli_num_rows($view_query) > 0){ 
-           $agree_product = mysqli_query($conn, "UPDATE products SET approve = 'True' WHERE product_id = '$view_id'") or die('Query failed');
+            $agree_product = mysqli_query($conn, "UPDATE products SET approve = 'True' WHERE product_id = '$view_id'") or die('Query failed');
         }
-        header('location:AdminProductlisting.php');
+        // Redirect to AdminProductlisting.php after displaying the message
+        header('Location: AdminProductlisting.php');
+        exit();
     }
-
+    
     if (isset($_GET['decline'])){
         $view_id = $_GET['decline'];
         $view_query = mysqli_query($conn, "SELECT * FROM products where product_id='$view_id'") or die('Query failed');
+        $_SESSION['message_up'] = 'Decline a product successfully';
         if (mysqli_num_rows($view_query) > 0){ 
-           $decline_product = mysqli_query($conn, "DELETE FROM products WHERE product_id = '$view_id'") or die('Query failed');
+            $decline_product = mysqli_query($conn, "DELETE FROM products WHERE product_id = '$view_id'") or die('Query failed');
         }
-        header('location:AdminProductlisting.php');
+        header('Location: AdminProductlisting.php');
+        exit();
     }
-
+    
     if (isset($_GET['delete'])){
         $view_id = $_GET['delete'];
         $view_query = mysqli_query($conn, "SELECT * FROM products where product_id='$view_id'") or die('Query failed');
+        $_SESSION['message_up'] = 'Delete a product successfully';
         if (mysqli_num_rows($view_query) > 0){ 
-           $delete_product = mysqli_query($conn, "DELETE FROM products WHERE product_id = '$view_id'") or die('Query failed');
+            $delete_product = mysqli_query($conn, "DELETE FROM products WHERE product_id = '$view_id'") or die('Query failed');
         }
-        header('location:AdminProductlisting.php');
+        header('Location: AdminProductlisting.php');
+        exit();
     }
 ?>
 
@@ -43,6 +52,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
+<?php
+session_start();
+
+if (isset($_SESSION['message_up'])){
+    $message = $_SESSION['message_up'];
+    echo '
+    <div id="message" style="border-radius: 15px; background-color: rgba(0,0,0,0.6); width: 400px; height: 200px; color: #fff; padding: 40px; margin: 10px 0 0 40%; z-index: 100; position: relative;">
+        <span style="margin-left: 20%">'.$message.'<i style="margin-left: 1rem;" class="fa-solid fa-trash" onclick="this.closest(\'div\').remove()"></i></span>
+        <span style="margin-left: 20%">Sent notification to the owner</span>
+    </div>
+    ';
+    unset($_SESSION['message_up']);
+}
+    ?>
 
     <div class="sidebar">
         <div class="sidebar-brand">
