@@ -33,7 +33,12 @@
                   <input type="number" id="price" class="form-input" name ="price" placeholder="Enter price (vnd)"/>
         
                   <label for="category" class="form-label">Category</label>
-                  <input type="text" id="category" class="form-input" name ="category" placeholder="Enter category"/>
+                  <select type="text" id="category" class="form-input" name ="category" placeholder="Enter category">
+                    <option>Formal clothes</option>
+                    <option>Casual clothes</option>
+                    <option>Cosplay costumes</option>
+                    <option>Uniform</option>
+                  </select>
         
                   <label for="description" class="form-label">Description</label>
                   <textarea id="description" class="form-textarea" name="description" placeholder="Enter here"></textarea>
