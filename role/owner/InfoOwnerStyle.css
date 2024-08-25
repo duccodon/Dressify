@@ -109,9 +109,9 @@
   .form-input {
     border-radius: 5px;
     border: 5px solid rgba(156, 175, 170, 1);
-    background-color: #fbf3d5;
+    background-color: #ffff;
     margin-top: 9px;
-    color: #858585;
+    color: #1c1c1c;
     padding: 31px 32px;
     font: 500 24px Roboto, sans-serif;
   }
@@ -195,7 +195,7 @@
   }
   
   .submit-button {
-    background-color: rgba(239, 188, 155, 1);
+    background-color: #779DF8;
     align-self: center;
     margin-top: 57px;
     margin-bottom: 57px;
