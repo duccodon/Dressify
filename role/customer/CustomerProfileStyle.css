@@ -108,8 +108,8 @@
   
   .form-input {
     border-radius: 5px;
-    border: 5px solid rgba(156, 175, 170, 1);
-    background-color: #fbf3d5;
+    border: 4px solid rgba(0, 0, 0);
+    background-color: #E5EDFD;
     margin-top: 9px;
     color: #858585;
     padding: 31px 32px;
