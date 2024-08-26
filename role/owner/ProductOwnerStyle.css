@@ -85,11 +85,17 @@
     background-color: #ffff; 
     border: 2px solid #000;
     border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 10px;
+    padding: 10px;
+    overflow-y: auto;
 }
 
 .promotion-box {
-    width: 250px;
-    height: 150px;
+    width: calc(33.33% - 10px);
+    min-height: 150px;
     border: 2px solid #ddd;
     border-radius: 10px;
     padding: 20px;
@@ -99,6 +105,8 @@
     flex-direction: column;
     justify-content: center;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    flex-grow: 0;
+    flex-shrink: 0;
 }
 
 .promotion-box h3 {
