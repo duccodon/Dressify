@@ -25,7 +25,9 @@
                 </div>
                 
                 <div class="promotion-section">
-                    <div class="promotion-content"></div>
+                    <div class="promotion-content">
+                        
+                    </div>
                     <button id="addPromotionBtn" class="add-promotion-btn">Add Promotion</button>
                 </div>
                 <div id="promotionModal" class="modal">
@@ -85,7 +87,7 @@
                 </div>
             </main>
     </section>
-    <!-- <script src="ProductOwnerScript.js"></script> -->
+    <script src="ProductOwnerScript.js"></script>
 </body>
 </html>
 
