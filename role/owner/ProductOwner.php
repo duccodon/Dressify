@@ -8,6 +8,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Text+Me+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="ProductOwnerStyle.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <title>Profile</title>
@@ -17,16 +19,14 @@
     <section class="profile-container">
             <main class="main-content">
                 <div class="filter-buttons">
-                    <button class="filter-button">Casual</button>
+                    <button class="filter-button">Formal clothes</button>
+                    <button class="filter-button">Casual clothes</button>
+                    <button class="filter-button active">Cosplay costumes</button>
                     <button class="filter-button">Uniform</button>
-                    <button class="filter-button active">Traditional</button>
-                    <button class="filter-button">Uniform</button>
-                    <button class="filter-button">Casual</button>
                 </div>
                 
                 <div class="promotion-section">
                     <div class="promotion-content">
-                        
                     </div>
                     <button id="addPromotionBtn" class="add-promotion-btn">Add Promotion</button>
                 </div>
