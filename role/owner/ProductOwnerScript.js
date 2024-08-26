@@ -31,20 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    form.onsubmit = function(e) {
-        e.preventDefault();
-        var discountCode = form.discountCode.value;
-        var selectedItems = Array.from(itemCheckboxes.querySelectorAll('input[type="checkbox"]:checked'))
-            .map(cb => cb.value);
-
-        // Add new promotion box
-        addPromotionBox(discountCode, selectedItems);
-
-        // Close the modal after submission
-        modal.style.display = 'none';
-        form.reset();
-    }
-
     function populateItemCheckboxes() {
         var items = ['Denim Jacket', 'Blue Jeans', 'Blue Sweater'];
         itemCheckboxes.innerHTML = items.map(item => 
@@ -52,13 +38,41 @@ document.addEventListener('DOMContentLoaded', function() {
         ).join('');
     }
 
-    function addPromotionBox(discountCode, items) {
+    form.onsubmit = function(e) {
+        e.preventDefault();
+        var discountCode = form.discountCode.value;
+        var promotionImage = form.promotionImage.files[0];
+        var selectedItems = Array.from(itemCheckboxes.querySelectorAll('input[type="checkbox"]:checked'))
+            .map(cb => cb.value);
+    
+        if (promotionImage) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                addPromotionBox(discountCode, selectedItems, e.target.result);
+            }
+            reader.readAsDataURL(promotionImage);
+        } else {
+            addPromotionBox(discountCode, selectedItems, null);
+        }
+    
+        modal.style.display = 'none';
+        form.reset();
+    }
+    
+    function addPromotionBox(discountCode, items, imageUrl) {
         var promotionBox = document.createElement('div');
         promotionBox.className = 'promotion-box';
         promotionBox.innerHTML = `
-            <h3>${discountCode}</h3>
-            <p>Applies to: ${items.join(', ')}</p>
+            ${imageUrl ? `<img src="${imageUrl}" alt="Promotion Image" class="promotion-image">` : ''}
+            <div class="promotion-details">
+                <h3>${discountCode}</h3>
+                <p>Applies to: ${items.join(', ')}</p>
+            </div>
         `;
         promotionContent.appendChild(promotionBox);
+    
+        if (promotionContent.scrollHeight > promotionContent.clientHeight) {
+            promotionContent.style.overflowY = 'scroll';
+        }
     }
 });
