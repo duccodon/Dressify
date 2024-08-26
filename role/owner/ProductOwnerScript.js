@@ -1,28 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    const buttons1 = document.querySelectorAll('.filter-button');
-    
-    buttons.forEach(button => {
-        button.addEventListener('click', function() {
-            buttons1.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-        });
-    });
-
     const buttons = document.querySelectorAll('.filter-button');
-    var modal = document.getElementById('promotionModal');
-    var btn = document.getElementById('addPromotionBtn');
-    var span = document.getElementsByClassName('close')[0];
-    var form = document.getElementById('promotionForm');
-    var itemCheckboxes = document.getElementById('itemCheckboxes');
-    var promotionContent = document.querySelector('.promotion-content');
-
+    
     buttons.forEach(button => {
         button.addEventListener('click', function() {
             buttons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
         });
     });
+
+    var modal = document.getElementById('promotionModal');
+    var btn = document.getElementById('addPromotionBtn');
+    var span = document.getElementsByClassName('close')[0];
+    var form = document.getElementById('promotionForm');
+    var itemCheckboxes = document.getElementById('itemCheckboxes');
+    var promotionContent = document.querySelector('.promotion-content');
 
     btn.onclick = function() {
         modal.style.display = 'block';
