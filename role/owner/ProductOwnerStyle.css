@@ -87,6 +87,36 @@
     border-radius: 20px;
 }
 
+.promotion-box {
+    width: 250px;
+    height: 150px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.promotion-box h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.2em;
+}
+
+.promotion-box p {
+    margin: 10px 0;
+    font-size: 0.9em;
+}
+
+.add-promotion-btn:hover {
+    background-color: #417BF7;
+}
+
+
 .add-promotion-btn {
     float: right;
     margin-top: -20px;
@@ -100,9 +130,6 @@
     font-size: 16px;
 }
 
-.add-promotion-btn:hover {
-    background-color: #417BF7;
-}
 
 .modal {
     display: none;
