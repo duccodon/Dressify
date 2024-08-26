@@ -106,8 +106,9 @@
 
 .product-card {
   border-radius: 15px;
+  border: 2px solid rgba(0, 0, 0);
+  background-color: #E5EDFD;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
-  background-color: #d6dac8;
   margin: 28px 0 0 56px;
   padding: 10px 31px;
 }
