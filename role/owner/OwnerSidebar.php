@@ -101,32 +101,5 @@ session_start();
             </div>
         </header>
     </div>
-<script>
-    function loadDoc() {
-        setInterval(function(){
-            const xhttp = new XMLHttpRequest();
-            xhttp.onload = function() {
-            document.getElementById("notifcount").innerHTML = this.responseText;
-            }
-            xhttp.open("GET", "incomeCount.php", true);
-            xhttp.send();
-        }, 10);
-}
-
-function loadDoc2() {
-        setInterval(function(){
-            const xhttp = new XMLHttpRequest();
-            xhttp.onload = function() {
-            document.getElementById("fbcount").innerHTML = this.responseText;
-            }
-            xhttp.open("GET", "fbcount.php", true);
-            xhttp.send();
-        }, 10);
-}
-
-
-loadDoc();
-loadDoc2();
-</script>
 </body>
 </html>
