@@ -27,6 +27,7 @@
                 
                 <div class="promotion-section">
                     <div class="promotion-content">
+                        <!-- Promotion boxes will be dynamically added here -->
                     </div>
                     <button id="addPromotionBtn" class="add-promotion-btn">Add Promotion</button>
                 </div>
@@ -38,6 +39,11 @@
                             <div class="form-group">
                                 <label for="discountCode">Discount Code:</label>
                                 <input type="text" id="discountCode" name="discountCode" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="discountValue">Discount Value (%):</label>
+                                <input type="number" id="discountValue" name="discountValue" min="0" max="100" required>
                             </div>
 
                             <div class="form-group">
