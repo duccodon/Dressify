@@ -848,7 +848,7 @@ body {
   position: relative;
   z-index: 10;
   margin-left: 111px;
-  width: 663px;
+  width: 1211px;
   max-width: 100%;
 }
 
@@ -898,7 +898,7 @@ body {
   flex-direction: column;
   color: #000;
   font-weight: 400;
-  margin-top: 7px;
+  margin-top: 5px;
 }
 
 .brand-name {
@@ -928,6 +928,7 @@ body {
   width: 20px;
   align-self: stretch;
   margin: auto 0;
+  transform: translate(8px,0);
 }
 
 .social-icon-large {
