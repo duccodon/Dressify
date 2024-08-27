@@ -15,8 +15,8 @@
       <nav class="nav-container">
         <div class="logo-container">
           <div class="logo-wrapper">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ef1c57dd-f848-4202-b456-1fc8df3eb044?apiKey=ddd8aa0cfecf4afdbc9c5aaf3fe7201a&" alt="Logo" class="logo-image" />
-            <span class="logo-text">FRIENDS</span>
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/34558c40-b052-415f-959c-e1a06fbe2d55?placeholderIfAbsent=true&apiKey=ef65c1600ab64517b49ba8fffd8c443f" alt="Logo" class="logo-image" />
+            <span class="logo-text">DRESSIFY</span>
           </div>
         </div>
         <div class="nav-links-container">
@@ -25,10 +25,10 @@
             <a href="#" class="nav-link">Terms of use</a>
             <a href="#" class="nav-link">Feedback</a>
             <a href="#" class="nav-link">Contact</a>
-            <div class="sign-in-button">
+            <button class="sign-in-button">
               <span class="sign-in-text">Sign in</span>
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d23728ac3130592e39689104affbdfd6c7be8668f97af59c09c65d846221a39e?apiKey=ddd8aa0cfecf4afdbc9c5aaf3fe7201a&" alt="Sign in" class="sign-in-icon" />
-            </div>
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b19110c5d3d10ff7d2da96be65a6cf627d76465c96da1727b2bfb6d7eab82d3e?apiKey=ddd8aa0cfecf4afdbc9c5aaf3fe7201a&" alt="Sign in" class="sign-in-icon" />
+          </button>
           </div>
         </div>
       </nav>
@@ -39,10 +39,10 @@
         <div class="hero-content">
           <div class="hero-text-container">
             <div class="hero-text-wrapper">
-              <h2 class="welcome-text"> <span style="color: #efbc9b;">Welcome!</span></h2>
+              <h2 class="welcome-text"> <span style="color: #779DF8;">Welcome!</span></h2>
               <h1 class="hero-title">
                 The World's Best Clothing Rental
-                <span style="color: #efbc9b;">Platform</span>
+                <span style="color: #779DF8;">Platform</span>
               </h1>
               <p class="hero-description">
                 We provide the widest range of clothes from casual outfits to high-end fashion with competitive pricing.
@@ -77,7 +77,7 @@
                         </div>
                       </div>
                       <div class="partners-logo-column-2">
-                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/042acd227ce9b7224db440203eea3ad70bf93fe41a1eacc9557d2e7192d8cef1?apiKey=ddd8aa0cfecf4afdbc9c5aaf3fe7201a&" alt="Partner 3" class="partner-logo-3" />
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6da685c30dfd50be7a2586ec1d1bd2fa882b2bfe7f6dd49d71d26b0a719358b3?placeholderIfAbsent=true&apiKey=ef65c1600ab64517b49ba8fffd8c443f" alt="Partner 3" class="partner-logo-3" />
                       </div>
                     </div>
                   </div>
@@ -90,7 +90,7 @@
           </div>
           <div class="partners-logo-column-4">
             <div class="partners-logo-stack">
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/dfacba74-0d93-4ef4-adda-d47ceb28c97a?apiKey=ddd8aa0cfecf4afdbc9c5aaf3fe7201a&" alt="Partner 5" class="partner-logo-5" />
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b9bd68fac375102c384ffff1c206ba46429b2b7d178076999648fc56bff28b3c?placeholderIfAbsent=true&apiKey=ef65c1600ab64517b49ba8fffd8c443f" alt="Partner 5" class="partner-logo-5" />
               <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/83ba47fe66cc57f9d818d68be7f13a0be8a6d3473fa650dcf85e3e3d619fe6e9?apiKey=ddd8aa0cfecf4afdbc9c5aaf3fe7201a&" alt="Partner 6" class="partner-logo-6" />
             </div>
           </div>
@@ -178,7 +178,7 @@
                 <div class="global-text-divider"></div>
                 <div class="global-text-content">
                   <h2 class="global-title">
-                    We have users around the <span style="color: #1a75ff;">globe</span>
+                    We have users around <br>the <span style="color: #1a75ff;">globe</span>
                   </h2>
                   <p class="global-description">
                     Unlock endless styles with Friends. Rent designer looks you love without breaking the bank. Track your outfits every step of the way, and enjoy peace of mind with photo verification for any damages or concerns.
@@ -209,7 +209,7 @@
                       </div>
                       <p class="global-tracking">
                         Real Time <br />
-                        <span style="color: #9cafaa;">Order Tracking</span>
+                        <span style="color: #1c1c1c;">Order Tracking</span>
                       </p>
                     </div>
                   </div>
@@ -237,127 +237,71 @@
           </div>
           <div class="global-image">
             <div class="global-image-wrapper">
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/81530f2218c2c5d49bae920928daa1a2f9ebf629e0678915170560a970cb2476?apiKey=ddd8aa0cfecf4afdbc9c5aaf3fe7201a&" alt="Global reach" class="global-image-main" />
-              <div class="global-image-overlay"></div>
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/772f14f6446389a668736101a5323280d690c06599515e90dd2a48820324ea61?placeholderIfAbsent=true&apiKey=ef65c1600ab64517b49ba8fffd8c443f" alt="Global reach" class="global-image-main" />
+              <div class="global-image-overlay"><img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/692253045149287067886388907a5fa4433e3380cc67eb66479e14bc7de5356c?placeholderIfAbsent=true&apiKey=ef65c1600ab64517b49ba8fffd8c443f" class="responsive-image" alt="Description of the image content" /></div>
             </div>
           </div>
         </div>
       </section>
   
       <section class="features-section">
-        <div class="features-grid">
-          <div class="feature-card">
-            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/be963299ab23a2f2f4aa1a46e3e8f6017517dba27c6f4af18284722bb44bf7c5?apiKey=ddd8aa0cfecf4afdbc9c5aaf3fe7201a&" alt="Local business finance" class="feature-icon" />
-            <h3 class="feature-title">
-              Local business <br /> finance
-            </h3>
-            <p class="feature-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit ut
-            </p>
-            <div class="feature-link">
-              <span class="feature-link-text">Learn more</span>
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/09c53134064d9da2c566aab108a62f54c27bbbfd75e5cfd5a906e4227cb0d4a5?apiKey=ddd8aa0cfecf4afdbc9c5aaf3fe7201a&" alt="Learn more" class="feature-link-icon" />
-            </div>
-          </div>
-          <div class="feature-card-column">
-            <div class="feature-card-dark">
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/665678508b511f841cbf3d2ae7f7adc4b027b5f7ab515b121dd2252b6ca78281?apiKey=ddd8aa0cfecf4afdbc9c5aaf3fe7201a&" alt="Global payments" class="feature-icon" />
-              <h3 class="feature-title">
-                Built for global <br /> payments
-              </h3>
-              <p class="feature-description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit ut
-              </p>
-              <div class="feature-link">
-                <span class="feature-link-text">Learn more</span>
-                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/36029940aec59a442f12125a59c256a36d23807db7679b4f5674e863c5b5cd79?apiKey=ddd8aa0cfecf4afdbc9c5aaf3fe7201a&" alt="Learn more" class="feature-link-icon-light" />
-              </div>
-            </div>
-          </div>
-          <div class="feature-card-column">
-            <div class="feature-card">
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f56ee2336f0471ed1be1e3ce29851e5d5c60c1d527947fd2c28637cf5382cae6?apiKey=ddd8aa0cfecf4afdbc9c5aaf3fe7201a&" alt="Internet of Money" class="feature-icon" />
-              <h3 class="feature-title">
-                Make internet of <br /> Money
-              </h3>
-              <p class="feature-description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit ut
-              </p>
-              <div class="feature-link">
-                <span class="feature-link-text">Learn more</span>
-                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/09c53134064d9da2c566aab108a62f54c27bbbfd75e5cfd5a906e4227cb0d4a5?apiKey=ddd8aa0cfecf4afdbc9c5aaf3fe7201a&" alt="Learn more" class="feature-link-icon" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+  <div class="features-container">
+    <article class="feature-card">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/190dd1994a958d77757c4097e8123079171cd76a5d3a4d7dfa52f60bb9e3406b?placeholderIfAbsent=true&apiKey=ef65c1600ab64517b49ba8fffd8c443f" alt="Local business finance icon" class="feature-icon" />
+      <h2 class="feature-title">Local business <br /> finance</h2>
+      <p class="feature-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut</p>
+    </article>
+
+    <article class="feature-card feature-card-highlighted">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7575f4d38a9260b321ffd4d120ac2046dfe3aba4db6fd3c9eca0e1da5093bf59?placeholderIfAbsent=true&apiKey=ef65c1600ab64517b49ba8fffd8c443f" alt="Global payments icon" class="feature-icon" />
+      <h2 class="feature-title">Built for global <br /> payments</h2>
+      <p class="feature-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut</p>
+    </article>
+
+    <article class="feature-card">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b08f98ed2e5cd5ad52fcc0272788a0bb5b3dc7c8f3eb4a621a85b1ec8045f00c?placeholderIfAbsent=true&apiKey=ef65c1600ab64517b49ba8fffd8c443f" alt="Internet of Money icon" class="feature-icon" />
+      <h2 class="feature-title">Make internet of <br /> Money</h2>
+      <p class="feature-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut</p>
+    </article>
+  </div>
+</section>
   
-      <section class="testimonials-section">
-        <div class="testimonials-wrapper">
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0c0a5e9132926b113aa7f8403fcb5cf024226c5dbe5a050928a325960a1c80e3?apiKey=ddd8aa0cfecf4afdbc9c5aaf3fe7201a&" alt="Testimonials background" class="testimonials-bg" />
-          <div class="testimonials-content">
-            <div class="testimonials-header">
-              <h2 class="testimonials-title">Our Services</h2>
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f94a9502ba935074db6a9ca76914d5294f9a0a7efbd964114fa7f9f9b353a9e4?apiKey=ddd8aa0cfecf4afdbc9c5aaf3fe7201a&" alt="Services icon" class="testimonials-icon" />
+      <section class="testimonial-section">
+  <div class="testimonial-background">
+    <div class="testimonial-content">
+      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/0c0a5e9132926b113aa7f8403fcb5cf024226c5dbe5a050928a325960a1c80e3?placeholderIfAbsent=true&apiKey=ef65c1600ab64517b49ba8fffd8c443f" class="background-image" alt="" />
+      <header class="testimonial-header">
+        <h2 class="service-title">Our Services</h2>
+        <h1 class="testimonial-headline">Global businesses love Friends</h1>
+      </header>
+      <div class="testimonial-cards">
+        <div class="card-container">
+          <article class="testimonial-card">
+            <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel</p>
+            <div class="testimonial-author">
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/2ccdb5a80af424b7a16d4732e6b0f06c68243fcf2b47572f3f1e82645d8e4c07?placeholderIfAbsent=true&apiKey=ef65c1600ab64517b49ba8fffd8c443f" class="author-image" alt="Portrait of Mahesh" />
+              <p class="author-name">Mahesh</p>
             </div>
-            <div class="testimonials-subtitle">
-              <h3 class="testimonials-subtitle-text">Global businesses love Friends</h3>
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/074fb177a514b3010ac91ca9393343165f89cde03fcd157406945b847e3ff994?apiKey=ddd8aa0cfecf4afdbc9c5aaf3fe7201a&" alt="Global icon" class="testimonials-subtitle-icon" />
+          </article>
+          <article class="testimonial-card">
+            <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel</p>
+            <div class="testimonial-author">
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d6d18d00527af2c1caa658aa3a984fb82cb316ad09292a824f6b326dd4b9b891?placeholderIfAbsent=true&apiKey=ef65c1600ab64517b49ba8fffd8c443f" class="author-image" alt="Portrait of Webflow Developer" />
+              <p class="author-name">Webflow Developer</p>
             </div>
-            <div class="testimonials-grid">
-              <div class="testimonial-sidebar"></div>
-              <div class="testimonial-card">
-                <p class="testimonial-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel
-                </p>
-                <div class="testimonial-author">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/8543afec3da3d9ad36b55f45bc3ba83e7ab09bf818f7100a616b6bbe9b00d627?apiKey=ddd8aa0cfecf4afdbc9c5aaf3fe7201a&" alt="Mahesh" class="testimonial-avatar" />
-                  <div class="testimonial-info">
-                    <p class="testimonial-name">Mahesh</p>
-                    <p class="testimonial-role">CEO</p>
-                  </div>
-                </div>
-              </div>
-              <div class="testimonial-card">
-                <p class="testimonial-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel
-                </p>
-                <div class="testimonial-author">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c7408a0ba59e1fbc6b3b31248b2177d7d38195da4079c26210082ba83e1b4170?apiKey=ddd8aa0cfecf4afdbc9c5aaf3fe7201a&" alt="Ranveer" class="testimonial-avatar" />
-                  <div class="testimonial-info">
-                    <p class="testimonial-name">Ranveer</p>
-                    <p class="testimonial-role">Webflow Developer</p>
-                  </div>
-                </div>
-              </div>
-              <div class="testimonial-card">
-                <p class="testimonial-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel
-                </p>
-                <div class="testimonial-author">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/140c74744d6d885fe4af00921a22c8107a3363c7e2e734bfcc07061ba4600651?apiKey=ddd8aa0cfecf4afdbc9c5aaf3fe7201a&" alt="Tony Stark" class="testimonial-avatar" />
-                  <div class="testimonial-info">
-                    <p class="testimonial-name">Tony Stark</p>
-                    <p class="testimonial-role">CEO</p>
-                  </div>
-                </div>
-              </div>
-              <div class="testimonial-card">
-                <p class="testimonial-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel
-                </p>
-                <div class="testimonial-author">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/409b6bf8f5d99bdaace3cb73a6c16d2996b37877b53dd651b7bb2f933e74861f?apiKey=ddd8aa0cfecf4afdbc9c5aaf3fe7201a&" alt="Ranveer" class="testimonial-avatar" />
-                  <div class="testimonial-info">
-                    <p class="testimonial-name">Ranveer</p>
-                    <p class="testimonial-role">Webflow Developer</p>
-                  </div>
-                </div>
-              </div>
+          </article>
+          <article class="testimonial-card">
+            <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel</p>
+            <div class="testimonial-author">
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/dd119becd2d22dd86dd0b35e9070587aed525c4816f7a594b9c10475da5ea47f?placeholderIfAbsent=true&apiKey=ef65c1600ab64517b49ba8fffd8c443f" class="author-image" alt="Portrait of Tony Stark" />
+              <p class="author-name">Tony Stark</p>
             </div>
-          </div>
+          </article>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
   
       <section class="cta-banner">
         <div class="cta-content">
@@ -374,46 +318,45 @@
       </section>
     </main>
   
-    <footer class="footer">
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ef6ddfc8b391b058ed857c3ed6ae58343589f1b159ebef98af749ed476789fb0?apiKey=ddd8aa0cfecf4afdbc9c5aaf3fe7201a&" alt="Footer background" class="footer-bg" />
-      <div class="footer-content">
-        <div class="footer-brand">
-          <h2 class="footer-logo">Friends</h2>
-          <p class="footer-description">Lorem ipsum dolor sit amet, consectetur</p>
-          <div class="footer-social">
-            <a href="#" aria-label="Facebook">
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/28bc8e502da164358c968c122c83a7c1ba4a003238bc6e50afaef5f3c82e775e?apiKey=ddd8aa0cfecf4afdbc9c5aaf3fe7201a&" alt="" class="social-icon" />
-            </a>
-            <a href="#" aria-label="Twitter">
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/df7acb49d103e1b035d8b2f07a38cef922811228565e3d4a457b880e5f31792a?apiKey=ddd8aa0cfecf4afdbc9c5aaf3fe7201a&" alt="" class="social-icon" />
-            </a>
-            <a href="#" aria-label="Instagram">
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/09b3c0154691a22be3dc00d2fabf8ac95dfdf8892c3754d18b85262eccc901ee?apiKey=ddd8aa0cfecf4afdbc9c5aaf3fe7201a&" alt="" class="social-icon" />
-            </a>
-            <a href="#" aria-label="LinkedIn">
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/fd515e56e4d87c8452658bc5cda9c38fba7c9f02b693231bfd4cee4c6243d176?apiKey=ddd8aa0cfecf4afdbc9c5aaf3fe7201a&" alt="" class="social-icon" />
-            </a>
+    <footer class="footer-container">
+  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/06d1d1b27d95303f5b464f7dda6bcc5625bd0f3c79d22aa2c474c1fe7b2a40f3?placeholderIfAbsent=true&apiKey=ef65c1600ab64517b49ba8fffd8c443f" alt="" class="footer-background" />
+  <div class="footer-content">
+    <div class="footer-columns">
+      <div class="footer-column">
+        <div class="footer-info">
+          <div class="footer-brand">
+            <h2 class="brand-name">Dressify</h2>
+            <p class="brand-description">Lorem ipsum dolor sit amet, consectetur</p>
+          </div>
+          <div class="social-icons">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a509553088f5b4c8928a482997daeaf702d4855bed7cb1bab9a023964259a707?placeholderIfAbsent=true&apiKey=ef65c1600ab64517b49ba8fffd8c443f" alt="Social media icon" class="social-icon" />
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ebed14a78e988dacfc05ca25ef8c8c9935ddb8e1b38a3741e9c04066e99f8aca?placeholderIfAbsent=true&apiKey=ef65c1600ab64517b49ba8fffd8c443f" alt="Social media icon" class="social-icon" />
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/598009a0f428c744538f748f7bcd01f9bcff4a280f546e25c94cf627d3ee8fee?placeholderIfAbsent=true&apiKey=ef65c1600ab64517b49ba8fffd8c443f" alt="Social media icon" class="social-icon social-icon-large" />
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4c50c9694af1c75404daa69b22aef3a3afe80f307af89d1ecc09fac7d91ef2a4?placeholderIfAbsent=true&apiKey=ef65c1600ab64517b49ba8fffd8c443f" alt="Social media icon" class="social-icon social-icon-large" />
           </div>
         </div>
+      </div>
+      <div class="footer-links-column">
         <nav class="footer-links">
           <h3 class="footer-links-title">Company</h3>
           <a href="#" class="footer-link">About Us</a>
           <a href="#" class="footer-link">Careers</a>
           <a href="#" class="footer-link">Blog</a>
         </nav>
+      </div>
+      <div class="footer-links-column">
         <nav class="footer-links">
           <h3 class="footer-links-title">FAQ</h3>
           <a href="#" class="footer-link">Account</a>
-          <a href="#" class="footer-link">Manage deliveries</a>
+          <a href="#" class="footer-link footer-link-wide">Manage deliveries</a>
           <a href="#" class="footer-link">Orders tracking</a>
           <a href="#" class="footer-link">Report process</a>
         </nav>
-        <form class="footer-newsletter">
-          <label for="newsletter-email" class="visually-hidden">Enter your email</label>
-          <input type="email" id="newsletter-email" class="newsletter-input" placeholder="your@email.com" required>
-          <button type="submit" class="newsletter-button">Subscribe</button>
-        </form>
       </div>
-    </footer>
+    </div>
+  </div>
+  <div class="footer-divider" role="separator"></div>
+  <p class="copyright">Copyright @ Friends 2024. All Rights Reserved.</p>
+</footer>
   </div>
 </html> 
