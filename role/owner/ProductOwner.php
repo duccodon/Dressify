@@ -35,18 +35,24 @@
                         <span class="close">&times;</span>
                         <h2>Add Promotion</h2>
                         <form id="promotionForm">
-                            <label for="discountCode">Discount Code:</label>
-                            <input type="text" id="discountCode" name="discountCode" required>
-
-                            <label for="promotionImage">Promotion Image:</label>
-                            <input type="file" id="promotionImage" name="promotionImage" accept="image/*">
-
-                            <h3>Apply Discount to:</h3>
-                            <div id="itemCheckboxes">
-                                <!-- Checkboxes will be dynamically added here -->
+                            <div class="form-group">
+                                <label for="discountCode">Discount Code:</label>
+                                <input type="text" id="discountCode" name="discountCode" required>
                             </div>
 
-                            <button type="submit">Save Promotion</button>
+                            <div class="form-group">
+                                <label for="promotionImage">Promotion Image:</label>
+                                <input type="file" id="promotionImage" name="promotionImage" accept="image/*" required>
+                            </div>
+
+                            <div class="form-group">
+                                <h3>Apply Discount to:</h3>
+                                <div id="itemCheckboxes">
+                                    <!-- Checkboxes will be dynamically added here -->
+                                </div>
+                            </div>
+
+                            <button type="submit" class="submit-btn">Save Promotion</button>
                         </form>
                     </div>
                 </div>
