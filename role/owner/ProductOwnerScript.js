@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
     form.onsubmit = function(e) {
         e.preventDefault();
         var discountCode = form.discountCode.value;
+        var discountValue = form.discountValue.value;
         var promotionImage = form.promotionImage.files[0];
         var selectedItems = Array.from(itemCheckboxes.querySelectorAll('input[type="checkbox"]:checked'))
             .map(cb => cb.value);
@@ -48,29 +49,36 @@ document.addEventListener('DOMContentLoaded', function() {
         if (promotionImage) {
             var reader = new FileReader();
             reader.onload = function(e) {
-                addPromotionBox(discountCode, selectedItems, e.target.result);
+                addPromotionBox(discountCode, discountValue, selectedItems, e.target.result);
             }
             reader.readAsDataURL(promotionImage);
         } else {
-            addPromotionBox(discountCode, selectedItems, null);
+            addPromotionBox(discountCode, discountValue, selectedItems, null);
         }
     
         modal.style.display = 'none';
         form.reset();
     }
     
-    function addPromotionBox(discountCode, items, imageUrl) {
+    function addPromotionBox(discountCode, discountValue, items, imageUrl) {
+
         var promotionBox = document.createElement('div');
         promotionBox.className = 'promotion-box';
+        
         promotionBox.innerHTML = `
-            ${imageUrl ? `<img src="${imageUrl}" alt="Promotion Image" class="promotion-image">` : ''}
+            <div class="promotion-image-container">
+                ${imageUrl ? `<img src="${imageUrl}" alt="Promotion Image" class="promotion-image">` : ''}
+            </div>
             <div class="promotion-details">
                 <h3>${discountCode}</h3>
+                <p class="discount-value">${discountValue}% OFF</p>
                 <p>Applies to: ${items.join(', ')}</p>
             </div>
         `;
-        promotionContent.appendChild(promotionBox);
+        
+        document.querySelector('.promotion-content').appendChild(promotionBox);
     
+        const promotionContent = document.querySelector('.promotion-content');
         if (promotionContent.scrollHeight > promotionContent.clientHeight) {
             promotionContent.style.overflowY = 'scroll';
         }
