@@ -105,7 +105,7 @@ INSERT INTO `delivery_unit` (`id`, `name`, `price`) VALUES
 --
 
 CREATE TABLE `discount` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `id` INT(11) NOT NULL,
   `discount_code` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `cus_id` INT(11) NOT NULL,
   `discount_value` DECIMAL(10, 2) NOT NULL,
