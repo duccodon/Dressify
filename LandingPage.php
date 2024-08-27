@@ -355,7 +355,7 @@
       </div>
     </div>
   </div>
-  <div class="footer-divider" role="separator"></div>
+  <div class="footer-divider"></div>
   <p class="copyright">Copyright @ Friends 2024. All Rights Reserved.</p>
 </footer>
   </div>
