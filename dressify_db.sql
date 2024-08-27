@@ -105,9 +105,11 @@ INSERT INTO `delivery_unit` (`id`, `name`, `price`) VALUES
 --
 
 CREATE TABLE `discount` (
-  `id` int(255) NOT NULL,
-  `discount_code` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `cus_id` int(255) NOT NULL
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `discount_code` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `cus_id` INT(11) NOT NULL,
+  `discount_value` DECIMAL(10, 2) NOT NULL,
+  `image_url` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
