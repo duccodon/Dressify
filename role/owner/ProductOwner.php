@@ -31,21 +31,21 @@
                 <div class="promotion-section">
                     <div class="promotion-content">
                         <?php
-                        if (mysqli_num_rows($select_promotions) > 0) {
-                            while ($promotion = mysqli_fetch_assoc($select_promotions)) {
-                                echo "<div class='promotion-box'>";
-                                echo "<div class='promotion-image-container'>";
-                                if ($promotion['image_url']) {
-                                    echo "<img src='" . $promotion['image_url'] . "' alt='Promotion Image' class='promotion-image'>";
+                            if (mysqli_num_rows($select_promotions) > 0) {
+                                while ($promotion = mysqli_fetch_assoc($select_promotions)) {
+                                    echo "<div class='promotion-box'>";
+                                    echo "<div class='promotion-image-container'>";
+                                    if ($promotion['image_url']) {
+                                        echo "<img src='../../" . $promotion['image_url'] . "' alt='Promotion Image' class='promotion-image'>";
+                                    }
+                                    echo "</div>";
+                                    echo "<div class='promotion-details'>";
+                                    echo "<h3>" . $promotion['discount_code'] . "</h3>";
+                                    echo "<p class='discount-value'>" . $promotion['discount_value'] . "% OFF</p>";
+                                    echo "</div>";
+                                    echo "</div>";
                                 }
-                                echo "</div>";
-                                echo "<div class='promotion-details'>";
-                                echo "<h3>" . $promotion['discount_code'] . "</h3>";
-                                echo "<p class='discount-value'>" . $promotion['discount_value'] . "% OFF</p>";
-                                echo "</div>";
-                                echo "</div>";
                             }
-                        }
                         ?>
                     </div>
                     <button id="deletePromotionBtn" class="delete-promotion-btn">Delete Promotion</button>
