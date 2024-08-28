@@ -12,17 +12,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $image_url = null;
     if (isset($_FILES['promotionImage']) && $_FILES['promotionImage']['error'] == 0) {
-        $target_dir = "uploads/";
-        if (!file_exists($target_dir)) {
-            mkdir($target_dir, 0777, true);
-        }
-        $target_file = $target_dir . basename($_FILES["promotionImage"]["name"]);
-        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+        $target_dir = "../../img/";
+        $file_extension = pathinfo($_FILES["promotionImage"]["name"], PATHINFO_EXTENSION);
+        $new_filename = uniqid() . '.' . $file_extension;
+        $target_file = $target_dir . $new_filename;
         
         $check = getimagesize($_FILES["promotionImage"]["tmp_name"]);
         if($check !== false) {
             if (move_uploaded_file($_FILES["promotionImage"]["tmp_name"], $target_file)) {
-                $image_url = $target_file;
+                $image_url = "img/" . $new_filename;
             } else {
                 echo json_encode(["success" => false, "message" => "Failed to move uploaded file"]);
                 exit;
