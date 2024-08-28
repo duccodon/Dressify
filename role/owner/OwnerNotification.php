@@ -11,10 +11,10 @@
 <div class="container">
 <div class="inner_left_pannel">
   <div class="header-left">
-    <select name="user_type">
-      <option value="Inbox">Inbox</option>
-      <option value="IncomeOrder">Income Order</option>
-    </select>
+    <select onchange="redirectPage()" id="select" name="user_type">
+      <option value="OwnerNotification.php">Income Order</option>
+      <option value="ViewFeedback.php">Feedback</option>
+    </select> 
     <div>Mark all as read</div>
   </div>
   <div class="notification-list">
@@ -126,8 +126,43 @@
 </div>
 <div class="inner_right_pannel">
   <h1>Detail</h1>
-  <?php include 'IncomeOrder.php'; ?>
-  
+  <?php
+include '../../ConnectDB.php';
+
+if(!isset($_SESSION)){
+  session_start();
+}
+
+$sql = "SELECT * FROM orders";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0){
+    //output data of each row
+    while($row = $result->fetch_assoc()){
+        $id = $row["id"];
+        $from = $row['cus_id'];
+        $from2 = $row['fullname'];
+        $contact_number = $row['contact_number'];
+        $date = $row["date_start"];
+        $duration = $row["duration"];
+        $status = $row["status"];
+        $shipadd = $row["shipping_address"];
+        $delivercode = $row["delivery_code"];
+        $note = $row["note"];
+        include 'IncomeOrder.php';
+
+    }
+    }   else    {
+        include 'NoOrder.php';
+    }
+$conn->close();
+?>
+<script>
+  function redirectPage() {
+        var selectedValue = document.getElementById("select").value;
+        window.location.href = selectedValue;
+    }
+</script> 
   
 </div>
 </div>
