@@ -1,12 +1,9 @@
 :root{
-    --theme-color:#FBF3D5;
-    --bright-orange:#efbc9b;
-    --dark-orange:#ff7008;
-    --bright-green:#D6DAC8;
-    --dark-green:#9CAFAA;
+    --theme-color:#ffffff;
+    --dark-blue:#417BF7;
+    --light-blue:#E5EDFD;
+    --blue:#779DF8;
     --black:#1c1c1c;
-    --red-murrey:#817373;
-    --bright-yellow:#F5D8B8;
 }
 
 *{
@@ -16,8 +13,8 @@
 }
 
 body{
-    background-color: #FBF3D5;
-    background: linear-gradient(to right, var(--theme-color), var(--bright-orange));
+    background-color: #E5EDFD;
+    background: linear-gradient(to right, var(--theme-color), var(--dark-blue));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,7 +23,7 @@ body{
 }
 
 .container{
-    background-color: var(--bright-green); /*same with container form background color*/
+    background-color: var(--light-blue); /*same with container form background color*/
     border-radius: 35px;
     box-shadow: 0 5px 45px rgba(0, 0, 0, 0.4);
     position: relative;
@@ -37,14 +34,14 @@ body{
 }
 
 .container h1 {
-    color: var(--red-murrey);
+    color: var(--black);
 }
 .container h1.hidden {
-    color: #6d4a27;
+    color: #1c1c1c;
 }
 
 .container p{
-    color: #6d4a27;
+    color: #1c1c1c;
     font-size: 20px;
     line-height: 20px;
     letter-spacing: 0.3px;
@@ -57,14 +54,14 @@ body{
 }
 
 .container a{
-    color: var(--red-murrey);
-    background-color: var(--dark-green);
+    color: var(--black);
+    background-color: var(--blue);
     font-size: 15px;
 }
 
 .container button{
-    background-color: #FCFFE0;
-    color: var(--red-murrey);
+    background-color: #779DF8;
+    color: var(--black);
     font-size: 15px;
     padding: 15px 50px;
     border: 2px solid transparent;
@@ -77,13 +74,13 @@ body{
 }
 
 .container button.hidden{
-    background-color: var(--dark-green);
+    background-color: var(--blue);
     border: 3px solid;
-    color: #6d4a27;
+    color: #1c1c1c;
 }
 
 .container form{
-    background-color: var(--bright-green);
+    background-color: var(--light-blue);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -101,8 +98,8 @@ body{
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
-    background: var(--dark-green); 
-    color: #6d4a27;
+    background: var(--blue); 
+    color: #1c1c1c;
 }
 .message i{
     cursor: pointer;
@@ -200,7 +197,7 @@ body{
 
 .toggle{
     height: 100%;
-    background: #FCFFE0;
+    background: #779DF8;
     color: #fff;
     position: relative;
     left: -100%;
