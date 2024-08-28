@@ -40,28 +40,96 @@ document.addEventListener('DOMContentLoaded', function() {
 
     form.onsubmit = function(e) {
         e.preventDefault();
-        var discountCode = form.discountCode.value;
-        var discountValue = form.discountValue.value;
-        var promotionImage = form.promotionImage.files[0];
-        var selectedItems = Array.from(itemCheckboxes.querySelectorAll('input[type="checkbox"]:checked'))
-            .map(cb => cb.value);
-    
-        if (promotionImage) {
-            var reader = new FileReader();
-            reader.onload = function(e) {
-                addPromotionBox(discountCode, discountValue, selectedItems, e.target.result);
+        var formData = new FormData(form);
+
+        fetch('add_promotion.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
-            reader.readAsDataURL(promotionImage);
-        } else {
-            addPromotionBox(discountCode, discountValue, selectedItems, null);
-        }
-    
-        modal.style.display = 'none';
-        form.reset();
+            return response.json();
+        })
+        .then(data => {
+            console.log('Server response:', data);
+            if (data.success) {
+                addPromotionBox(
+                    data.data.discount_code,
+                    data.data.discount_value,
+                    [], 
+                    data.data.image_url
+                );
+                modal.style.display = 'none';
+                form.reset();
+            } else {
+                console.error('Error adding promotion:', data.message);
+                alert('Error adding promotion: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred while adding the promotion: ' + error.message);
+        });
     }
     
-    function addPromotionBox(discountCode, discountValue, items, imageUrl) {
+    var deleteModal = document.getElementById('deletePromotionModal');
+    var deleteBtn = document.getElementById('deletePromotionBtn');
+    var deleteSpan = deleteModal.getElementsByClassName('close')[0];
+    var deleteForm = document.getElementById('deletePromotionForm');
 
+    deleteBtn.onclick = function() {
+        deleteModal.style.display = 'block';
+    }
+
+    deleteSpan.onclick = function() {
+        deleteModal.style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+        if (event.target == deleteModal) {
+            deleteModal.style.display = 'none';
+        }
+    }
+
+    deleteForm.onsubmit = function(e) {
+        e.preventDefault();
+        var formData = new FormData(deleteForm);
+
+        fetch('delete_promotion.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Server response:', data);
+            if (data.success) {
+                alert('Promotion(s) deleted successfully');
+                location.reload(); // Reload the page to reflect the changes
+            } else {
+                console.error('Error deleting promotion:', data.message);
+                alert('Error deleting promotion: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred while deleting the promotion: ' + error.message);
+        });
+
+        deleteModal.style.display = 'none';
+        deleteForm.reset();
+    }
+
+    function addPromotionBox(discountCode, discountValue, items, imageUrl) {
         var promotionBox = document.createElement('div');
         promotionBox.className = 'promotion-box';
         
@@ -77,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         
         document.querySelector('.promotion-content').appendChild(promotionBox);
-    
+        
         const promotionContent = document.querySelector('.promotion-content');
         if (promotionContent.scrollHeight > promotionContent.clientHeight) {
             promotionContent.style.overflowY = 'scroll';
