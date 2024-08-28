@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Server response:', data);
             if (data.success) {
                 alert('Promotion(s) deleted successfully');
-                location.reload(); // Reload the page to reflect the changes
+                location.reload();
             } else {
                 console.error('Error deleting promotion:', data.message);
                 alert('Error deleting promotion: ' + data.message);
@@ -129,18 +129,17 @@ document.addEventListener('DOMContentLoaded', function() {
         deleteForm.reset();
     }
 
-    function addPromotionBox(discountCode, discountValue, items, imageUrl) {
+    function addPromotionBox(discountCode, discountValue, imageUrl) {
         var promotionBox = document.createElement('div');
         promotionBox.className = 'promotion-box';
         
         promotionBox.innerHTML = `
             <div class="promotion-image-container">
-                ${imageUrl ? `<img src="${imageUrl}" alt="Promotion Image" class="promotion-image">` : ''}
+                ${imageUrl ? `<img src="../../${imageUrl}" alt="Promotion Image" class="promotion-image">` : ''}
             </div>
             <div class="promotion-details">
                 <h3>${discountCode}</h3>
                 <p class="discount-value">${discountValue}% OFF</p>
-                <p>Applies to: ${items.join(', ')}</p>
             </div>
         `;
         
