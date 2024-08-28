@@ -1,6 +1,9 @@
 <?php
     include '../../ConnectDB.php';
     session_start();
+
+    $cus_id = $_SESSION['cus_id'];
+    $select_promotions = mysqli_query($conn, "SELECT * FROM discount WHERE cus_id='$cus_id'") or die('Query failed');
 ?>
 
 <!DOCTYPE html>
@@ -27,8 +30,25 @@
                 
                 <div class="promotion-section">
                     <div class="promotion-content">
-                        <!-- Promotion boxes will be dynamically added here -->
+                        <?php
+                        if (mysqli_num_rows($select_promotions) > 0) {
+                            while ($promotion = mysqli_fetch_assoc($select_promotions)) {
+                                echo "<div class='promotion-box'>";
+                                echo "<div class='promotion-image-container'>";
+                                if ($promotion['image_url']) {
+                                    echo "<img src='" . $promotion['image_url'] . "' alt='Promotion Image' class='promotion-image'>";
+                                }
+                                echo "</div>";
+                                echo "<div class='promotion-details'>";
+                                echo "<h3>" . $promotion['discount_code'] . "</h3>";
+                                echo "<p class='discount-value'>" . $promotion['discount_value'] . "% OFF</p>";
+                                echo "</div>";
+                                echo "</div>";
+                            }
+                        }
+                        ?>
                     </div>
+                    <button id="deletePromotionBtn" class="delete-promotion-btn">Delete Promotion</button>
                     <button id="addPromotionBtn" class="add-promotion-btn">Add Promotion</button>
                 </div>
                 <div id="promotionModal" class="modal">
@@ -51,14 +71,21 @@
                                 <input type="file" id="promotionImage" name="promotionImage" accept="image/*" required>
                             </div>
 
-                            <div class="form-group">
-                                <h3>Apply Discount to:</h3>
-                                <div id="itemCheckboxes">
-                                    <!-- Checkboxes will be dynamically added here -->
-                                </div>
-                            </div>
-
                             <button type="submit" class="submit-btn">Save Promotion</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="deletePromotionModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h2>Delete Promotion</h2>
+                        <form id="deletePromotionForm">
+                            <div class="form-group">
+                                <label for="deleteDiscountCode">Enter Discount Code to Delete:</label>
+                                <input type="text" id="deleteDiscountCode" name="deleteDiscountCode" required>
+                            </div>
+                            <button type="submit" class="submit-btn">Delete Promotion</button>
                         </form>
                     </div>
                 </div>
