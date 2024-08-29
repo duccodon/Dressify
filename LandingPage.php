@@ -21,7 +21,7 @@
         </div>
         <div class="nav-links-container">
           <div class="nav-links">
-            <a href="#" class="nav-link">Why Friends</a>
+            <a href="#" class="nav-link">Why Dressify</a>
             <a href="#" class="nav-link">Terms of use</a>
             <a href="#" class="nav-link">Feedback</a>
             <a href="#" class="nav-link">Contact</a>
@@ -115,7 +115,7 @@
                 <div class="services-card-divider"></div>
                 <h4 class="services-card-title">Wishlists</h4>
                 <p class="services-card-description">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor
+                Wishlists allows you to create personalized product collections. You can save items you want to buy to your account for future reference. 
                 </p>
                 <div class="services-card-icon-wrapper">
                   <span class="services-card-icon">↗</span>
@@ -124,9 +124,9 @@
               
               <div class="services-card">
                 <div class="services-card-divider"></div>
-                <h4 class="services-card-title">Order Checking</h4>
+                <h4 class="services-card-title">Order Tracking</h4>
                 <p class="services-card-description">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor
+                 Order Tracking allows you to check your order status anytime, anywhere. Just enter the order code, you will immediately know what stage your order is in.
                 </p>
                 <div class="services-card-icon-wrapper">
                   <span class="services-card-icon">↗</span>
@@ -135,9 +135,9 @@
               
               <div class="services-card">
                 <div class="services-card-divider"></div>
-                <h4 class="services-card-title">Multiple payment methods</h4>
+                <h4 class="services-card-title">Promotions</h4>
                 <p class="services-card-description">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor
+                Discount programs, special offers or gifts included with product purchases. Makes it easy for you to find the best offers and take advantage of them effectively.
                 </p>
                 <div class="services-card-icon-wrapper">
                   <span class="services-card-icon">↗</span>
@@ -146,9 +146,9 @@
               
               <div class="services-card">
                 <div class="services-card-divider"></div>
-                <h4 class="services-card-title">Membership and loyalty points</h4>
+                <h4 class="services-card-title">Membership point</h4>
                 <p class="services-card-description">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor
+                  Register as a member to become part of a close-knit community - Receive welcome gifts and exclusive offers. Shop and earn reward points. Redeem your reward points for discounts, gifts or other offers.
                 </p>
                 <div class="services-card-icon-wrapper">
                   <span class="services-card-icon">↗</span>
@@ -159,7 +159,7 @@
                 <div class="services-card-divider"></div>
                 <h4 class="services-card-title">Secured shopping</h4>
                 <p class="services-card-description">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor
+                Ensure that all your transactions are protected by good security measures, helping to protect your personal and financial information.
                 </p>
                 <div class="services-card-icon-wrapper">
                   <span class="services-card-icon">↗</span>
@@ -249,19 +249,19 @@
     <article class="feature-card">
       <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/190dd1994a958d77757c4097e8123079171cd76a5d3a4d7dfa52f60bb9e3406b?placeholderIfAbsent=true&apiKey=ef65c1600ab64517b49ba8fffd8c443f" alt="Local business finance icon" class="feature-icon" />
       <h2 class="feature-title">Local business <br /> finance</h2>
-      <p class="feature-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut</p>
+      <p class="feature-description">Helps with financial stability for both rental owners and customers</p>
     </article>
 
     <article class="feature-card feature-card-highlighted">
       <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7575f4d38a9260b321ffd4d120ac2046dfe3aba4db6fd3c9eca0e1da5093bf59?placeholderIfAbsent=true&apiKey=ef65c1600ab64517b49ba8fffd8c443f" alt="Global payments icon" class="feature-icon" />
-      <h2 class="feature-title">Built for global <br /> payments</h2>
-      <p class="feature-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut</p>
+      <h2 class="feature-title">Healthy renting <br /> commnunity</h2>
+      <p class="feature-description">Provided a friendly enviroment for user to post and rent products</p>
     </article>
 
     <article class="feature-card">
       <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b08f98ed2e5cd5ad52fcc0272788a0bb5b3dc7c8f3eb4a621a85b1ec8045f00c?placeholderIfAbsent=true&apiKey=ef65c1600ab64517b49ba8fffd8c443f" alt="Internet of Money icon" class="feature-icon" />
       <h2 class="feature-title">Make internet of <br /> Money</h2>
-      <p class="feature-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut</p>
+      <p class="feature-description">Help rental owners to widespread their products and help customers knows more products</p>
     </article>
   </div>
 </section>
@@ -277,21 +277,22 @@
       <div class="testimonial-cards">
         <div class="card-container">
           <article class="testimonial-card">
-            <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel</p>
+            <p class="testimonial-text">“This website is amazing! I found a lot of quality products at reasonable prices. The rental process is very easy and quick. I will definitely come back to use this service.”</p>
             <div class="testimonial-author">
               <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/2ccdb5a80af424b7a16d4732e6b0f06c68243fcf2b47572f3f1e82645d8e4c07?placeholderIfAbsent=true&apiKey=ef65c1600ab64517b49ba8fffd8c443f" class="author-image" alt="Portrait of Mahesh" />
-              <p class="author-name">Mahesh</p>
+              <p class="author-name">Peter</p>
             </div>
           </article>
           <article class="testimonial-card">
-            <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel</p>
+            <p class="testimonial-text">
+            “I am very satisfied with my shopping experience on this website. Friendly interface, easy to use and very good customer service. I was able to rent the products I needed quickly.”</p>
             <div class="testimonial-author">
               <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d6d18d00527af2c1caa658aa3a984fb82cb316ad09292a824f6b326dd4b9b891?placeholderIfAbsent=true&apiKey=ef65c1600ab64517b49ba8fffd8c443f" class="author-image" alt="Portrait of Webflow Developer" />
-              <p class="author-name">Webflow Developer</p>
+              <p class="author-name">Josh</p>
             </div>
           </article>
           <article class="testimonial-card">
-            <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel</p>
+            <p class="testimonial-text">“This website is the ideal place for me to rent my products. The product listing process is very simple and I have received many orders from customers. Very satisfied!”</p>
             <div class="testimonial-author">
               <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/dd119becd2d22dd86dd0b35e9070587aed525c4816f7a594b9c10475da5ea47f?placeholderIfAbsent=true&apiKey=ef65c1600ab64517b49ba8fffd8c443f" class="author-image" alt="Portrait of Tony Stark" />
               <p class="author-name">Tony Stark</p>
@@ -326,7 +327,7 @@
         <div class="footer-info">
           <div class="footer-brand">
             <h2 class="brand-name">Dressify</h2>
-            <p class="brand-description">Lorem ipsum dolor sit amet, consectetur</p>
+            <p class="brand-description">Look goods - Feel goods</p>
           </div>
           <div class="social-icons">
             <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a509553088f5b4c8928a482997daeaf702d4855bed7cb1bab9a023964259a707?placeholderIfAbsent=true&apiKey=ef65c1600ab64517b49ba8fffd8c443f" alt="Social media icon" class="social-icon" />
