@@ -1,33 +1,3 @@
-<?php
-include '../../ConnectDB.php';
-session_start();
-//if (!isset($_SESSION['cus_id'])) {
-//    header("Location: login.php");
-//    exit();
-//}
-
-
-// $_SESSION['cus_id'] = 3; // For testing purposes
-// $cus_id = $_SESSION['cus_id'];
-
-// // Fetch current user data
-// $sql = "SELECT * FROM customers WHERE cus_id = ?";
-// $stmt = $conn->prepare($sql);
-// $stmt->bind_param("i", $cus_id);
-// $stmt->execute();
-// $result = $stmt->get_result();
-
-// if ($result->num_rows > 0) {
-//     $row = $result->fetch_assoc(); 
-//     $avatar = !empty($row['avatar']) ? $row['avatar'] : 'img/default_avatar.jpg';
-// } else {
-//     echo "No user found";
-// }
-
-// $stmt->close();
-// $conn->close();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -93,7 +63,7 @@ session_start();
             </div>
 
             <div class="user-wrapper">
-                <img src="<?php echo htmlspecialchars($avatar); ?>">
+                <img src="../../img/default_avatar.jpg">
                 <div>
                     <h4>Friends</h4>
                     <small>Owner</small>

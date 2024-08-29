@@ -54,6 +54,8 @@ if(isset($_GET['view'])){
                 <p>Delivery Unit: <?php echo $order['delivery_code'];?>.</p>
                 <br>
                 <a href="History.php">Return to history</a>
+                <br>
+                <a href="CustomerNotificationPage.php?view-order=<?php echo"$order_id";?>">More detail information</a>
             </fieldset>
         </div>
 </div>

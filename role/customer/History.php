@@ -46,14 +46,15 @@ session_start();
                 $select_orders = mysqli_query($conn, "SELECT * FROM orders WHERE cus_id='$_SESSION[cus_id]'") or die('Query failed');
                 if (mysqli_num_rows($select_orders) > 0){
                     while($fetch_orders = mysqli_fetch_assoc($select_orders)){
-                        if ($fetch_orders['status'] == 'accepted'){
+                        if ($fetch_orders['status'] != "checkout" && $fetch_orders['status'] != "in progress"){
                             $customer = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM customers WHERE cus_id='$fetch_orders[owner_id]' "));
             ?>
                 <div style="width: 200px; height: 150px;" class="card-list-single">
                     <div>
-                        <div class="list-content"><?php echo $customer['fullname']?></div>
+                        <div class="list-content">Order ID: <?php echo $fetch_orders['id']?></div>
+                        <div class="list-content">Owner: <?php echo $customer['fullname']?></div>
                         <div class="list-content"><?php echo $fetch_orders['date_start']?></div>
-                        <a style="margin-left: 10px;" href="ViewOrder.php?view=<?php echo $fetch_orders['id']?>" class="edit">View <i class="fa-solid fa-eye"></i></a>
+                        <a href="ViewOrder.php?view=<?php echo $fetch_orders['id']?>" class="edit">View <i class="fa-solid fa-eye"></i></a>
                     </div>
                 </div>
             <?php
