@@ -4,6 +4,11 @@
 
     $cus_id = $_SESSION['cus_id'];
     $select_promotions = mysqli_query($conn, "SELECT * FROM discount WHERE cus_id='$cus_id'") or die('Query failed');
+    $select_products = mysqli_query($conn, "SELECT * FROM products WHERE owner_id='$cus_id' AND approve='True'");
+    if (!$select_products) {
+        die("Query failed: " . mysqli_error($conn));
+    }
+    $products = mysqli_fetch_all($select_products, MYSQLI_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -89,40 +94,34 @@
                         </form>
                     </div>
                 </div>
-
-                <div style="margin-left: 2rem;">
-                <div class="cards-list">
-                    <div class="card-list-single">
-                        <a style="font-size:10px;" href="OwnerForm.php">
-                        <div style="align-content:center;">
-                            <div class="list-content"><i class="fa-solid fa-plus"></i></div>
-                            <div class="list-content">Add products</div>
+                <div class="product-grid">
+                    <?php if (count($products) > 0): ?>
+                        <?php foreach ($products as $product): ?>
+                            <div class="product-card" data-images='["<?php echo $product['image1']; ?>", "<?php echo $product['image2']; ?>", "<?php echo $product['image3']; ?>"]'>
+                                <div class="product-image">
+                                    <img src = "../../img/product/<?php echo $product['image1']; ?>" alt="<?php echo $product['product_name']; ?>">
+                                </div>
+                                <div class="product-info">
+                                    <h3><?php echo $product['product_name']; ?></h3>
+                                    <p class="product-price"><?php echo number_format($product['price']); ?> VND</p>
+                                </div>
+                                <div class="product-actions">
+                                    <div class="product-stock">Stock: <?php echo $product['stock']; ?></div>
+                                    <button class="edit-btn"><i class="fas fa-pencil-alt"></i></button>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                    
+                    <!-- Add More box, always present -->
+                    <div class="product-card add-more">
+                        <a href="OwnerForm.php">
+                        <div  class="add-more-content">
+                            <span>+</span>
+                            <a href="OwnerForm.php"></a>
+                            <p>Add More</p>
                         </div>
-                        </a>
                     </div>
-                <?php
-                    $select_products = mysqli_query($conn, "SELECT * FROM products WHERE owner_id='$_SESSION[cus_id]'") or die('Query failed');
-                    if (mysqli_num_rows($select_products) > 0){
-                        while($fetch_products = mysqli_fetch_assoc($select_products)){
-                            if ($fetch_products['approve'] == 'True'){
-                ?>
-                    <div class="card-list-single">
-                        <div>
-                            <img src = "../../img/product/<?php echo $fetch_products['image1'];?>">
-                            <div class="list-content"><?php echo $fetch_products['product_name'] ?></div>
-                            <div class="list-content"><?php echo $fetch_products['price'] ?></div>
-                        <div>
-                            <a href="ProductOwner.php?view=<?php echo $fetch_products['product_id']; ?>" class="edit">View <i class="fa-solid fa-eye"></i></a>
-                            <a href="ProductOwner.php?delete=<?php echo $fetch_products['product_id']; ?>" class="delete" onclick="return confirm('Are you sure to delete this product');">Delete <i class="fa-solid fa-trash"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <?php
-                            }
-                        }
-                    }
-                ?>
-                </div>
                 </div>
             </main>
     </section>
