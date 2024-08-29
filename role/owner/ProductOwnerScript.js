@@ -150,26 +150,27 @@ document.addEventListener('DOMContentLoaded', function() {
             promotionContent.style.overflowY = 'scroll';
         }
     }
+    const filterButtons = document.querySelectorAll('.filter-button');
     const productCards = document.querySelectorAll('.product-card');
 
-    productCards.forEach(card => {
-        if (!card.classList.contains('add-more')) {
-            const images = JSON.parse(card.dataset.images);
-            const imgElement = card.querySelector('img');
-            let currentIndex = 0;
-            let intervalId;
-
-            card.addEventListener('mouseenter', () => {
-                intervalId = setInterval(() => {
-                    currentIndex = (currentIndex + 1) % images.length;
-                    imgElement.src = `../../img/${images[currentIndex]}`;
-                }, 1000); // Change image every 1 second
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const category = this.getAttribute('data-category').toLowerCase();
+            console.log('Filtering for category:', category);
+            
+            productCards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category').toLowerCase();
+                console.log('Card category:', cardCategory);
+                
+                if (category === 'all' || cardCategory === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
             });
 
-            card.addEventListener('mouseleave', () => {
-                clearInterval(intervalId);
-                imgElement.src = `../../img/${images[0]}`; // Reset to first image
-            });
-        }
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+        });
     });
 });
