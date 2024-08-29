@@ -6,10 +6,11 @@
         $view_id = $_GET['agree'];
         $view_query = mysqli_query($conn, "SELECT * FROM orders where id='$view_id'") or die('Query failed');
         if (mysqli_num_rows($view_query) > 0){ 
-           mysqli_query($conn, "UPDATE orders SET `status` = 'accepted' WHERE id = '$view_id'") or die('Query failed');
+            mysqli_query($conn, "UPDATE orders SET `status` = 'accepted' WHERE id = '$view_id'") or die('Query failed');
 
-           $order = mysqli_fetch_assoc($view_query);
-           mysqli_query($conn, "UPDATE cart SET `status` = 'accepted' WHERE owner_id = '$_SESSION[cus_id]' AND cus_id='$order[cus_id]' ") or die('Query failed');
+            $order = mysqli_fetch_assoc($view_query);
+            mysqli_query($conn, "UPDATE cart SET `status` = 'accepted', `order_id`='$order[id]' WHERE owner_id = '$_SESSION[cus_id]' AND cus_id='$order[cus_id]' AND status='in progress'") or die('Query failed');
+            mysqli_query($conn, "INSERT INTO `message` (from_id, to_id, from_view, to_view, `type`, `order_id`) VALUES ('$_SESSION[cus_id]', '$order[cus_id]', '0', '0', 'Accept Order', '$order[id]')") or die('Query failed');
         }
         header('location:OwnerOrder.php');
     }
@@ -19,6 +20,7 @@
         $view_query = mysqli_query($conn, "SELECT * FROM orders where product_id='$view_id'") or die('Query failed');
         if (mysqli_num_rows($view_query) > 0){ 
            mysqli_query($conn, "DELETE FROM orders WHERE id = '$view_id'") or die('Query failed');
+           mysqli_query($conn, "INSERT INTO `message` (from_id, to_id, from_view, to_view, `type`) VALUES ('$_SESSION[cus_id]', '$order[cus_id]', '0', '0', 'Decline Order')") or die('Query failed');
         }
         header('location:OwnerOrder.php');
     }

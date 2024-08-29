@@ -47,15 +47,13 @@ session_start();
                 if (mysqli_num_rows($select_orders) > 0){
                     while($fetch_orders = mysqli_fetch_assoc($select_orders)){
                         if ($fetch_orders['status'] == 'accepted'){
-                            $customer = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM customers WHERE cus_id='$fetch_orders[cus_id]' "));
+                            $customer = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM customers WHERE cus_id='$fetch_orders[owner_id]' "));
             ?>
-                <div class="card-list-single">
+                <div style="width: 200px; height: 150px;" class="card-list-single">
                     <div>
-                        <a class="wish"><i class="fa-solid fa-heart"></i></a>
-                        <img src = "../../img/download (1).jpg">
                         <div class="list-content"><?php echo $customer['fullname']?></div>
                         <div class="list-content"><?php echo $fetch_orders['date_start']?></div>
-                        <a style="margin-left: 35%;" href="AdminProductlisting.php?view=" class="edit">View <i class="fa-solid fa-eye"></i></a>
+                        <a style="margin-left: 10px;" href="ViewOrder.php?view=<?php echo $fetch_orders['id']?>" class="edit">View <i class="fa-solid fa-eye"></i></a>
                     </div>
                 </div>
             <?php

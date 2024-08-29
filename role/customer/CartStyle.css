@@ -121,3 +121,15 @@ table{
   padding: 28px 60px 28px;
   font-weight: 600;
 }
+
+.update-button {
+  background-color: #417BF7;
+  border-radius: 15px;
+  align-self: center;
+  margin: 30px auto 30px auto;
+  width: 500px;
+  color: #ffffff;
+  text-align: center;
+  padding: 28px 60px 28px;
+  font: 30px Roboto, sans-serif;
+}
