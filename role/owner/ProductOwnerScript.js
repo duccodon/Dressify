@@ -150,4 +150,26 @@ document.addEventListener('DOMContentLoaded', function() {
             promotionContent.style.overflowY = 'scroll';
         }
     }
+    const productCards = document.querySelectorAll('.product-card');
+
+    productCards.forEach(card => {
+        if (!card.classList.contains('add-more')) {
+            const images = JSON.parse(card.dataset.images);
+            const imgElement = card.querySelector('img');
+            let currentIndex = 0;
+            let intervalId;
+
+            card.addEventListener('mouseenter', () => {
+                intervalId = setInterval(() => {
+                    currentIndex = (currentIndex + 1) % images.length;
+                    imgElement.src = `../../img/${images[currentIndex]}`;
+                }, 1000); // Change image every 1 second
+            });
+
+            card.addEventListener('mouseleave', () => {
+                clearInterval(intervalId);
+                imgElement.src = `../../img/${images[0]}`; // Reset to first image
+            });
+        }
+    });
 });
