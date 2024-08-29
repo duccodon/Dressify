@@ -18,7 +18,7 @@
       <p class="feature-item">Fast Access</p>
       <p class="feature-item">Easy Transaction</p>
       <p class="feature-item">Neat and Safe</p>
-      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets%2Fef65c1600ab64517b49ba8fffd8c443f%2F0b2b2d1390bb4c34bfc292a56ff7ad7c" class="feature-image" alt="Feature illustration" /> 
+      <img loading="lazy" src="../../element/map.png" class="feature-image" alt="Feature illustration" /> 
     </section>
       
     <section class="product-form">
