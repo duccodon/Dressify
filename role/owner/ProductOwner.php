@@ -5,9 +5,7 @@
     $cus_id = $_SESSION['cus_id'];
     $select_promotions = mysqli_query($conn, "SELECT * FROM discount WHERE cus_id='$cus_id'") or die('Query failed');
     $select_products = mysqli_query($conn, "SELECT * FROM products WHERE owner_id='$cus_id' AND approve='True'");
-    if (!$select_products) {
-        die("Query failed: " . mysqli_error($conn));
-    }
+
     $products = mysqli_fetch_all($select_products, MYSQLI_ASSOC);
 ?>
 
@@ -18,6 +16,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Text+Me+One&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="ProductOwnerStyle.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <title>Profile</title>
@@ -27,10 +27,13 @@
     <section class="profile-container">
             <main class="main-content">
                 <div class="filter-buttons">
-                    <button class="filter-button">Formal clothes</button>
-                    <button class="filter-button">Casual clothes</button>
-                    <button class="filter-button active">Cosplay costumes</button>
-                    <button class="filter-button">Uniform</button>
+                    <div class="filter-buttons">
+                        <button class="filter-button" data-category="Formalclothes">Formal clothes</button>
+                        <button class="filter-button" data-category="Casual clothes">Casual clothes</button>
+                        <button class="filter-button" data-category="Cosplay costumes">Cosplay costumes</button>
+                        <button class="filter-button" data-category="Uniform">Uniform</button>
+        
+                    </div>
                 </div>
                 
                 <div class="promotion-section">
@@ -97,23 +100,22 @@
                 <div class="product-grid">
                     <?php if (count($products) > 0): ?>
                         <?php foreach ($products as $product): ?>
-                            <div class="product-card" data-images='["<?php echo $product['image1']; ?>", "<?php echo $product['image2']; ?>", "<?php echo $product['image3']; ?>"]'>
+                            <div class="product-card" data-category="<?php echo htmlspecialchars($product['category']); ?>">
                                 <div class="product-image">
-                                    <img src = "../../img/product/<?php echo $product['image1']; ?>" alt="<?php echo $product['product_name']; ?>">
+                                    <img src="../../img/product/<?php echo htmlspecialchars($product['image1']); ?>" alt="<?php echo htmlspecialchars($product['product_name']); ?>">
                                 </div>
-                                <div class="product-info">
-                                    <h3><?php echo $product['product_name']; ?></h3>
+                                <div class="product-details">
+                                    <div class="product-header">
+                                        <h3><?php echo htmlspecialchars($product['product_name']); ?></h3>
+                                        <button class="edit-btn"><i class="fas fa-pencil-alt"></i></button>
+                                    </div>
+                                    <p class="product-stock">Stock: <?php echo htmlspecialchars($product['stock']); ?></p>
                                     <p class="product-price"><?php echo number_format($product['price']); ?> VND</p>
-                                </div>
-                                <div class="product-actions">
-                                    <div class="product-stock">Stock: <?php echo $product['stock']; ?></div>
-                                    <button class="edit-btn"><i class="fas fa-pencil-alt"></i></button>
                                 </div>
                             </div>
                         <?php endforeach; ?>
                     <?php endif; ?>
                     
-                    <!-- Add More box, always present -->
                     <div class="product-card add-more">
                         <a href="OwnerForm.php">
                         <div  class="add-more-content">
