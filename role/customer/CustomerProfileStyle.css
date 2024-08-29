@@ -186,7 +186,11 @@
   }
   
   .submit-button {
+<<<<<<< HEAD
     background-color: #417BF7;;
+=======
+    background-color: #779DF8;
+>>>>>>> c6210e112e7afeedfa7bd6e09a5129440eafcb8a
     align-self: center;
     margin-top: 57px;
     margin-bottom: 57px;
